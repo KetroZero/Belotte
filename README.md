@@ -1,2 +1,2 @@
 # Belotte
-Suivre les cartes au jue "Belotte". Prevoir la distribution
+Suivre les cartes au jeu de "Belotte". Prevoir la distribution
