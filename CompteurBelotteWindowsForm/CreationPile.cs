@@ -22,11 +22,18 @@ namespace CompteurBelotteWindowsForm
         public CreationPile()
         {
             InitializeComponent();
+
             radioButtonPique.Checked = true;
             SwitchImages();
 
             carte1.ImageLocation = carte2.ImageLocation = carte3.ImageLocation = carte4.ImageLocation = path + CardBack;
             turn = 1;
+
+            labelImpair2.Text = Program.J1.name + " et " + Program.J3.name;
+            labelpointimpair.Text = Program.pointsImpaire + "/" + Program.maxScore;
+
+            labelPair2.Text = Program.J2.name + " et " + Program.J4.name;
+            labelpointPair.Text = Program.pointsPaire + "/" + Program.maxScore;
 
             pileImpair = new Paquet();
             pilePair = new Paquet();

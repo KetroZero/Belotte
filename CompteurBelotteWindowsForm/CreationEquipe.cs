@@ -17,11 +17,6 @@ namespace CompteurBelotteWindowsForm
             InitializeComponent();
         }
 
-        public Joueur GetJ1()
-        {
-            return new Joueur(0);
-        }
-
         private void buttonEquipe_Click(object sender, EventArgs e)
         {
             textBoxJ1.Enabled = true;
@@ -35,58 +30,105 @@ namespace CompteurBelotteWindowsForm
         private void buttonValide_Click(object sender, EventArgs e)
         {
             labelError.Visible = false;
-
-            Joueur J1, J2, J3, J4;
-
+            bool error = false;
             try
             {
                 if (TextBoxIsValid(textBoxJ1))
                 {
-                    J1 = new Joueur(1, textBoxJ1.Text);
+                    Program.J1 = new Joueur(1, textBoxJ1.Text);
                 }
 
                 if (TextBoxIsValid(textBoxJ1))
                 {
-                    J2 = new Joueur(2, textBoxJ2.Text);
+                    Program.J2 = new Joueur(2, textBoxJ2.Text);
                 }
                 if (TextBoxIsValid(textBoxJ1))
                 {
-                    J3 = new Joueur(3, textBoxJ3.Text);
+                    Program.J3 = new Joueur(3, textBoxJ3.Text);
                 }
                 if (TextBoxIsValid(textBoxJ1))
                 {
-                    J4 = new Joueur(4, textBoxJ4.Text);
+                    Program.J4 = new Joueur(4, textBoxJ4.Text);
                 }
             }
             catch (Exception ex)
             {
                 labelError.Text = ex.Message;
                 labelError.Visible = true;
+                error = true;
             }
 
-            Form pile = new CreationPile();
-            pile.Location = this.Location;
-            pile.StartPosition = this.StartPosition;
-            pile.FormClosing += delegate { this.Show(); };
-            pile.Show();
-            this.Hide();
+            if (!error)
+            {
+                Form pile = new CreationPile();
+                pile.Location = this.Location;
+                pile.StartPosition = this.StartPosition;
+                pile.FormClosing += delegate { this.Show(); };
+                pile.Show();
+                this.Hide();
+            }
 
         }
 
         private bool TextBoxIsValid(TextBox control)
         {
-            Exception ex = new BelotteException();
+            bool isValid = true;
             if (string.IsNullOrWhiteSpace(control.Text))
             {
-                ex = new Exception("Format de nom incorrect.");
+                throw new Exception("Format de nom incorrect.");
+                isValid = false;
+
             }
 
             if (string.IsNullOrEmpty(control.Text))
             {
-                ex = new Exception("Le nom est vide.");
+                throw new Exception("Le nom est vide.");
+                isValid = false;
             }
 
-            return ex.Message == null;
+            return isValid;
+        }
+
+        private void groupBoxScore_Enter(object sender, EventArgs e)
+        {
+            if (radioButtonScore1000.Checked)
+            {
+                Program.maxScore = int.Parse(radioButtonScore1000.Text);
+            }
+
+            if (radioButtonScore1500.Checked)
+            {
+                Program.maxScore = int.Parse(radioButtonScore1500.Text);
+            }
+
+            if (radioButtonScoreAutre.Checked)
+            {
+                try
+                {
+                    Program.maxScore = int.Parse(textBoxScore.Text);
+                }
+                catch (Exception ex)
+                {
+                    textBoxScore.Text = "";
+                }
+            }
+        }
+
+        private void textBoxScore_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Program.maxScore = int.Parse(textBoxScore.Text);
+            }
+            catch (Exception ex)
+            {
+                textBoxScore.Text = "";
+            }
+        }
+
+        private void radioButtonScoreAutre_CheckedChanged(object sender, EventArgs e)
+        {
+            textBoxScore.Enabled = radioButtonScoreAutre.Checked;
         }
     }
 }

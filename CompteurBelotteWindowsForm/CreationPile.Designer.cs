@@ -53,6 +53,8 @@
             this.pickCard1 = new System.Windows.Forms.PictureBox();
             this.labelPair2 = new System.Windows.Forms.Label();
             this.labelImpair2 = new System.Windows.Forms.Label();
+            this.labelpointPair = new System.Windows.Forms.Label();
+            this.labelpointimpair = new System.Windows.Forms.Label();
             this.groupBoxJeu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.carte4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carte3)).BeginInit();
@@ -344,11 +346,33 @@
             this.labelImpair2.TabIndex = 7;
             this.labelImpair2.Text = "J1 && J3";
             // 
+            // labelpointPair
+            // 
+            this.labelpointPair.AutoSize = true;
+            this.labelpointPair.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelpointPair.Location = new System.Drawing.Point(1111, 86);
+            this.labelpointPair.Name = "labelpointPair";
+            this.labelpointPair.Size = new System.Drawing.Size(58, 20);
+            this.labelpointPair.TabIndex = 8;
+            this.labelpointPair.Text = "0/1000";
+            // 
+            // labelpointimpair
+            // 
+            this.labelpointimpair.AutoSize = true;
+            this.labelpointimpair.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelpointimpair.Location = new System.Drawing.Point(1111, 236);
+            this.labelpointimpair.Name = "labelpointimpair";
+            this.labelpointimpair.Size = new System.Drawing.Size(58, 20);
+            this.labelpointimpair.TabIndex = 9;
+            this.labelpointimpair.Text = "0/1000";
+            // 
             // CreationPile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1283, 588);
+            this.Controls.Add(this.labelpointimpair);
+            this.Controls.Add(this.labelpointPair);
             this.Controls.Add(this.labelImpair2);
             this.Controls.Add(this.labelPair2);
             this.Controls.Add(this.groupBoxCardPick);
@@ -406,5 +430,7 @@
         private System.Windows.Forms.Label labelPair2;
         private System.Windows.Forms.Label labelImpair2;
         private System.Windows.Forms.PictureBox pickCard2;
+        private System.Windows.Forms.Label labelpointPair;
+        private System.Windows.Forms.Label labelpointimpair;
     }
 }

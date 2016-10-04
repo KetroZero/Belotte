@@ -183,6 +183,7 @@
             this.groupBoxScore.Size = new System.Drawing.Size(192, 80);
             this.groupBoxScore.TabIndex = 14;
             this.groupBoxScore.TabStop = false;
+            this.groupBoxScore.Enter += new System.EventHandler(this.groupBoxScore_Enter);
             // 
             // textBoxScore
             // 
@@ -190,6 +191,7 @@
             this.textBoxScore.Name = "textBoxScore";
             this.textBoxScore.Size = new System.Drawing.Size(100, 20);
             this.textBoxScore.TabIndex = 3;
+            this.textBoxScore.TextChanged += new System.EventHandler(this.textBoxScore_TextChanged);
             // 
             // radioButtonScoreAutre
             // 
@@ -201,6 +203,7 @@
             this.radioButtonScoreAutre.TabStop = true;
             this.radioButtonScoreAutre.Text = "Autre";
             this.radioButtonScoreAutre.UseVisualStyleBackColor = true;
+            this.radioButtonScoreAutre.CheckedChanged += new System.EventHandler(this.radioButtonScoreAutre_CheckedChanged);
             // 
             // radioButtonScore1500
             // 
