@@ -55,6 +55,9 @@
             this.labelImpair2 = new System.Windows.Forms.Label();
             this.labelpointPair = new System.Windows.Forms.Label();
             this.labelpointimpair = new System.Windows.Forms.Label();
+            this.labelAtout = new System.Windows.Forms.Label();
+            this.comboBoxAtout = new System.Windows.Forms.ComboBox();
+            this.buttonAnnule = new System.Windows.Forms.Button();
             this.groupBoxJeu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.carte4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carte3)).BeginInit();
@@ -140,22 +143,26 @@
             // 
             // buttonPair
             // 
+            this.buttonPair.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.buttonPair.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonPair.Location = new System.Drawing.Point(876, 13);
             this.buttonPair.Name = "buttonPair";
             this.buttonPair.Size = new System.Drawing.Size(199, 93);
             this.buttonPair.TabIndex = 2;
             this.buttonPair.Text = "Main pour l\'équipe paire";
-            this.buttonPair.UseVisualStyleBackColor = true;
+            this.buttonPair.UseVisualStyleBackColor = false;
             this.buttonPair.Click += new System.EventHandler(this.buttonPair_Click);
             // 
             // buttonImpair
             // 
-            this.buttonImpair.Location = new System.Drawing.Point(876, 162);
+            this.buttonImpair.BackColor = System.Drawing.SystemColors.Info;
+            this.buttonImpair.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonImpair.Location = new System.Drawing.Point(876, 126);
             this.buttonImpair.Name = "buttonImpair";
             this.buttonImpair.Size = new System.Drawing.Size(199, 94);
             this.buttonImpair.TabIndex = 3;
             this.buttonImpair.Text = "Main pour l\'équipe impaire";
-            this.buttonImpair.UseVisualStyleBackColor = true;
+            this.buttonImpair.UseVisualStyleBackColor = false;
             this.buttonImpair.Click += new System.EventHandler(this.buttonImpair_Click);
             // 
             // groupBoxCouleur
@@ -164,9 +171,9 @@
             this.groupBoxCouleur.Controls.Add(this.radioButtonTrefle);
             this.groupBoxCouleur.Controls.Add(this.radioButtonCoeur);
             this.groupBoxCouleur.Controls.Add(this.radioButtonPique);
-            this.groupBoxCouleur.Location = new System.Drawing.Point(12, 90);
+            this.groupBoxCouleur.Location = new System.Drawing.Point(12, 263);
             this.groupBoxCouleur.Name = "groupBoxCouleur";
-            this.groupBoxCouleur.Size = new System.Drawing.Size(114, 173);
+            this.groupBoxCouleur.Size = new System.Drawing.Size(317, 52);
             this.groupBoxCouleur.TabIndex = 4;
             this.groupBoxCouleur.TabStop = false;
             // 
@@ -174,7 +181,8 @@
             // 
             this.radioButtonCarreau.AutoSize = true;
             this.radioButtonCarreau.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButtonCarreau.Location = new System.Drawing.Point(7, 122);
+            this.radioButtonCarreau.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.radioButtonCarreau.Location = new System.Drawing.Point(229, 19);
             this.radioButtonCarreau.Name = "radioButtonCarreau";
             this.radioButtonCarreau.Size = new System.Drawing.Size(84, 24);
             this.radioButtonCarreau.TabIndex = 3;
@@ -187,7 +195,8 @@
             // 
             this.radioButtonTrefle.AutoSize = true;
             this.radioButtonTrefle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButtonTrefle.Location = new System.Drawing.Point(7, 92);
+            this.radioButtonTrefle.ForeColor = System.Drawing.Color.DimGray;
+            this.radioButtonTrefle.Location = new System.Drawing.Point(156, 19);
             this.radioButtonTrefle.Name = "radioButtonTrefle";
             this.radioButtonTrefle.Size = new System.Drawing.Size(67, 24);
             this.radioButtonTrefle.TabIndex = 2;
@@ -200,7 +209,8 @@
             // 
             this.radioButtonCoeur.AutoSize = true;
             this.radioButtonCoeur.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButtonCoeur.Location = new System.Drawing.Point(7, 62);
+            this.radioButtonCoeur.ForeColor = System.Drawing.Color.Red;
+            this.radioButtonCoeur.Location = new System.Drawing.Point(80, 19);
             this.radioButtonCoeur.Name = "radioButtonCoeur";
             this.radioButtonCoeur.Size = new System.Drawing.Size(70, 24);
             this.radioButtonCoeur.TabIndex = 1;
@@ -213,7 +223,7 @@
             // 
             this.radioButtonPique.AutoSize = true;
             this.radioButtonPique.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButtonPique.Location = new System.Drawing.Point(7, 32);
+            this.radioButtonPique.Location = new System.Drawing.Point(7, 19);
             this.radioButtonPique.Name = "radioButtonPique";
             this.radioButtonPique.Size = new System.Drawing.Size(67, 24);
             this.radioButtonPique.TabIndex = 0;
@@ -330,7 +340,7 @@
             // 
             this.labelPair2.AutoSize = true;
             this.labelPair2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPair2.Location = new System.Drawing.Point(1107, 32);
+            this.labelPair2.Location = new System.Drawing.Point(1106, 47);
             this.labelPair2.Name = "labelPair2";
             this.labelPair2.Size = new System.Drawing.Size(62, 20);
             this.labelPair2.TabIndex = 6;
@@ -340,7 +350,7 @@
             // 
             this.labelImpair2.AutoSize = true;
             this.labelImpair2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelImpair2.Location = new System.Drawing.Point(1107, 162);
+            this.labelImpair2.Location = new System.Drawing.Point(1110, 164);
             this.labelImpair2.Name = "labelImpair2";
             this.labelImpair2.Size = new System.Drawing.Size(62, 20);
             this.labelImpair2.TabIndex = 7;
@@ -350,7 +360,7 @@
             // 
             this.labelpointPair.AutoSize = true;
             this.labelpointPair.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelpointPair.Location = new System.Drawing.Point(1111, 86);
+            this.labelpointPair.Location = new System.Drawing.Point(1106, 86);
             this.labelpointPair.Name = "labelpointPair";
             this.labelpointPair.Size = new System.Drawing.Size(58, 20);
             this.labelpointPair.TabIndex = 8;
@@ -360,17 +370,56 @@
             // 
             this.labelpointimpair.AutoSize = true;
             this.labelpointimpair.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelpointimpair.Location = new System.Drawing.Point(1111, 236);
+            this.labelpointimpair.Location = new System.Drawing.Point(1110, 200);
             this.labelpointimpair.Name = "labelpointimpair";
             this.labelpointimpair.Size = new System.Drawing.Size(58, 20);
             this.labelpointimpair.TabIndex = 9;
             this.labelpointimpair.Text = "0/1000";
+            // 
+            // labelAtout
+            // 
+            this.labelAtout.AutoSize = true;
+            this.labelAtout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAtout.Location = new System.Drawing.Point(19, 92);
+            this.labelAtout.Name = "labelAtout";
+            this.labelAtout.Size = new System.Drawing.Size(48, 20);
+            this.labelAtout.TabIndex = 10;
+            this.labelAtout.Text = "Atout";
+            // 
+            // comboBoxAtout
+            // 
+            this.comboBoxAtout.FormattingEnabled = true;
+            this.comboBoxAtout.Items.AddRange(new object[] {
+            "Pique",
+            "Coeur",
+            "Trèfle",
+            "Carreau"});
+            this.comboBoxAtout.Location = new System.Drawing.Point(74, 94);
+            this.comboBoxAtout.Name = "comboBoxAtout";
+            this.comboBoxAtout.Size = new System.Drawing.Size(94, 21);
+            this.comboBoxAtout.TabIndex = 11;
+            this.comboBoxAtout.Text = "-Atout-";
+            this.comboBoxAtout.SelectedIndexChanged += new System.EventHandler(this.comboBoxAtout_SelectedIndexChanged);
+            // 
+            // buttonAnnule
+            // 
+            this.buttonAnnule.BackColor = System.Drawing.Color.IndianRed;
+            this.buttonAnnule.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAnnule.Location = new System.Drawing.Point(1110, 240);
+            this.buttonAnnule.Name = "buttonAnnule";
+            this.buttonAnnule.Size = new System.Drawing.Size(150, 63);
+            this.buttonAnnule.TabIndex = 12;
+            this.buttonAnnule.Text = "Annuler la dernière main";
+            this.buttonAnnule.UseVisualStyleBackColor = false;
             // 
             // CreationPile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1283, 588);
+            this.Controls.Add(this.buttonAnnule);
+            this.Controls.Add(this.comboBoxAtout);
+            this.Controls.Add(this.labelAtout);
             this.Controls.Add(this.labelpointimpair);
             this.Controls.Add(this.labelpointPair);
             this.Controls.Add(this.labelImpair2);
@@ -432,5 +481,8 @@
         private System.Windows.Forms.PictureBox pickCard2;
         private System.Windows.Forms.Label labelpointPair;
         private System.Windows.Forms.Label labelpointimpair;
+        private System.Windows.Forms.Label labelAtout;
+        private System.Windows.Forms.ComboBox comboBoxAtout;
+        private System.Windows.Forms.Button buttonAnnule;
     }
 }

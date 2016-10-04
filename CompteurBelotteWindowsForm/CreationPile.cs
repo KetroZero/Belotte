@@ -18,6 +18,8 @@ namespace CompteurBelotteWindowsForm
         private Paquet pilePair;
         private Paquet pileImpair;
 
+        private Couleur currentAtout;
+
         int turn = 0;
         public CreationPile()
         {
@@ -30,14 +32,18 @@ namespace CompteurBelotteWindowsForm
             turn = 1;
 
             labelImpair2.Text = Program.J1.name + " et " + Program.J3.name;
-            labelpointimpair.Text = Program.pointsImpaire + "/" + Program.maxScore;
+            labelpointimpair.Text = "0";
 
             labelPair2.Text = Program.J2.name + " et " + Program.J4.name;
-            labelpointPair.Text = Program.pointsPaire + "/" + Program.maxScore;
+            labelpointPair.Text = "0";
 
             pileImpair = new Paquet();
             pilePair = new Paquet();
 
+            comboBoxAtout.DataSource = Enum.GetValues(typeof(Couleur));
+            comboBoxAtout.SelectedIndex = 0;
+            comboBoxAtout.DropDownStyle = ComboBoxStyle.DropDownList;
+            currentAtout = (Couleur)comboBoxAtout.SelectedItem;
         }
 
         private void radioButtonPique_CheckedChanged(object sender, EventArgs e)
@@ -176,20 +182,32 @@ namespace CompteurBelotteWindowsForm
 
         private void buttonPair_Click(object sender, EventArgs e)
         {
-            pilePair.AjouterAuPaquet(new Carte(carte1.ImageLocation.Remove(0, path.Length)));
-            pilePair.AjouterAuPaquet(new Carte(carte2.ImageLocation.Remove(0, path.Length)));
-            pilePair.AjouterAuPaquet(new Carte(carte3.ImageLocation.Remove(0, path.Length)));
-            pilePair.AjouterAuPaquet(new Carte(carte4.ImageLocation.Remove(0, path.Length)));
+            Carte c1 = new Carte(carte1.ImageLocation.Remove(0, path.Length));
+            c1.atout = (c1.couleur == currentAtout);
+            Carte c2 = new Carte(carte2.ImageLocation.Remove(0, path.Length));
+            c2.atout = (c2.couleur == currentAtout);
+            Carte c3 = new Carte(carte3.ImageLocation.Remove(0, path.Length));
+            c3.atout = (c3.couleur == currentAtout);
+            Carte c4 = new Carte(carte4.ImageLocation.Remove(0, path.Length));
+            c4.atout = (c4.couleur == currentAtout);
+
+            UpdatePoints(c1, c2, c3, c4, 0);
 
             UpdateTurn();
         }
 
         private void buttonImpair_Click(object sender, EventArgs e)
         {
-            pileImpair.AjouterAuPaquet(new Carte(carte1.ImageLocation.Remove(0, path.Length)));
-            pileImpair.AjouterAuPaquet(new Carte(carte2.ImageLocation.Remove(0, path.Length)));
-            pileImpair.AjouterAuPaquet(new Carte(carte3.ImageLocation.Remove(0, path.Length)));
-            pileImpair.AjouterAuPaquet(new Carte(carte4.ImageLocation.Remove(0, path.Length)));
+            Carte c1 = new Carte(carte1.ImageLocation.Remove(0, path.Length));
+            c1.SetAtout(c1.couleur == currentAtout);
+            Carte c2 = new Carte(carte2.ImageLocation.Remove(0, path.Length));
+            c2.SetAtout(c2.couleur == currentAtout);
+            Carte c3 = new Carte(carte3.ImageLocation.Remove(0, path.Length));
+            c3.SetAtout(c3.couleur == currentAtout);
+            Carte c4 = new Carte(carte4.ImageLocation.Remove(0, path.Length));
+            c4.SetAtout(c4.couleur == currentAtout);
+
+            UpdatePoints(c1, c2, c3, c4, 1);
 
             UpdateTurn();
         }
@@ -209,6 +227,38 @@ namespace CompteurBelotteWindowsForm
             {
                 this.Close();
             }
+        }
+
+        private void UpdatePoints(Carte c1, Carte c2, Carte c3, Carte c4, int winner)
+        {
+            int points = c1.valeur + c2.valeur + c3.valeur + c4.valeur;
+
+            if (winner % 2 == 1) // impaire
+            {
+                Program.pointsImpaire += points;
+
+                pileImpair.AjouterAuPaquet(c1);
+                pileImpair.AjouterAuPaquet(c2);
+                pileImpair.AjouterAuPaquet(c3);
+                pileImpair.AjouterAuPaquet(c4);
+            }
+            else // pair
+            {
+                Program.pointsPaire += points;
+
+                pilePair.AjouterAuPaquet(c1);
+                pilePair.AjouterAuPaquet(c2);
+                pilePair.AjouterAuPaquet(c3);
+                pilePair.AjouterAuPaquet(c4);
+            }
+
+            labelpointimpair.Text = Program.pointsImpaire.ToString();
+            labelpointPair.Text = Program.pointsPaire.ToString();
+        }
+
+        private void comboBoxAtout_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            currentAtout = (Couleur)comboBoxAtout.SelectedItem;
         }
     }
 }

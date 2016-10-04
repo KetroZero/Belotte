@@ -32,7 +32,7 @@ namespace CompteurBelotteWindowsForm
         {
         }
 
-        public Carte(string imageName)
+        public Carte(string imageName, bool atout = false)
         {
             string[] cardArgs = imageName.Split(new char[] { '_', '.' });
 
@@ -72,7 +72,15 @@ namespace CompteurBelotteWindowsForm
                     break;
             }
 
+            this.atout = atout;
 
+            valeur = rankToValeur(nom, atout);
+        }
+
+        public void SetAtout(bool atout)
+        {
+            this.atout = atout;
+            valeur = rankToValeur(nom, atout);
         }
 
         public bool isCarte(string description)
