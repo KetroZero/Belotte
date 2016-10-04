@@ -8,3 +8,4 @@ C:\Users\Utilisateur\Documents\Projets_Visual_Studio\BelotteWindowsForm\Compteur
 C:\Users\Utilisateur\Documents\Projets_Visual_Studio\BelotteWindowsForm\CompteurBelotteWindowsForm\obj\Debug\CompteurBelotteWindowsForm.pdb
 C:\Users\Utilisateur\Documents\Projets_Visual_Studio\BelotteWindowsForm\CompteurBelotteWindowsForm\obj\Debug\CompteurBelotteWindowsForm.CreationEquipe.resources
 C:\Users\Utilisateur\Documents\Projets_Visual_Studio\BelotteWindowsForm\CompteurBelotteWindowsForm\obj\Debug\CompteurBelotteWindowsForm.CreationPile.resources
+C:\Users\Utilisateur\Documents\Projets_Visual_Studio\BelotteWindowsForm\CompteurBelotteWindowsForm\obj\Debug\CompteurBelotteWindowsForm.Points_Coupe.resources

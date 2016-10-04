@@ -81,9 +81,21 @@ namespace CompteurBelotteWindowsForm
             }
         }
 
+        public void Remove(Carte c)
+        {
+            cartes.Remove(c);
+        }
+
         public int getLength()
         {
             return cartes.Count;
+        }
+
+        public bool isInPaquet(Carte c)
+        {
+            c.SetAtout(false);
+
+            return cartes.Contains(c);
         }
 
         public void SetCouleurAtout(Couleur couleur)

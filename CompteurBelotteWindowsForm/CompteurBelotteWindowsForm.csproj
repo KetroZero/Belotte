@@ -62,6 +62,12 @@
     <Compile Include="CreationEquipe.Designer.cs">
       <DependentUpon>CreationEquipe.cs</DependentUpon>
     </Compile>
+    <Compile Include="Points_Coupe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Points_Coupe.Designer.cs">
+      <DependentUpon>Points_Coupe.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CreationEquipe.resx">
@@ -69,6 +75,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CreationPile.resx">
       <DependentUpon>CreationPile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Points_Coupe.resx">
+      <DependentUpon>Points_Coupe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
