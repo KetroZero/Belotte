@@ -411,6 +411,7 @@
             this.buttonAnnule.TabIndex = 12;
             this.buttonAnnule.Text = "Annuler la dernière main";
             this.buttonAnnule.UseVisualStyleBackColor = false;
+            this.buttonAnnule.Click += new System.EventHandler(this.buttonAnnule_Click);
             // 
             // CreationPile
             // 

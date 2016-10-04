@@ -22,10 +22,10 @@ namespace CompteurBelotteWindowsForm
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            J1 = new Joueur(1);
-            J2 = new Joueur(2);
-            J3 = new Joueur(3);
-            J4 = new Joueur(4);
+            J1 = new Joueur(1, "J1");
+            J2 = new Joueur(2, "J2");
+            J3 = new Joueur(3, "J3");
+            J4 = new Joueur(4, "J4");
 
             Application.Run(new CreationEquipe());
         }

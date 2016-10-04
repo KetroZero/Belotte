@@ -19,6 +19,9 @@ namespace CompteurBelotteWindowsForm
         private Paquet pileImpair;
         private Paquet paquetComplet;
 
+        private int pointsImpaire;
+        private int pointsPaire;
+
         private Couleur currentAtout;
 
         int turn = 0;
@@ -244,7 +247,9 @@ namespace CompteurBelotteWindowsForm
             }
             else
             {
-                this.Close();
+                //this.Close();
+                groupBoxJeu.Visible = false;
+                groupBoxCardPick.Visible = false;
             }
         }
 
@@ -254,7 +259,7 @@ namespace CompteurBelotteWindowsForm
 
             if (winner % 2 == 1) // impaire
             {
-                Program.pointsImpaire += points;
+                pointsImpaire += points;
 
                 pileImpair.AjouterAuPaquet(c1);
                 pileImpair.AjouterAuPaquet(c2);
@@ -263,7 +268,7 @@ namespace CompteurBelotteWindowsForm
             }
             else // pair
             {
-                Program.pointsPaire += points;
+                pointsPaire += points;
 
                 pilePair.AjouterAuPaquet(c1);
                 pilePair.AjouterAuPaquet(c2);
@@ -276,8 +281,8 @@ namespace CompteurBelotteWindowsForm
             paquetComplet.Remove(c3);
             paquetComplet.Remove(c4);
 
-            labelpointimpair.Text = Program.pointsImpaire.ToString();
-            labelpointPair.Text = Program.pointsPaire.ToString();
+            labelpointimpair.Text = pointsImpaire.ToString();
+            labelpointPair.Text = pointsPaire.ToString();
         }
 
         private void comboBoxAtout_SelectedIndexChanged(object sender, EventArgs e)
@@ -295,6 +300,11 @@ namespace CompteurBelotteWindowsForm
                 }
             }
             return true;
+        }
+
+        private void buttonAnnule_Click(object sender, EventArgs e)
+        {
+            //TODO
         }
 
     }
