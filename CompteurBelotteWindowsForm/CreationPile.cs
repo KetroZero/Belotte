@@ -45,7 +45,7 @@ namespace CompteurBelotteWindowsForm
             comboBoxAtout.DataSource = Enum.GetValues(typeof(Couleur));
             comboBoxAtout.SelectedIndex = 0;
             comboBoxAtout.DropDownStyle = ComboBoxStyle.DropDownList;
-            currentAtout = (Couleur)comboBoxAtout.SelectedItem;
+            currentAtout = (Couleur)comboBoxAtout.SelectedIndex;
 
             SwitchImages();
 
@@ -248,8 +248,14 @@ namespace CompteurBelotteWindowsForm
             else
             {
                 //this.Close();
-                groupBoxJeu.Visible = false;
-                groupBoxCardPick.Visible = false;
+                //groupBoxJeu.Visible = false;
+                //groupBoxCardPick.Visible = false;
+
+                Form form = new Points_Coupe(pointsPaire, pointsImpaire); ;
+                form.Location = this.Location;
+                form.StartPosition = this.StartPosition;
+                form.Show();
+                this.Hide();
             }
         }
 
@@ -265,6 +271,11 @@ namespace CompteurBelotteWindowsForm
                 pileImpair.AjouterAuPaquet(c2);
                 pileImpair.AjouterAuPaquet(c3);
                 pileImpair.AjouterAuPaquet(c4);
+
+                if(turn==8)
+                {
+                    pointsImpaire += 10;
+                }
             }
             else // pair
             {
@@ -274,6 +285,11 @@ namespace CompteurBelotteWindowsForm
                 pilePair.AjouterAuPaquet(c2);
                 pilePair.AjouterAuPaquet(c3);
                 pilePair.AjouterAuPaquet(c4);
+
+                if (turn == 8)
+                {
+                    pointsPaire += 10;
+                }
             }
 
             paquetComplet.Remove(c1);
@@ -287,7 +303,7 @@ namespace CompteurBelotteWindowsForm
 
         private void comboBoxAtout_SelectedIndexChanged(object sender, EventArgs e)
         {
-            currentAtout = (Couleur)comboBoxAtout.SelectedItem;
+            currentAtout = (Couleur)comboBoxAtout.SelectedIndex;
         }
 
         private bool gameIsValid()

@@ -38,7 +38,7 @@ namespace CompteurBelotteWindowsForm
 
             switch (cardArgs[0])
             {
-                default: break; // throw Exception
+                default: break; // throw Exception ??
 
                 case "A": nom = Rang.As;
                     break;
@@ -60,7 +60,7 @@ namespace CompteurBelotteWindowsForm
 
             switch (cardArgs[1])
             {
-                default: break; // throw Exception
+                default: break; // throw Exception ??
 
                 case "Ca": couleur = Couleur.Carreau;
                     break;
