@@ -118,6 +118,7 @@ namespace CompteurBelotteWindowsForm
 
         private void SetCardPlayed(PictureBox p)
         {
+            /*
             if (carte1.ImageLocation == path + CardBack)
             {
                 carte1.ImageLocation = p.ImageLocation;
@@ -133,6 +134,21 @@ namespace CompteurBelotteWindowsForm
             else if (carte4.ImageLocation == path + CardBack)
             {
                 carte4.ImageLocation = p.ImageLocation;
+            }
+            */
+
+            foreach (PictureBox pb in groupBoxJeu.Controls.OfType<PictureBox>().OrderBy(c => c.Name))
+            {
+                if (pb.ImageLocation == path + CardBack)
+                {
+                    pb.ImageLocation = p.ImageLocation;
+
+                    Carte c = new Carte(p.ImageLocation.Remove(0, path.Length));
+                    paquetComplet.Remove(c);
+
+                    p.ImageLocation = path + CardBack;
+                    break;
+                }
             }
         }
 
@@ -178,22 +194,38 @@ namespace CompteurBelotteWindowsForm
 
         private void carte1_Click(object sender, EventArgs e)
         {
+            Carte c = new Carte(carte1.ImageLocation.Remove(0, path.Length));
+            paquetComplet.AjouterAuPaquet(c);
+
             carte1.ImageLocation = path + CardBack;
+            SwitchImages();
         }
 
         private void carte2_Click(object sender, EventArgs e)
         {
+            Carte c = new Carte(carte2.ImageLocation.Remove(0, path.Length));
+            paquetComplet.AjouterAuPaquet(c);
+
             carte2.ImageLocation = path + CardBack;
+            SwitchImages();
         }
 
         private void carte3_Click(object sender, EventArgs e)
         {
+            Carte c = new Carte(carte3.ImageLocation.Remove(0, path.Length));
+            paquetComplet.AjouterAuPaquet(c);
+
             carte3.ImageLocation = path + CardBack;
+            SwitchImages();
         }
 
         private void carte4_Click(object sender, EventArgs e)
         {
+            Carte c = new Carte(carte4.ImageLocation.Remove(0, path.Length));
+            paquetComplet.AjouterAuPaquet(c);
+
             carte4.ImageLocation = path + CardBack;
+            SwitchImages();
         }
 
         private void buttonPair_Click(object sender, EventArgs e)
@@ -272,9 +304,13 @@ namespace CompteurBelotteWindowsForm
                 pileImpair.AjouterAuPaquet(c3);
                 pileImpair.AjouterAuPaquet(c4);
 
-                if(turn==8)
+                if (turn == 8)
                 {
                     pointsImpaire += 10;
+                    if (pilePair.getLength() < 1)
+                    {
+                        pointsImpaire = 250;
+                    }
                 }
             }
             else // pair
@@ -289,6 +325,10 @@ namespace CompteurBelotteWindowsForm
                 if (turn == 8)
                 {
                     pointsPaire += 10;
+                    if (pileImpair.getLength() < 1)
+                    {
+                        pointsPaire = 250;
+                    }
                 }
             }
 
@@ -299,6 +339,7 @@ namespace CompteurBelotteWindowsForm
 
             labelpointimpair.Text = pointsImpaire.ToString();
             labelpointPair.Text = pointsPaire.ToString();
+
         }
 
         private void comboBoxAtout_SelectedIndexChanged(object sender, EventArgs e)
