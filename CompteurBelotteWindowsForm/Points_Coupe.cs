@@ -26,6 +26,9 @@ namespace CompteurBelotteWindowsForm
 
             radioButtonPair.Text = Program.J2.name + " et " + Program.J4.name + " (Paire)";
             radioButtonImpair.Text = Program.J1.name + " et " + Program.J3.name + " (Impaire)";
+
+            buttonSuivant.Enabled = false;
+            buttonSuivant.Visible = false;
         }
 
         private void ConvertScore(int pair, int impair, bool belottePair, bool belotteImpair)
@@ -116,6 +119,9 @@ namespace CompteurBelotteWindowsForm
 
             buttonValide.Enabled = false;
 
+            buttonSuivant.Enabled = true;
+            buttonSuivant.Visible = true;
+
             int cumulPair = 0;
             foreach (int i in listBoxPair.Items)
             {
@@ -152,6 +158,15 @@ namespace CompteurBelotteWindowsForm
         {
             checkBelottePair.Enabled = !checkBelotteImpair.Checked;
             ConvertScore(scorePair, scoreImpair, checkBelottePair.Checked, checkBelotteImpair.Checked);
+        }
+
+        private void buttonSuivant_Click(object sender, EventArgs e)
+        {
+            Form form = new CreationPile();
+            form.Location = this.Location;
+            form.StartPosition = this.StartPosition;
+            form.Show();
+            this.Hide();
         }
     }
 }

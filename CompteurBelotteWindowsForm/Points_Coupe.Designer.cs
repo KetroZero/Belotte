@@ -33,10 +33,10 @@
             this.labelJ2J4 = new System.Windows.Forms.Label();
             this.labelJ1J3 = new System.Windows.Forms.Label();
             this.groupAtout = new System.Windows.Forms.GroupBox();
-            this.radioButtonPair = new System.Windows.Forms.RadioButton();
-            this.radioButtonImpair = new System.Windows.Forms.RadioButton();
-            this.checkBelottePair = new System.Windows.Forms.CheckBox();
             this.checkBelotteImpair = new System.Windows.Forms.CheckBox();
+            this.checkBelottePair = new System.Windows.Forms.CheckBox();
+            this.radioButtonImpair = new System.Windows.Forms.RadioButton();
+            this.radioButtonPair = new System.Windows.Forms.RadioButton();
             this.labelRemporte = new System.Windows.Forms.Label();
             this.labelPointPair1 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -49,6 +49,7 @@
             this.listBoxImpair = new System.Windows.Forms.ListBox();
             this.labelCumulPair = new System.Windows.Forms.Label();
             this.labelCumulImpair = new System.Windows.Forms.Label();
+            this.buttonSuivant = new System.Windows.Forms.Button();
             this.groupAtout.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -106,17 +107,27 @@
             this.groupAtout.TabIndex = 6;
             this.groupAtout.TabStop = false;
             // 
-            // radioButtonPair
+            // checkBelotteImpair
             // 
-            this.radioButtonPair.AutoSize = true;
-            this.radioButtonPair.Location = new System.Drawing.Point(6, 19);
-            this.radioButtonPair.Name = "radioButtonPair";
-            this.radioButtonPair.Size = new System.Drawing.Size(89, 17);
-            this.radioButtonPair.TabIndex = 0;
-            this.radioButtonPair.TabStop = true;
-            this.radioButtonPair.Text = "Paire J2 et J4";
-            this.radioButtonPair.UseVisualStyleBackColor = true;
-            this.radioButtonPair.CheckedChanged += new System.EventHandler(this.radioButtonPair_CheckedChanged);
+            this.checkBelotteImpair.AutoSize = true;
+            this.checkBelotteImpair.Location = new System.Drawing.Point(165, 42);
+            this.checkBelotteImpair.Name = "checkBelotteImpair";
+            this.checkBelotteImpair.Size = new System.Drawing.Size(59, 17);
+            this.checkBelotteImpair.TabIndex = 3;
+            this.checkBelotteImpair.Text = "Belotte";
+            this.checkBelotteImpair.UseVisualStyleBackColor = true;
+            this.checkBelotteImpair.CheckedChanged += new System.EventHandler(this.checkBelotteImpair_CheckedChanged);
+            // 
+            // checkBelottePair
+            // 
+            this.checkBelottePair.AutoSize = true;
+            this.checkBelottePair.Location = new System.Drawing.Point(165, 19);
+            this.checkBelottePair.Name = "checkBelottePair";
+            this.checkBelottePair.Size = new System.Drawing.Size(59, 17);
+            this.checkBelottePair.TabIndex = 2;
+            this.checkBelottePair.Text = "Belotte";
+            this.checkBelottePair.UseVisualStyleBackColor = true;
+            this.checkBelottePair.CheckedChanged += new System.EventHandler(this.checkBelottePair_CheckedChanged);
             // 
             // radioButtonImpair
             // 
@@ -130,27 +141,17 @@
             this.radioButtonImpair.UseVisualStyleBackColor = true;
             this.radioButtonImpair.CheckedChanged += new System.EventHandler(this.radioButtonImpair_CheckedChanged);
             // 
-            // checkBelottePair
+            // radioButtonPair
             // 
-            this.checkBelottePair.AutoSize = true;
-            this.checkBelottePair.Location = new System.Drawing.Point(165, 19);
-            this.checkBelottePair.Name = "checkBelottePair";
-            this.checkBelottePair.Size = new System.Drawing.Size(59, 17);
-            this.checkBelottePair.TabIndex = 2;
-            this.checkBelottePair.Text = "Belotte";
-            this.checkBelottePair.UseVisualStyleBackColor = true;
-            this.checkBelottePair.CheckedChanged += new System.EventHandler(this.checkBelottePair_CheckedChanged);
-            // 
-            // checkBelotteImpair
-            // 
-            this.checkBelotteImpair.AutoSize = true;
-            this.checkBelotteImpair.Location = new System.Drawing.Point(165, 42);
-            this.checkBelotteImpair.Name = "checkBelotteImpair";
-            this.checkBelotteImpair.Size = new System.Drawing.Size(59, 17);
-            this.checkBelotteImpair.TabIndex = 3;
-            this.checkBelotteImpair.Text = "Belotte";
-            this.checkBelotteImpair.UseVisualStyleBackColor = true;
-            this.checkBelotteImpair.CheckedChanged += new System.EventHandler(this.checkBelotteImpair_CheckedChanged);
+            this.radioButtonPair.AutoSize = true;
+            this.radioButtonPair.Location = new System.Drawing.Point(6, 19);
+            this.radioButtonPair.Name = "radioButtonPair";
+            this.radioButtonPair.Size = new System.Drawing.Size(89, 17);
+            this.radioButtonPair.TabIndex = 0;
+            this.radioButtonPair.TabStop = true;
+            this.radioButtonPair.Text = "Paire J2 et J4";
+            this.radioButtonPair.UseVisualStyleBackColor = true;
+            this.radioButtonPair.CheckedChanged += new System.EventHandler(this.radioButtonPair_CheckedChanged);
             // 
             // labelRemporte
             // 
@@ -275,11 +276,23 @@
             this.labelCumulImpair.TabIndex = 18;
             this.labelCumulImpair.Text = "Total";
             // 
+            // buttonSuivant
+            // 
+            this.buttonSuivant.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSuivant.Location = new System.Drawing.Point(197, 361);
+            this.buttonSuivant.Name = "buttonSuivant";
+            this.buttonSuivant.Size = new System.Drawing.Size(131, 72);
+            this.buttonSuivant.TabIndex = 19;
+            this.buttonSuivant.Text = "Tour suivant";
+            this.buttonSuivant.UseVisualStyleBackColor = true;
+            this.buttonSuivant.Click += new System.EventHandler(this.buttonSuivant_Click);
+            // 
             // Points_Coupe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(882, 445);
+            this.Controls.Add(this.buttonSuivant);
             this.Controls.Add(this.labelCumulImpair);
             this.Controls.Add(this.labelCumulPair);
             this.Controls.Add(this.listBoxImpair);
@@ -329,5 +342,6 @@
         private System.Windows.Forms.ListBox listBoxImpair;
         private System.Windows.Forms.Label labelCumulPair;
         private System.Windows.Forms.Label labelCumulImpair;
+        private System.Windows.Forms.Button buttonSuivant;
     }
 }
