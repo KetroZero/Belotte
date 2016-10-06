@@ -105,7 +105,6 @@
             this.groupAtout.Size = new System.Drawing.Size(285, 75);
             this.groupAtout.TabIndex = 6;
             this.groupAtout.TabStop = false;
-            this.groupAtout.Enter += new System.EventHandler(this.groupAtout_Enter);
             // 
             // radioButtonPair
             // 

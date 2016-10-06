@@ -23,24 +23,22 @@ namespace CompteurBelotteWindowsForm
 
             scorePair = pair;
             scoreImpair = impair;
-        }
 
-        private void groupAtout_Enter(object sender, EventArgs e)
-        {
-            ConvertScore(scorePair, scoreImpair, checkBelottePair.Checked, checkBelotteImpair.Checked);
+            radioButtonPair.Text = Program.J2.name + " et " + Program.J4.name + " (Paire)";
+            radioButtonImpair.Text = Program.J1.name + " et " + Program.J3.name + " (Impaire)";
         }
 
         private void ConvertScore(int pair, int impair, bool belottePair, bool belotteImpair)
         {
-            totalPair = 0;// 10 * (int)Math.Round((double)pair / 10);
-            totalImpair = 0;//10 * (int)Math.Round((double)impair / 10);
+            totalPair = 0;
+            totalImpair = 0;
 
             if (radioButtonImpair.Checked) // Impair à pris l'atout
             {
                 if (impair >= 82)
                 {
-                    totalImpair = 10 * (int)Math.Round((double)impair / 10) + (belotteImpair ? 20 : 0);
-                    totalPair = 10 * (int)Math.Round((double)pair / 10) + (belottePair ? 20 : 0);
+                    totalImpair = 10 * (int)Math.Round((double)0.1f + impair / 10) + (belotteImpair ? 20 : 0);
+                    totalPair = 10 * (int)Math.Round((double)0.1f + pair / 10) + (belottePair ? 20 : 0);
                 }
                 else
                 {
@@ -70,8 +68,8 @@ namespace CompteurBelotteWindowsForm
 
                 if (pair >= 82)
                 {
-                    totalPair = 10 * (int)Math.Round((double)pair / 10) + (belottePair ? 20 : 0);
-                    totalImpair = 10 * (int)Math.Round((double)impair / 10) + (belotteImpair ? 20 : 0);
+                    totalPair = 10 * (int)Math.Round((double)0.1f + pair / 10) + (belottePair ? 20 : 0);
+                    totalImpair = 10 * (int)Math.Round((double)0.1f + impair / 10) + (belotteImpair ? 20 : 0);
                 }
                 else
                 {
@@ -104,7 +102,7 @@ namespace CompteurBelotteWindowsForm
 
         private void DisplayScore()
         {
-            labelTotalPair.Text = "Total : " +totalPair;
+            labelTotalPair.Text = "Total : " + totalPair;
             labelTotalImpair.Text = "Total : " + totalImpair;
 
             labelPointPair1.Text = "Points du tas : " + scorePair;

@@ -113,30 +113,10 @@ namespace CompteurBelotteWindowsForm
                     p.ImageLocation = path + CardBack;
                 }
             }
-
         }
 
         private void SetCardPlayed(PictureBox p)
         {
-            /*
-            if (carte1.ImageLocation == path + CardBack)
-            {
-                carte1.ImageLocation = p.ImageLocation;
-            }
-            else if (carte2.ImageLocation == path + CardBack)
-            {
-                carte2.ImageLocation = p.ImageLocation;
-            }
-            else if (carte3.ImageLocation == path + CardBack)
-            {
-                carte3.ImageLocation = p.ImageLocation;
-            }
-            else if (carte4.ImageLocation == path + CardBack)
-            {
-                carte4.ImageLocation = p.ImageLocation;
-            }
-            */
-
             foreach (PictureBox pb in groupBoxJeu.Controls.OfType<PictureBox>().OrderBy(c => c.Name))
             {
                 if (pb.ImageLocation == path + CardBack)
@@ -233,13 +213,13 @@ namespace CompteurBelotteWindowsForm
             if (gameIsValid())
             {
                 Carte c1 = new Carte(carte1.ImageLocation.Remove(0, path.Length));
-                c1.atout = (c1.couleur == currentAtout);
+                c1.SetAtout(c1.couleur == currentAtout);
                 Carte c2 = new Carte(carte2.ImageLocation.Remove(0, path.Length));
-                c2.atout = (c2.couleur == currentAtout);
+                c2.SetAtout(c2.couleur == currentAtout);
                 Carte c3 = new Carte(carte3.ImageLocation.Remove(0, path.Length));
-                c3.atout = (c3.couleur == currentAtout);
+                c3.SetAtout(c3.couleur == currentAtout);
                 Carte c4 = new Carte(carte4.ImageLocation.Remove(0, path.Length));
-                c4.atout = (c4.couleur == currentAtout);
+                c4.SetAtout(c4.couleur == currentAtout);
 
                 UpdatePoints(c1, c2, c3, c4, 0);
 
@@ -279,15 +259,31 @@ namespace CompteurBelotteWindowsForm
             }
             else
             {
-                //this.Close();
-                //groupBoxJeu.Visible = false;
-                //groupBoxCardPick.Visible = false;
+                if (pointsImpaire + pointsPaire >= 162)
+                {
+                    Form form = new Points_Coupe(pointsPaire, pointsImpaire); ;
+                    form.Location = this.Location;
+                    form.StartPosition = this.StartPosition;
+                    form.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    DialogResult dr = MessageBox.Show("La somme des points est invalide", "Erreur", MessageBoxButtons.OKCancel);
 
-                Form form = new Points_Coupe(pointsPaire, pointsImpaire); ;
-                form.Location = this.Location;
-                form.StartPosition = this.StartPosition;
-                form.Show();
-                this.Hide();
+                    if (dr == DialogResult.Cancel)
+                    {
+                        UpdateTurn();
+                    }
+                    else if (dr == System.Windows.Forms.DialogResult.OK)
+                    {
+                        Form form = new Points_Coupe(pointsPaire, pointsImpaire); ;
+                        form.Location = this.Location;
+                        form.StartPosition = this.StartPosition;
+                        form.Show();
+                        this.Hide();
+                    }
+                }
             }
         }
 
