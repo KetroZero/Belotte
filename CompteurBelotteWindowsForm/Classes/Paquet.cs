@@ -114,7 +114,8 @@ namespace CompteurBelotteWindowsForm
         {
             for (int i = 0; i < nbcartes; i++)
             {
-                j.ajouterCarte(Distribuer());
+                j.ajouterCarte(getCarte(0));
+                cartes.RemoveAt(0);
             }
         }
         private void Melanger()
@@ -131,13 +132,5 @@ namespace CompteurBelotteWindowsForm
                 cartes[n] = temp;
             }
         }
-
-        private Carte Distribuer()
-        {
-            Carte c = getCarte(0);
-            cartes.RemoveAt(0);
-            return c;
-        }
-
     }
 }
