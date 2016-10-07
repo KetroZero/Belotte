@@ -27,6 +27,11 @@ namespace CompteurBelotteWindowsForm
         {
             InitializeComponent();
 
+            foreach (PictureBox p in this.Controls.OfType<PictureBox>())
+            {
+                p.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
+
             carte1.ImageLocation = carte2.ImageLocation = carte3.ImageLocation = carte4.ImageLocation = path + CardBack;
             turn = 1;
 

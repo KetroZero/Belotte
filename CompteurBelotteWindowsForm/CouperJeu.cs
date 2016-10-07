@@ -76,7 +76,7 @@ namespace CompteurBelotteWindowsForm
 
         private void buttonCouper_Click(object sender, EventArgs e)
         {
-            Form form = new DistribuerEtMontrer();
+            Form form = new pick3card1();
             form.Location = this.Location;
             form.StartPosition = this.StartPosition;
             form.Show();

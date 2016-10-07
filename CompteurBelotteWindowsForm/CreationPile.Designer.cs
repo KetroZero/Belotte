@@ -104,6 +104,7 @@
             this.carte4.Location = new System.Drawing.Point(475, 19);
             this.carte4.Name = "carte4";
             this.carte4.Size = new System.Drawing.Size(150, 225);
+            this.carte4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.carte4.TabIndex = 3;
             this.carte4.TabStop = false;
             this.carte4.Click += new System.EventHandler(this.carte4_Click);
@@ -115,6 +116,7 @@
             this.carte3.Location = new System.Drawing.Point(319, 19);
             this.carte3.Name = "carte3";
             this.carte3.Size = new System.Drawing.Size(150, 225);
+            this.carte3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.carte3.TabIndex = 2;
             this.carte3.TabStop = false;
             this.carte3.Click += new System.EventHandler(this.carte3_Click);
@@ -126,6 +128,7 @@
             this.carte2.Location = new System.Drawing.Point(163, 19);
             this.carte2.Name = "carte2";
             this.carte2.Size = new System.Drawing.Size(150, 225);
+            this.carte2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.carte2.TabIndex = 1;
             this.carte2.TabStop = false;
             this.carte2.Click += new System.EventHandler(this.carte2_Click);
@@ -137,6 +140,7 @@
             this.carte1.Location = new System.Drawing.Point(7, 20);
             this.carte1.Name = "carte1";
             this.carte1.Size = new System.Drawing.Size(150, 225);
+            this.carte1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.carte1.TabIndex = 0;
             this.carte1.TabStop = false;
             this.carte1.Click += new System.EventHandler(this.carte1_Click);
@@ -255,6 +259,7 @@
             this.pickCard8.Location = new System.Drawing.Point(1098, 13);
             this.pickCard8.Name = "pickCard8";
             this.pickCard8.Size = new System.Drawing.Size(150, 245);
+            this.pickCard8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pickCard8.TabIndex = 8;
             this.pickCard8.TabStop = false;
             this.pickCard8.Click += new System.EventHandler(this.pickCard8_Click);
@@ -266,6 +271,7 @@
             this.pickCard7.Location = new System.Drawing.Point(942, 13);
             this.pickCard7.Name = "pickCard7";
             this.pickCard7.Size = new System.Drawing.Size(150, 245);
+            this.pickCard7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pickCard7.TabIndex = 7;
             this.pickCard7.TabStop = false;
             this.pickCard7.Click += new System.EventHandler(this.pickCard7_Click);
@@ -277,6 +283,7 @@
             this.pickCard6.Location = new System.Drawing.Point(786, 13);
             this.pickCard6.Name = "pickCard6";
             this.pickCard6.Size = new System.Drawing.Size(150, 245);
+            this.pickCard6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pickCard6.TabIndex = 6;
             this.pickCard6.TabStop = false;
             this.pickCard6.Click += new System.EventHandler(this.pickCard6_Click);
@@ -288,6 +295,7 @@
             this.pickCard5.Location = new System.Drawing.Point(630, 13);
             this.pickCard5.Name = "pickCard5";
             this.pickCard5.Size = new System.Drawing.Size(150, 245);
+            this.pickCard5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pickCard5.TabIndex = 5;
             this.pickCard5.TabStop = false;
             this.pickCard5.Click += new System.EventHandler(this.pickCard5_Click);
@@ -299,6 +307,7 @@
             this.pickCard4.Location = new System.Drawing.Point(474, 13);
             this.pickCard4.Name = "pickCard4";
             this.pickCard4.Size = new System.Drawing.Size(150, 245);
+            this.pickCard4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pickCard4.TabIndex = 4;
             this.pickCard4.TabStop = false;
             this.pickCard4.Click += new System.EventHandler(this.pickCard4_Click);
@@ -310,6 +319,7 @@
             this.pickCard3.Location = new System.Drawing.Point(318, 13);
             this.pickCard3.Name = "pickCard3";
             this.pickCard3.Size = new System.Drawing.Size(150, 245);
+            this.pickCard3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pickCard3.TabIndex = 3;
             this.pickCard3.TabStop = false;
             this.pickCard3.Click += new System.EventHandler(this.pickCard3_Click);
@@ -321,6 +331,7 @@
             this.pickCard2.Location = new System.Drawing.Point(162, 13);
             this.pickCard2.Name = "pickCard2";
             this.pickCard2.Size = new System.Drawing.Size(150, 245);
+            this.pickCard2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pickCard2.TabIndex = 2;
             this.pickCard2.TabStop = false;
             this.pickCard2.Click += new System.EventHandler(this.pickCard2_Click);
@@ -332,6 +343,7 @@
             this.pickCard1.Location = new System.Drawing.Point(6, 13);
             this.pickCard1.Name = "pickCard1";
             this.pickCard1.Size = new System.Drawing.Size(150, 245);
+            this.pickCard1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pickCard1.TabIndex = 1;
             this.pickCard1.TabStop = false;
             this.pickCard1.Click += new System.EventHandler(this.pickCard1_Click);
