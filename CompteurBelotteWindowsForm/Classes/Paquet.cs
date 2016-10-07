@@ -41,7 +41,7 @@ namespace CompteurBelotteWindowsForm
 
         public void DistribuerAtout(Joueur j)
         {
-            j.ajouterCarte(Distribuer());
+            DistribuerNCartes(j, 1);
         }
 
         public Carte montrerAtout()

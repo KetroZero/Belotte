@@ -39,10 +39,10 @@
             this.pickCard2 = new System.Windows.Forms.PictureBox();
             this.pickCard1 = new System.Windows.Forms.PictureBox();
             this.groupDealer = new System.Windows.Forms.GroupBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.groupMain2 = new System.Windows.Forms.GroupBox();
             this.pickTwocard8 = new System.Windows.Forms.PictureBox();
             this.pickTwocard7 = new System.Windows.Forms.PictureBox();
@@ -53,23 +53,23 @@
             this.pickTwocard2 = new System.Windows.Forms.PictureBox();
             this.pickTwocard1 = new System.Windows.Forms.PictureBox();
             this.groupMain3 = new System.Windows.Forms.GroupBox();
-            this.pick3card8 = new System.Windows.Forms.PictureBox();
-            this.pick3card7 = new System.Windows.Forms.PictureBox();
-            this.pick3card6 = new System.Windows.Forms.PictureBox();
-            this.pick3card5 = new System.Windows.Forms.PictureBox();
-            this.pick3card4 = new System.Windows.Forms.PictureBox();
-            this.pickThreeCard3 = new System.Windows.Forms.PictureBox();
-            this.pickThreeCard2 = new System.Windows.Forms.PictureBox();
-            this.pickThreeCard12 = new System.Windows.Forms.PictureBox();
+            this.pickThree8 = new System.Windows.Forms.PictureBox();
+            this.pickThree7 = new System.Windows.Forms.PictureBox();
+            this.pickThree6 = new System.Windows.Forms.PictureBox();
+            this.pickThree5 = new System.Windows.Forms.PictureBox();
+            this.pickThree4 = new System.Windows.Forms.PictureBox();
+            this.pickThree3 = new System.Windows.Forms.PictureBox();
+            this.pickThree2 = new System.Windows.Forms.PictureBox();
+            this.pickThree1 = new System.Windows.Forms.PictureBox();
             this.groupMain4 = new System.Windows.Forms.GroupBox();
-            this.pick4card8 = new System.Windows.Forms.PictureBox();
-            this.pick4card7 = new System.Windows.Forms.PictureBox();
-            this.pick4card6 = new System.Windows.Forms.PictureBox();
-            this.pick4card5 = new System.Windows.Forms.PictureBox();
-            this.pick4card4 = new System.Windows.Forms.PictureBox();
-            this.pick4card3 = new System.Windows.Forms.PictureBox();
-            this.pick4card2 = new System.Windows.Forms.PictureBox();
-            this.pick4card1 = new System.Windows.Forms.PictureBox();
+            this.pickFour8 = new System.Windows.Forms.PictureBox();
+            this.pickFour7 = new System.Windows.Forms.PictureBox();
+            this.pickFour6 = new System.Windows.Forms.PictureBox();
+            this.pickFour5 = new System.Windows.Forms.PictureBox();
+            this.pickFour4 = new System.Windows.Forms.PictureBox();
+            this.pickFour3 = new System.Windows.Forms.PictureBox();
+            this.pickFour2 = new System.Windows.Forms.PictureBox();
+            this.pickFour1 = new System.Windows.Forms.PictureBox();
             this.labelJ1 = new System.Windows.Forms.Label();
             this.labelJ2 = new System.Windows.Forms.Label();
             this.labelJ3 = new System.Windows.Forms.Label();
@@ -80,6 +80,8 @@
             this.labelRetour = new System.Windows.Forms.Label();
             this.pick3card2 = new System.Windows.Forms.PictureBox();
             this.pickThreeCard1 = new System.Windows.Forms.PictureBox();
+            this.pick3card3 = new System.Windows.Forms.PictureBox();
+            this.buttonContinue = new System.Windows.Forms.Button();
             this.groupMain1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pickCard8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pickCard7)).BeginInit();
@@ -100,26 +102,27 @@
             ((System.ComponentModel.ISupportInitialize)(this.pickTwocard2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pickTwocard1)).BeginInit();
             this.groupMain3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pick3card8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pick3card7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pick3card6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pick3card5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pick3card4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pickThreeCard3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pickThreeCard2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pickThreeCard12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pickThree8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pickThree7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pickThree6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pickThree5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pickThree4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pickThree3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pickThree2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pickThree1)).BeginInit();
             this.groupMain4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pick4card8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pick4card7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pick4card6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pick4card5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pick4card4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pick4card3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pick4card2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pick4card1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pickFour8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pickFour7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pickFour6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pickFour5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pickFour4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pickFour3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pickFour2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pickFour1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureRetourne)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pick3card2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pickThreeCard1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pick3card3)).BeginInit();
             this.SuspendLayout();
             // 
             // groupMain1
@@ -239,29 +242,17 @@
             this.groupDealer.TabStop = false;
             this.groupDealer.Text = "Donneur";
             // 
-            // radioButton1
+            // radioButton4
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(83, 19);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(85, 17);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "radioButton1";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(255, 19);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(85, 17);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "radioButton2";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            this.radioButton4.AutoSize = true;
+            this.radioButton4.Location = new System.Drawing.Point(618, 19);
+            this.radioButton4.Name = "radioButton4";
+            this.radioButton4.Size = new System.Drawing.Size(85, 17);
+            this.radioButton4.TabIndex = 3;
+            this.radioButton4.TabStop = true;
+            this.radioButton4.Text = "radioButton4";
+            this.radioButton4.UseVisualStyleBackColor = true;
+            this.radioButton4.CheckedChanged += new System.EventHandler(this.radioButton4_CheckedChanged);
             // 
             // radioButton3
             // 
@@ -275,17 +266,29 @@
             this.radioButton3.UseVisualStyleBackColor = true;
             this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
             // 
-            // radioButton4
+            // radioButton2
             // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(618, 19);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(85, 17);
-            this.radioButton4.TabIndex = 3;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "radioButton4";
-            this.radioButton4.UseVisualStyleBackColor = true;
-            this.radioButton4.CheckedChanged += new System.EventHandler(this.radioButton4_CheckedChanged);
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(255, 19);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(85, 17);
+            this.radioButton2.TabIndex = 1;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "radioButton2";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(83, 19);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(85, 17);
+            this.radioButton1.TabIndex = 0;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "radioButton1";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // groupMain2
             // 
@@ -393,211 +396,211 @@
             // 
             // groupMain3
             // 
-            this.groupMain3.Controls.Add(this.pick3card8);
-            this.groupMain3.Controls.Add(this.pick3card7);
-            this.groupMain3.Controls.Add(this.pick3card6);
-            this.groupMain3.Controls.Add(this.pick3card5);
-            this.groupMain3.Controls.Add(this.pick3card4);
-            this.groupMain3.Controls.Add(this.pickThreeCard3);
-            this.groupMain3.Controls.Add(this.pickThreeCard2);
-            this.groupMain3.Controls.Add(this.pickThreeCard12);
+            this.groupMain3.Controls.Add(this.pickThree8);
+            this.groupMain3.Controls.Add(this.pickThree7);
+            this.groupMain3.Controls.Add(this.pickThree6);
+            this.groupMain3.Controls.Add(this.pickThree5);
+            this.groupMain3.Controls.Add(this.pickThree4);
+            this.groupMain3.Controls.Add(this.pickThree3);
+            this.groupMain3.Controls.Add(this.pickThree2);
+            this.groupMain3.Controls.Add(this.pickThree1);
             this.groupMain3.Location = new System.Drawing.Point(96, 392);
             this.groupMain3.Name = "groupMain3";
             this.groupMain3.Size = new System.Drawing.Size(915, 158);
             this.groupMain3.TabIndex = 9;
             this.groupMain3.TabStop = false;
             // 
-            // pick3card8
+            // pickThree8
             // 
-            this.pick3card8.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pick3card8.ErrorImage")));
-            this.pick3card8.InitialImage = ((System.Drawing.Image)(resources.GetObject("pick3card8.InitialImage")));
-            this.pick3card8.Location = new System.Drawing.Point(797, 13);
-            this.pick3card8.Name = "pick3card8";
-            this.pick3card8.Size = new System.Drawing.Size(107, 135);
-            this.pick3card8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pick3card8.TabIndex = 8;
-            this.pick3card8.TabStop = false;
+            this.pickThree8.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pickThree8.ErrorImage")));
+            this.pickThree8.InitialImage = ((System.Drawing.Image)(resources.GetObject("pickThree8.InitialImage")));
+            this.pickThree8.Location = new System.Drawing.Point(797, 13);
+            this.pickThree8.Name = "pickThree8";
+            this.pickThree8.Size = new System.Drawing.Size(107, 135);
+            this.pickThree8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pickThree8.TabIndex = 8;
+            this.pickThree8.TabStop = false;
             // 
-            // pick3card7
+            // pickThree7
             // 
-            this.pick3card7.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pick3card7.ErrorImage")));
-            this.pick3card7.InitialImage = ((System.Drawing.Image)(resources.GetObject("pick3card7.InitialImage")));
-            this.pick3card7.Location = new System.Drawing.Point(684, 13);
-            this.pick3card7.Name = "pick3card7";
-            this.pick3card7.Size = new System.Drawing.Size(107, 135);
-            this.pick3card7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pick3card7.TabIndex = 7;
-            this.pick3card7.TabStop = false;
+            this.pickThree7.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pickThree7.ErrorImage")));
+            this.pickThree7.InitialImage = ((System.Drawing.Image)(resources.GetObject("pickThree7.InitialImage")));
+            this.pickThree7.Location = new System.Drawing.Point(684, 13);
+            this.pickThree7.Name = "pickThree7";
+            this.pickThree7.Size = new System.Drawing.Size(107, 135);
+            this.pickThree7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pickThree7.TabIndex = 7;
+            this.pickThree7.TabStop = false;
             // 
-            // pick3card6
+            // pickThree6
             // 
-            this.pick3card6.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pick3card6.ErrorImage")));
-            this.pick3card6.InitialImage = ((System.Drawing.Image)(resources.GetObject("pick3card6.InitialImage")));
-            this.pick3card6.Location = new System.Drawing.Point(571, 13);
-            this.pick3card6.Name = "pick3card6";
-            this.pick3card6.Size = new System.Drawing.Size(107, 135);
-            this.pick3card6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pick3card6.TabIndex = 6;
-            this.pick3card6.TabStop = false;
+            this.pickThree6.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pickThree6.ErrorImage")));
+            this.pickThree6.InitialImage = ((System.Drawing.Image)(resources.GetObject("pickThree6.InitialImage")));
+            this.pickThree6.Location = new System.Drawing.Point(571, 13);
+            this.pickThree6.Name = "pickThree6";
+            this.pickThree6.Size = new System.Drawing.Size(107, 135);
+            this.pickThree6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pickThree6.TabIndex = 6;
+            this.pickThree6.TabStop = false;
             // 
-            // pick3card5
+            // pickThree5
             // 
-            this.pick3card5.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pick3card5.ErrorImage")));
-            this.pick3card5.InitialImage = ((System.Drawing.Image)(resources.GetObject("pick3card5.InitialImage")));
-            this.pick3card5.Location = new System.Drawing.Point(458, 13);
-            this.pick3card5.Name = "pick3card5";
-            this.pick3card5.Size = new System.Drawing.Size(107, 135);
-            this.pick3card5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pick3card5.TabIndex = 5;
-            this.pick3card5.TabStop = false;
+            this.pickThree5.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pickThree5.ErrorImage")));
+            this.pickThree5.InitialImage = ((System.Drawing.Image)(resources.GetObject("pickThree5.InitialImage")));
+            this.pickThree5.Location = new System.Drawing.Point(458, 13);
+            this.pickThree5.Name = "pickThree5";
+            this.pickThree5.Size = new System.Drawing.Size(107, 135);
+            this.pickThree5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pickThree5.TabIndex = 5;
+            this.pickThree5.TabStop = false;
             // 
-            // pick3card4
+            // pickThree4
             // 
-            this.pick3card4.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pick3card4.ErrorImage")));
-            this.pick3card4.InitialImage = ((System.Drawing.Image)(resources.GetObject("pick3card4.InitialImage")));
-            this.pick3card4.Location = new System.Drawing.Point(345, 13);
-            this.pick3card4.Name = "pick3card4";
-            this.pick3card4.Size = new System.Drawing.Size(107, 135);
-            this.pick3card4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pick3card4.TabIndex = 4;
-            this.pick3card4.TabStop = false;
+            this.pickThree4.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pickThree4.ErrorImage")));
+            this.pickThree4.InitialImage = ((System.Drawing.Image)(resources.GetObject("pickThree4.InitialImage")));
+            this.pickThree4.Location = new System.Drawing.Point(345, 13);
+            this.pickThree4.Name = "pickThree4";
+            this.pickThree4.Size = new System.Drawing.Size(107, 135);
+            this.pickThree4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pickThree4.TabIndex = 4;
+            this.pickThree4.TabStop = false;
             // 
-            // pickThreeCard3
+            // pickThree3
             // 
-            this.pickThreeCard3.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pickThreeCard3.ErrorImage")));
-            this.pickThreeCard3.InitialImage = ((System.Drawing.Image)(resources.GetObject("pickThreeCard3.InitialImage")));
-            this.pickThreeCard3.Location = new System.Drawing.Point(232, 13);
-            this.pickThreeCard3.Name = "pickThreeCard3";
-            this.pickThreeCard3.Size = new System.Drawing.Size(107, 135);
-            this.pickThreeCard3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pickThreeCard3.TabIndex = 3;
-            this.pickThreeCard3.TabStop = false;
+            this.pickThree3.ErrorImage = null;
+            this.pickThree3.InitialImage = null;
+            this.pickThree3.Location = new System.Drawing.Point(232, 13);
+            this.pickThree3.Name = "pickThree3";
+            this.pickThree3.Size = new System.Drawing.Size(107, 135);
+            this.pickThree3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pickThree3.TabIndex = 3;
+            this.pickThree3.TabStop = false;
             // 
-            // pickThreeCard2
+            // pickThree2
             // 
-            this.pickThreeCard2.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pickThreeCard2.ErrorImage")));
-            this.pickThreeCard2.InitialImage = ((System.Drawing.Image)(resources.GetObject("pickThreeCard2.InitialImage")));
-            this.pickThreeCard2.Location = new System.Drawing.Point(119, 13);
-            this.pickThreeCard2.Name = "pickThreeCard2";
-            this.pickThreeCard2.Size = new System.Drawing.Size(107, 135);
-            this.pickThreeCard2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pickThreeCard2.TabIndex = 2;
-            this.pickThreeCard2.TabStop = false;
+            this.pickThree2.ErrorImage = null;
+            this.pickThree2.InitialImage = null;
+            this.pickThree2.Location = new System.Drawing.Point(119, 13);
+            this.pickThree2.Name = "pickThree2";
+            this.pickThree2.Size = new System.Drawing.Size(107, 135);
+            this.pickThree2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pickThree2.TabIndex = 2;
+            this.pickThree2.TabStop = false;
             // 
-            // pickThreeCard12
+            // pickThree1
             // 
-            this.pickThreeCard12.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pickThreeCard12.ErrorImage")));
-            this.pickThreeCard12.InitialImage = ((System.Drawing.Image)(resources.GetObject("pickThreeCard12.InitialImage")));
-            this.pickThreeCard12.Location = new System.Drawing.Point(6, 13);
-            this.pickThreeCard12.Name = "pickThreeCard12";
-            this.pickThreeCard12.Size = new System.Drawing.Size(107, 135);
-            this.pickThreeCard12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pickThreeCard12.TabIndex = 1;
-            this.pickThreeCard12.TabStop = false;
+            this.pickThree1.ErrorImage = null;
+            this.pickThree1.InitialImage = null;
+            this.pickThree1.Location = new System.Drawing.Point(6, 13);
+            this.pickThree1.Name = "pickThree1";
+            this.pickThree1.Size = new System.Drawing.Size(107, 135);
+            this.pickThree1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pickThree1.TabIndex = 1;
+            this.pickThree1.TabStop = false;
             // 
             // groupMain4
             // 
-            this.groupMain4.Controls.Add(this.pick4card8);
-            this.groupMain4.Controls.Add(this.pick4card7);
-            this.groupMain4.Controls.Add(this.pick4card6);
-            this.groupMain4.Controls.Add(this.pick4card5);
-            this.groupMain4.Controls.Add(this.pick4card4);
-            this.groupMain4.Controls.Add(this.pick4card3);
-            this.groupMain4.Controls.Add(this.pick4card2);
-            this.groupMain4.Controls.Add(this.pick4card1);
+            this.groupMain4.Controls.Add(this.pickFour8);
+            this.groupMain4.Controls.Add(this.pickFour7);
+            this.groupMain4.Controls.Add(this.pickFour6);
+            this.groupMain4.Controls.Add(this.pickFour5);
+            this.groupMain4.Controls.Add(this.pickFour4);
+            this.groupMain4.Controls.Add(this.pickFour3);
+            this.groupMain4.Controls.Add(this.pickFour2);
+            this.groupMain4.Controls.Add(this.pickFour1);
             this.groupMain4.Location = new System.Drawing.Point(102, 556);
             this.groupMain4.Name = "groupMain4";
             this.groupMain4.Size = new System.Drawing.Size(915, 158);
             this.groupMain4.TabIndex = 9;
             this.groupMain4.TabStop = false;
             // 
-            // pick4card8
+            // pickFour8
             // 
-            this.pick4card8.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pick4card8.ErrorImage")));
-            this.pick4card8.InitialImage = ((System.Drawing.Image)(resources.GetObject("pick4card8.InitialImage")));
-            this.pick4card8.Location = new System.Drawing.Point(797, 13);
-            this.pick4card8.Name = "pick4card8";
-            this.pick4card8.Size = new System.Drawing.Size(107, 135);
-            this.pick4card8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pick4card8.TabIndex = 8;
-            this.pick4card8.TabStop = false;
+            this.pickFour8.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pickFour8.ErrorImage")));
+            this.pickFour8.InitialImage = ((System.Drawing.Image)(resources.GetObject("pickFour8.InitialImage")));
+            this.pickFour8.Location = new System.Drawing.Point(797, 13);
+            this.pickFour8.Name = "pickFour8";
+            this.pickFour8.Size = new System.Drawing.Size(107, 135);
+            this.pickFour8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pickFour8.TabIndex = 8;
+            this.pickFour8.TabStop = false;
             // 
-            // pick4card7
+            // pickFour7
             // 
-            this.pick4card7.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pick4card7.ErrorImage")));
-            this.pick4card7.InitialImage = ((System.Drawing.Image)(resources.GetObject("pick4card7.InitialImage")));
-            this.pick4card7.Location = new System.Drawing.Point(684, 13);
-            this.pick4card7.Name = "pick4card7";
-            this.pick4card7.Size = new System.Drawing.Size(107, 135);
-            this.pick4card7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pick4card7.TabIndex = 7;
-            this.pick4card7.TabStop = false;
+            this.pickFour7.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pickFour7.ErrorImage")));
+            this.pickFour7.InitialImage = ((System.Drawing.Image)(resources.GetObject("pickFour7.InitialImage")));
+            this.pickFour7.Location = new System.Drawing.Point(684, 13);
+            this.pickFour7.Name = "pickFour7";
+            this.pickFour7.Size = new System.Drawing.Size(107, 135);
+            this.pickFour7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pickFour7.TabIndex = 7;
+            this.pickFour7.TabStop = false;
             // 
-            // pick4card6
+            // pickFour6
             // 
-            this.pick4card6.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pick4card6.ErrorImage")));
-            this.pick4card6.InitialImage = ((System.Drawing.Image)(resources.GetObject("pick4card6.InitialImage")));
-            this.pick4card6.Location = new System.Drawing.Point(571, 13);
-            this.pick4card6.Name = "pick4card6";
-            this.pick4card6.Size = new System.Drawing.Size(107, 135);
-            this.pick4card6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pick4card6.TabIndex = 6;
-            this.pick4card6.TabStop = false;
+            this.pickFour6.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pickFour6.ErrorImage")));
+            this.pickFour6.InitialImage = ((System.Drawing.Image)(resources.GetObject("pickFour6.InitialImage")));
+            this.pickFour6.Location = new System.Drawing.Point(571, 13);
+            this.pickFour6.Name = "pickFour6";
+            this.pickFour6.Size = new System.Drawing.Size(107, 135);
+            this.pickFour6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pickFour6.TabIndex = 6;
+            this.pickFour6.TabStop = false;
             // 
-            // pick4card5
+            // pickFour5
             // 
-            this.pick4card5.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pick4card5.ErrorImage")));
-            this.pick4card5.InitialImage = ((System.Drawing.Image)(resources.GetObject("pick4card5.InitialImage")));
-            this.pick4card5.Location = new System.Drawing.Point(458, 13);
-            this.pick4card5.Name = "pick4card5";
-            this.pick4card5.Size = new System.Drawing.Size(107, 135);
-            this.pick4card5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pick4card5.TabIndex = 5;
-            this.pick4card5.TabStop = false;
+            this.pickFour5.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pickFour5.ErrorImage")));
+            this.pickFour5.InitialImage = ((System.Drawing.Image)(resources.GetObject("pickFour5.InitialImage")));
+            this.pickFour5.Location = new System.Drawing.Point(458, 13);
+            this.pickFour5.Name = "pickFour5";
+            this.pickFour5.Size = new System.Drawing.Size(107, 135);
+            this.pickFour5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pickFour5.TabIndex = 5;
+            this.pickFour5.TabStop = false;
             // 
-            // pick4card4
+            // pickFour4
             // 
-            this.pick4card4.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pick4card4.ErrorImage")));
-            this.pick4card4.InitialImage = ((System.Drawing.Image)(resources.GetObject("pick4card4.InitialImage")));
-            this.pick4card4.Location = new System.Drawing.Point(345, 13);
-            this.pick4card4.Name = "pick4card4";
-            this.pick4card4.Size = new System.Drawing.Size(107, 135);
-            this.pick4card4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pick4card4.TabIndex = 4;
-            this.pick4card4.TabStop = false;
+            this.pickFour4.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pickFour4.ErrorImage")));
+            this.pickFour4.InitialImage = ((System.Drawing.Image)(resources.GetObject("pickFour4.InitialImage")));
+            this.pickFour4.Location = new System.Drawing.Point(345, 13);
+            this.pickFour4.Name = "pickFour4";
+            this.pickFour4.Size = new System.Drawing.Size(107, 135);
+            this.pickFour4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pickFour4.TabIndex = 4;
+            this.pickFour4.TabStop = false;
             // 
-            // pick4card3
+            // pickFour3
             // 
-            this.pick4card3.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pick4card3.ErrorImage")));
-            this.pick4card3.InitialImage = ((System.Drawing.Image)(resources.GetObject("pick4card3.InitialImage")));
-            this.pick4card3.Location = new System.Drawing.Point(232, 13);
-            this.pick4card3.Name = "pick4card3";
-            this.pick4card3.Size = new System.Drawing.Size(107, 135);
-            this.pick4card3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pick4card3.TabIndex = 3;
-            this.pick4card3.TabStop = false;
+            this.pickFour3.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pickFour3.ErrorImage")));
+            this.pickFour3.InitialImage = ((System.Drawing.Image)(resources.GetObject("pickFour3.InitialImage")));
+            this.pickFour3.Location = new System.Drawing.Point(232, 13);
+            this.pickFour3.Name = "pickFour3";
+            this.pickFour3.Size = new System.Drawing.Size(107, 135);
+            this.pickFour3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pickFour3.TabIndex = 3;
+            this.pickFour3.TabStop = false;
             // 
-            // pick4card2
+            // pickFour2
             // 
-            this.pick4card2.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pick4card2.ErrorImage")));
-            this.pick4card2.InitialImage = ((System.Drawing.Image)(resources.GetObject("pick4card2.InitialImage")));
-            this.pick4card2.Location = new System.Drawing.Point(119, 13);
-            this.pick4card2.Name = "pick4card2";
-            this.pick4card2.Size = new System.Drawing.Size(107, 135);
-            this.pick4card2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pick4card2.TabIndex = 2;
-            this.pick4card2.TabStop = false;
+            this.pickFour2.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pickFour2.ErrorImage")));
+            this.pickFour2.InitialImage = ((System.Drawing.Image)(resources.GetObject("pickFour2.InitialImage")));
+            this.pickFour2.Location = new System.Drawing.Point(119, 13);
+            this.pickFour2.Name = "pickFour2";
+            this.pickFour2.Size = new System.Drawing.Size(107, 135);
+            this.pickFour2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pickFour2.TabIndex = 2;
+            this.pickFour2.TabStop = false;
             // 
-            // pick4card1
+            // pickFour1
             // 
-            this.pick4card1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pick4card1.ErrorImage")));
-            this.pick4card1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pick4card1.InitialImage")));
-            this.pick4card1.Location = new System.Drawing.Point(6, 13);
-            this.pick4card1.Name = "pick4card1";
-            this.pick4card1.Size = new System.Drawing.Size(107, 135);
-            this.pick4card1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pick4card1.TabIndex = 1;
-            this.pick4card1.TabStop = false;
+            this.pickFour1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pickFour1.ErrorImage")));
+            this.pickFour1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pickFour1.InitialImage")));
+            this.pickFour1.Location = new System.Drawing.Point(6, 13);
+            this.pickFour1.Name = "pickFour1";
+            this.pickFour1.Size = new System.Drawing.Size(107, 135);
+            this.pickFour1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pickFour1.TabIndex = 1;
+            this.pickFour1.TabStop = false;
             // 
             // labelJ1
             // 
@@ -697,8 +700,8 @@
             // 
             // pickThreeCard1
             // 
-            this.pickThreeCard1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pickThreeCard1.ErrorImage")));
-            this.pickThreeCard1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pickThreeCard1.InitialImage")));
+            this.pickThreeCard1.ErrorImage = null;
+            this.pickThreeCard1.InitialImage = null;
             this.pickThreeCard1.Location = new System.Drawing.Point(6, 13);
             this.pickThreeCard1.Name = "pickThreeCard1";
             this.pickThreeCard1.Size = new System.Drawing.Size(107, 135);
@@ -706,11 +709,34 @@
             this.pickThreeCard1.TabIndex = 1;
             this.pickThreeCard1.TabStop = false;
             // 
+            // pick3card3
+            // 
+            this.pick3card3.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pick3card3.ErrorImage")));
+            this.pick3card3.InitialImage = ((System.Drawing.Image)(resources.GetObject("pick3card3.InitialImage")));
+            this.pick3card3.Location = new System.Drawing.Point(232, 13);
+            this.pick3card3.Name = "pick3card3";
+            this.pick3card3.Size = new System.Drawing.Size(107, 135);
+            this.pick3card3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pick3card3.TabIndex = 3;
+            this.pick3card3.TabStop = false;
+            // 
+            // buttonContinue
+            // 
+            this.buttonContinue.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonContinue.Location = new System.Drawing.Point(1097, 585);
+            this.buttonContinue.Name = "buttonContinue";
+            this.buttonContinue.Size = new System.Drawing.Size(150, 118);
+            this.buttonContinue.TabIndex = 18;
+            this.buttonContinue.Text = "Continuer";
+            this.buttonContinue.UseVisualStyleBackColor = true;
+            this.buttonContinue.Click += new System.EventHandler(this.buttonContinue_Click);
+            // 
             // pick3card1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1259, 722);
+            this.Controls.Add(this.buttonContinue);
             this.Controls.Add(this.labelRetour);
             this.Controls.Add(this.pictureRetourne);
             this.Controls.Add(this.buttonDonne2);
@@ -725,7 +751,7 @@
             this.Controls.Add(this.groupDealer);
             this.Controls.Add(this.groupMain1);
             this.Name = "pick3card1";
-            this.Text = "DistribuerEtMontrer";
+            this.Text = "Continuer";
             this.groupMain1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pickCard8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pickCard7)).EndInit();
@@ -747,26 +773,27 @@
             ((System.ComponentModel.ISupportInitialize)(this.pickTwocard2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pickTwocard1)).EndInit();
             this.groupMain3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pick3card8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pick3card7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pick3card6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pick3card5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pick3card4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pickThreeCard3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pickThreeCard2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pickThreeCard12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pickThree8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pickThree7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pickThree6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pickThree5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pickThree4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pickThree3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pickThree2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pickThree1)).EndInit();
             this.groupMain4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pick4card8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pick4card7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pick4card6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pick4card5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pick4card4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pick4card3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pick4card2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pick4card1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pickFour8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pickFour7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pickFour6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pickFour5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pickFour4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pickFour3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pickFour2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pickFour1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureRetourne)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pick3card2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pickThreeCard1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pick3card3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -798,23 +825,23 @@
         private System.Windows.Forms.PictureBox pickTwocard2;
         private System.Windows.Forms.PictureBox pickTwocard1;
         private System.Windows.Forms.GroupBox groupMain3;
-        private System.Windows.Forms.PictureBox pick3card8;
-        private System.Windows.Forms.PictureBox pick3card7;
-        private System.Windows.Forms.PictureBox pick3card6;
-        private System.Windows.Forms.PictureBox pick3card5;
-        private System.Windows.Forms.PictureBox pick3card4;
-        private System.Windows.Forms.PictureBox pickThreeCard3;
-        private System.Windows.Forms.PictureBox pickThreeCard2;
-        private System.Windows.Forms.PictureBox pickThreeCard12;
+        private System.Windows.Forms.PictureBox pickThree8;
+        private System.Windows.Forms.PictureBox pickThree7;
+        private System.Windows.Forms.PictureBox pickThree6;
+        private System.Windows.Forms.PictureBox pickThree5;
+        private System.Windows.Forms.PictureBox pickThree4;
+        private System.Windows.Forms.PictureBox pickThree3;
+        private System.Windows.Forms.PictureBox pickThree2;
+        private System.Windows.Forms.PictureBox pickThree1;
         private System.Windows.Forms.GroupBox groupMain4;
-        private System.Windows.Forms.PictureBox pick4card8;
-        private System.Windows.Forms.PictureBox pick4card7;
-        private System.Windows.Forms.PictureBox pick4card6;
-        private System.Windows.Forms.PictureBox pick4card5;
-        private System.Windows.Forms.PictureBox pick4card4;
-        private System.Windows.Forms.PictureBox pick4card3;
-        private System.Windows.Forms.PictureBox pick4card2;
-        private System.Windows.Forms.PictureBox pick4card1;
+        private System.Windows.Forms.PictureBox pickFour8;
+        private System.Windows.Forms.PictureBox pickFour7;
+        private System.Windows.Forms.PictureBox pickFour6;
+        private System.Windows.Forms.PictureBox pickFour5;
+        private System.Windows.Forms.PictureBox pickFour4;
+        private System.Windows.Forms.PictureBox pickFour3;
+        private System.Windows.Forms.PictureBox pickFour2;
+        private System.Windows.Forms.PictureBox pickFour1;
         private System.Windows.Forms.Label labelJ1;
         private System.Windows.Forms.Label labelJ2;
         private System.Windows.Forms.Label labelJ3;
@@ -825,5 +852,7 @@
         private System.Windows.Forms.Label labelRetour;
         private System.Windows.Forms.PictureBox pick3card2;
         private System.Windows.Forms.PictureBox pickThreeCard1;
+        private System.Windows.Forms.PictureBox pick3card3;
+        private System.Windows.Forms.Button buttonContinue;
     }
 }

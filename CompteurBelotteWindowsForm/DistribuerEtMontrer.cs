@@ -23,13 +23,6 @@ namespace CompteurBelotteWindowsForm
         {
             InitializeComponent();
 
-            foreach (PictureBox p in this.Controls.OfType<PictureBox>())
-            {
-                p.SizeMode = PictureBoxSizeMode.StretchImage;
-            }
-
-
-
             radioButton1.Text = labelJ1.Text = Program.J1.name;
             radioButton2.Text = labelJ2.Text = Program.J2.name;
             radioButton3.Text = labelJ3.Text = Program.J3.name;
@@ -166,7 +159,7 @@ namespace CompteurBelotteWindowsForm
 
             for (int i = donneur; i < donneur + 4; i++)
             {
-                if (i == 1)
+                if (i % 4 == 1)
                 {
                     paquet.Distribuer2Cartes(joueurs[i % 4]);
                 }
@@ -175,6 +168,9 @@ namespace CompteurBelotteWindowsForm
                     paquet.Distribuer3Cartes(joueurs[i % 4]);
                 }
             }
+
+            UpdateHands();
+            labelJ1.Enabled = labelJ2.Enabled = labelJ3.Enabled = labelJ4.Enabled = false;
 
         }
 
@@ -184,7 +180,7 @@ namespace CompteurBelotteWindowsForm
             pictureRetourne.Visible = false;
             for (int i = donneur; i < donneur + 4; i++)
             {
-                if (i == 2)
+                if (i % 3 == 2)
                 {
                     paquet.Distribuer2Cartes(joueurs[i % 4]);
                 }
@@ -193,6 +189,9 @@ namespace CompteurBelotteWindowsForm
                     paquet.Distribuer3Cartes(joueurs[i % 4]);
                 }
             }
+
+            UpdateHands();
+            labelJ1.Enabled = labelJ2.Enabled = labelJ3.Enabled = labelJ4.Enabled = false;
         }
 
         private void labelJ3_Click(object sender, EventArgs e)
@@ -201,7 +200,7 @@ namespace CompteurBelotteWindowsForm
             pictureRetourne.Visible = false;
             for (int i = donneur; i < donneur + 4; i++)
             {
-                if (i == 3)
+                if (i % 3 == 3)
                 {
                     paquet.Distribuer2Cartes(joueurs[i % 4]);
                 }
@@ -211,6 +210,9 @@ namespace CompteurBelotteWindowsForm
                 }
             }
 
+            UpdateHands();
+
+            labelJ1.Enabled = labelJ2.Enabled = labelJ3.Enabled = labelJ4.Enabled = false;
 
         }
 
@@ -220,7 +222,7 @@ namespace CompteurBelotteWindowsForm
             pictureRetourne.Visible = false;
             for (int i = donneur; i < donneur + 4; i++)
             {
-                if (i == 0)
+                if (i % 4 == 0)
                 {
                     paquet.Distribuer2Cartes(joueurs[i % 4]);
                 }
@@ -229,6 +231,10 @@ namespace CompteurBelotteWindowsForm
                     paquet.Distribuer3Cartes(joueurs[i % 4]);
                 }
             }
+
+            UpdateHands();
+            labelJ1.Enabled = labelJ2.Enabled = labelJ3.Enabled = labelJ4.Enabled = false;
+
         }
 
         private PictureBox playerCard(int player, int cardIndex)
@@ -248,6 +254,13 @@ namespace CompteurBelotteWindowsForm
             }
 
             return p;
+        }
+
+        private void buttonContinue_Click(object sender, EventArgs e)
+        {
+            Form form = new CreationPile();
+            form.Show();
+            this.Close();
         }
     }
 }
