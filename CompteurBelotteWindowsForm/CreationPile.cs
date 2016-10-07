@@ -15,8 +15,6 @@ namespace CompteurBelotteWindowsForm
         private string path = "C:/Users/Utilisateur/Documents/Projets_Visual_Studio/BelotteWindowsForm/CompteurBelotteWindowsForm/Images cartes/";
         private string CardBack = "cartes_dos.bmp";
 
-        private Paquet pilePair;
-        private Paquet pileImpair;
         private Paquet paquetComplet;
 
         private int pointsImpaire;
@@ -38,8 +36,8 @@ namespace CompteurBelotteWindowsForm
             labelPair2.Text = Program.J2.name + " et " + Program.J4.name;
             labelpointPair.Text = "0";
 
-            pileImpair = new Paquet();
-            pilePair = new Paquet();
+            Program.pileImpair = new Paquet();
+            Program.pilePair = new Paquet();
             paquetComplet = new Paquet(false);
 
             comboBoxAtout.DataSource = Enum.GetValues(typeof(Couleur));
@@ -261,7 +259,7 @@ namespace CompteurBelotteWindowsForm
             {
                 if (pointsImpaire + pointsPaire >= 162)
                 {
-                    Form form = new Points_Coupe(pointsPaire, pointsImpaire); ;
+                    Form form = new ComptePoints(pointsPaire, pointsImpaire); ;
                     form.Location = this.Location;
                     form.StartPosition = this.StartPosition;
                     form.Show();
@@ -277,7 +275,7 @@ namespace CompteurBelotteWindowsForm
                     }
                     else if (dr == System.Windows.Forms.DialogResult.OK)
                     {
-                        Form form = new Points_Coupe(pointsPaire, pointsImpaire); ;
+                        Form form = new ComptePoints(pointsPaire, pointsImpaire); ;
                         form.Location = this.Location;
                         form.StartPosition = this.StartPosition;
                         form.Show();
@@ -295,15 +293,15 @@ namespace CompteurBelotteWindowsForm
             {
                 pointsImpaire += points;
 
-                pileImpair.AjouterAuPaquet(c1);
-                pileImpair.AjouterAuPaquet(c2);
-                pileImpair.AjouterAuPaquet(c3);
-                pileImpair.AjouterAuPaquet(c4);
+                Program.pileImpair.AjouterAuPaquet(c1);
+                Program.pileImpair.AjouterAuPaquet(c2);
+                Program.pileImpair.AjouterAuPaquet(c3);
+                Program.pileImpair.AjouterAuPaquet(c4);
 
                 if (turn == 8)
                 {
                     pointsImpaire += 10;
-                    if (pilePair.getLength() < 1)
+                    if (Program.pilePair.getLength() < 1)
                     {
                         pointsImpaire = 250;
                     }
@@ -313,15 +311,15 @@ namespace CompteurBelotteWindowsForm
             {
                 pointsPaire += points;
 
-                pilePair.AjouterAuPaquet(c1);
-                pilePair.AjouterAuPaquet(c2);
-                pilePair.AjouterAuPaquet(c3);
-                pilePair.AjouterAuPaquet(c4);
+                Program.pilePair.AjouterAuPaquet(c1);
+                Program.pilePair.AjouterAuPaquet(c2);
+                Program.pilePair.AjouterAuPaquet(c3);
+                Program.pilePair.AjouterAuPaquet(c4);
 
                 if (turn == 8)
                 {
                     pointsPaire += 10;
-                    if (pileImpair.getLength() < 1)
+                    if (Program.pileImpair.getLength() < 1)
                     {
                         pointsPaire = 250;
                     }

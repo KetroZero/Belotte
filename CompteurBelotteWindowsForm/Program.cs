@@ -13,6 +13,8 @@ namespace CompteurBelotteWindowsForm
         public static int maxScore = 1000;
 
         public static Joueur J1, J2, J3, J4;
+        public static Paquet pilePair;
+        public static Paquet pileImpair;
         /// <summary>
         /// Point d'entrée principal de l'application.
         /// </summary>
@@ -26,6 +28,9 @@ namespace CompteurBelotteWindowsForm
             J2 = new Joueur(2, "J2");
             J3 = new Joueur(3, "J3");
             J4 = new Joueur(4, "J4");
+
+            pilePair = new Paquet();
+            pileImpair = new Paquet();
 
             Application.Run(new CreationEquipe());
         }

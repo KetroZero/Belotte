@@ -1,6 +1,6 @@
 ﻿namespace CompteurBelotteWindowsForm
 {
-    partial class Points_Coupe
+    partial class ComptePoints
     {
         /// <summary>
         /// Required designer variable.

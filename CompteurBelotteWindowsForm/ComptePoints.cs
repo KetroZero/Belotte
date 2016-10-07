@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace CompteurBelotteWindowsForm
 {
-    public partial class Points_Coupe : Form
+    public partial class ComptePoints : Form
     {
         private int scorePair = 1;
         private int scoreImpair = 150;
 
         private int totalPair = 0;
         private int totalImpair = 0;
-        public Points_Coupe(int pair, int impair)
+        public ComptePoints(int pair, int impair)
         {
             InitializeComponent();
 
@@ -162,7 +162,7 @@ namespace CompteurBelotteWindowsForm
 
         private void buttonSuivant_Click(object sender, EventArgs e)
         {
-            Form form = new CreationPile();
+            Form form = new CouperJeu();
             form.Location = this.Location;
             form.StartPosition = this.StartPosition;
             form.Show();

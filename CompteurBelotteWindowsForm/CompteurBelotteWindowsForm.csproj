@@ -44,6 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AfficherMains.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AfficherMains.Designer.cs">
+      <DependentUpon>AfficherMains.cs</DependentUpon>
+    </Compile>
     <Compile Include="Classes\BelotteException.cs" />
     <Compile Include="Classes\Carte.cs" />
     <Compile Include="Classes\Couleur.cs" />
@@ -70,6 +76,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AfficherMains.resx">
+      <DependentUpon>AfficherMains.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CreationEquipe.resx">
       <DependentUpon>CreationEquipe.cs</DependentUpon>
     </EmbeddedResource>
