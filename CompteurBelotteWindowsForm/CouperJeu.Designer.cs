@@ -123,6 +123,7 @@
             this.buttonCouper.TabIndex = 9;
             this.buttonCouper.Text = "Couper et Distribuer";
             this.buttonCouper.UseVisualStyleBackColor = true;
+            this.buttonCouper.Click += new System.EventHandler(this.buttonCouper_Click);
             // 
             // CouperJeu
             // 

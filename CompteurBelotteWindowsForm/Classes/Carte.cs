@@ -224,5 +224,50 @@ namespace CompteurBelotteWindowsForm
             Carte test = obj as Carte;
             return this.nom.Equals(test.nom) && this.couleur == test.couleur;
         }
+
+        public string ToImageLocation()
+        {
+            string card = "init";
+
+            switch (nom)
+            {
+                default: break; // throw Exception ??
+
+                case Rang.As: card = "A";
+                    break;
+                case Rang.Roi: card = "K";
+                    break;
+                case Rang.Dame: card = "Q";
+                    break;
+                case Rang.Valet: card = "J";
+                    break;
+                case Rang.Dix: card = "10";
+                    break;
+                case Rang.Neuf: card = "9";
+                    break;
+                case Rang.Huit: card = "8";
+                    break;
+                case Rang.Sept: card = "7";
+                    break;
+            }
+
+            switch (couleur)
+            {
+                default: break; // throw Exception ??
+
+                case Couleur.Carreau: card += "_Ca";
+                    break;
+                case Couleur.Coeur: card += "_Co";
+                    break;
+                case Couleur.Pique: card += "_P";
+                    break;
+                case Couleur.Trefle: card += "_T";
+                    break;
+            }
+
+            card += ".bmp";
+
+            return card;
+        }
     }
 }

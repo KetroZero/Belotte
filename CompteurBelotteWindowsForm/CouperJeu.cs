@@ -13,22 +13,23 @@ namespace CompteurBelotteWindowsForm
     public partial class CouperJeu : Form
     {
         private Carte coupe;
+
+        bool init = false;
         public CouperJeu()
         {
             InitializeComponent();
 
-            coupe = new Carte();
-
-            comboCouleur.DataSource = Enum.GetValues(typeof(Couleur));
-            comboCouleur.SelectedIndex = 0;
-            comboCouleur.DropDownStyle = ComboBoxStyle.DropDownList;
-
-
             comboValeur.DataSource = Enum.GetValues(typeof(Rang));
-            comboValeur.SelectedIndex = 0;
             comboValeur.DropDownStyle = ComboBoxStyle.DropDownList;
 
-            coupe = new Carte((Rang)comboValeur.SelectedItem, (Couleur)comboCouleur.SelectedItem, false);
+            comboCouleur.DataSource = Enum.GetValues(typeof(Couleur));
+            comboCouleur.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            comboValeur.SelectedIndex = 0;
+            comboCouleur.SelectedIndex = 0;
+
+            init = true;
+            //coupe = new Carte((Rang)comboValeur.SelectedItem, (Couleur)comboCouleur.SelectedItem, false);
         }
 
         private void buttonRetournerPair_Click(object sender, EventArgs e)
@@ -45,12 +46,18 @@ namespace CompteurBelotteWindowsForm
 
         private void comboCouleur_SelectedIndexChanged(object sender, EventArgs e)
         {
-            coupe = new Carte((Rang)comboValeur.SelectedItem, (Couleur)comboCouleur.SelectedItem, false);
+            if (init)
+            {
+                coupe = new Carte((Rang)comboValeur.SelectedItem, (Couleur)comboCouleur.SelectedItem, false);
+            }
         }
 
         private void comboValeur_SelectedIndexChanged(object sender, EventArgs e)
         {
-            coupe = new Carte((Rang)comboValeur.SelectedItem, (Couleur)comboCouleur.SelectedItem, false);
+            if (init)
+            {
+                coupe = new Carte((Rang)comboValeur.SelectedItem, (Couleur)comboCouleur.SelectedItem, false);
+            }
         }
 
         private void buttonPairDessus_Click(object sender, EventArgs e)
@@ -65,6 +72,15 @@ namespace CompteurBelotteWindowsForm
             Program.pileImpair.FusionnerAvec(Program.pilePair);
             buttonImpairDessus.Enabled = false;
             buttonPairDessus.Enabled = false;
+        }
+
+        private void buttonCouper_Click(object sender, EventArgs e)
+        {
+            Form form = new DistribuerEtMontrer();
+            form.Location = this.Location;
+            form.StartPosition = this.StartPosition;
+            form.Show();
+            this.Close();
         }
 
     }

@@ -44,11 +44,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AfficherMains.cs">
+    <Compile Include="CouperJeu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AfficherMains.Designer.cs">
-      <DependentUpon>AfficherMains.cs</DependentUpon>
+    <Compile Include="CouperJeu.Designer.cs">
+      <DependentUpon>CouperJeu.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\BelotteException.cs" />
     <Compile Include="Classes\Carte.cs" />
@@ -68,16 +68,22 @@
     <Compile Include="CreationEquipe.Designer.cs">
       <DependentUpon>CreationEquipe.cs</DependentUpon>
     </Compile>
-    <Compile Include="Points_Coupe.cs">
+    <Compile Include="ComptePoints.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Points_Coupe.Designer.cs">
-      <DependentUpon>Points_Coupe.cs</DependentUpon>
+    <Compile Include="ComptePoints.Designer.cs">
+      <DependentUpon>ComptePoints.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DistribuerEtMontrer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DistribuerEtMontrer.Designer.cs">
+      <DependentUpon>DistribuerEtMontrer.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AfficherMains.resx">
-      <DependentUpon>AfficherMains.cs</DependentUpon>
+    <EmbeddedResource Include="CouperJeu.resx">
+      <DependentUpon>CouperJeu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CreationEquipe.resx">
       <DependentUpon>CreationEquipe.cs</DependentUpon>
@@ -85,8 +91,11 @@
     <EmbeddedResource Include="CreationPile.resx">
       <DependentUpon>CreationPile.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Points_Coupe.resx">
-      <DependentUpon>Points_Coupe.cs</DependentUpon>
+    <EmbeddedResource Include="ComptePoints.resx">
+      <DependentUpon>ComptePoints.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DistribuerEtMontrer.resx">
+      <DependentUpon>DistribuerEtMontrer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
