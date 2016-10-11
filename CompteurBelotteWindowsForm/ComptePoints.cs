@@ -17,10 +17,13 @@ namespace CompteurBelotteWindowsForm
 
         private int totalPair = 0;
         private int totalImpair = 0;
-        public ComptePoints(int pair, int impair)
+        public ComptePoints()
         {
             InitializeComponent();
+        }
 
+        public void SetPoints(int pair, int impair)
+        {
             scorePair = pair;
             scoreImpair = impair;
 
@@ -29,6 +32,7 @@ namespace CompteurBelotteWindowsForm
 
             buttonSuivant.Enabled = false;
             buttonSuivant.Visible = false;
+            buttonValide.Enabled = true;
         }
 
         private void ConvertScore(int pair, int impair, bool belottePair, bool belotteImpair)
@@ -71,8 +75,8 @@ namespace CompteurBelotteWindowsForm
 
                 if (pair >= 82)
                 {
-                    totalPair = 10 * (int)Math.Round((double)0.1f + pair / 10) + (belottePair ? 20 : 0);
-                    totalImpair = 10 * (int)Math.Round((double)0.1f + impair / 10) + (belotteImpair ? 20 : 0);
+                    totalPair = 10 * (int)Math.Round((double)0.5f + pair / 10) + (belottePair ? 20 : 0);
+                    totalImpair = 10 * (int)Math.Round((double)0.5f + impair / 10) + (belotteImpair ? 20 : 0);
                 }
                 else
                 {

@@ -1,6 +1,6 @@
 ﻿namespace CompteurBelotteWindowsForm
 {
-    partial class pick3card1
+    partial class Distribuer
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(pick3card1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Distribuer));
             this.groupMain1 = new System.Windows.Forms.GroupBox();
             this.pickCard8 = new System.Windows.Forms.PictureBox();
             this.pickCard7 = new System.Windows.Forms.PictureBox();
@@ -58,8 +58,6 @@
             this.pickThree6 = new System.Windows.Forms.PictureBox();
             this.pickThree5 = new System.Windows.Forms.PictureBox();
             this.pickThree4 = new System.Windows.Forms.PictureBox();
-            this.pickThree3 = new System.Windows.Forms.PictureBox();
-            this.pickThree2 = new System.Windows.Forms.PictureBox();
             this.pickThree1 = new System.Windows.Forms.PictureBox();
             this.groupMain4 = new System.Windows.Forms.GroupBox();
             this.pickFour8 = new System.Windows.Forms.PictureBox();
@@ -82,6 +80,8 @@
             this.pickThreeCard1 = new System.Windows.Forms.PictureBox();
             this.pick3card3 = new System.Windows.Forms.PictureBox();
             this.buttonContinue = new System.Windows.Forms.Button();
+            this.pickThree3 = new System.Windows.Forms.PictureBox();
+            this.pickThree2 = new System.Windows.Forms.PictureBox();
             this.groupMain1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pickCard8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pickCard7)).BeginInit();
@@ -107,8 +107,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pickThree6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pickThree5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pickThree4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pickThree3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pickThree2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pickThree1)).BeginInit();
             this.groupMain4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pickFour8)).BeginInit();
@@ -123,6 +121,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pick3card2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pickThreeCard1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pick3card3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pickThree3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pickThree2)).BeginInit();
             this.SuspendLayout();
             // 
             // groupMain1
@@ -465,28 +465,6 @@
             this.pickThree4.TabIndex = 4;
             this.pickThree4.TabStop = false;
             // 
-            // pickThree3
-            // 
-            this.pickThree3.ErrorImage = null;
-            this.pickThree3.InitialImage = null;
-            this.pickThree3.Location = new System.Drawing.Point(232, 13);
-            this.pickThree3.Name = "pickThree3";
-            this.pickThree3.Size = new System.Drawing.Size(107, 135);
-            this.pickThree3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pickThree3.TabIndex = 3;
-            this.pickThree3.TabStop = false;
-            // 
-            // pickThree2
-            // 
-            this.pickThree2.ErrorImage = null;
-            this.pickThree2.InitialImage = null;
-            this.pickThree2.Location = new System.Drawing.Point(119, 13);
-            this.pickThree2.Name = "pickThree2";
-            this.pickThree2.Size = new System.Drawing.Size(107, 135);
-            this.pickThree2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pickThree2.TabIndex = 2;
-            this.pickThree2.TabStop = false;
-            // 
             // pickThree1
             // 
             this.pickThree1.ErrorImage = null;
@@ -731,7 +709,29 @@
             this.buttonContinue.UseVisualStyleBackColor = true;
             this.buttonContinue.Click += new System.EventHandler(this.buttonContinue_Click);
             // 
-            // pick3card1
+            // pickThree3
+            // 
+            this.pickThree3.ErrorImage = null;
+            this.pickThree3.InitialImage = null;
+            this.pickThree3.Location = new System.Drawing.Point(232, 13);
+            this.pickThree3.Name = "pickThree3";
+            this.pickThree3.Size = new System.Drawing.Size(107, 135);
+            this.pickThree3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pickThree3.TabIndex = 3;
+            this.pickThree3.TabStop = false;
+            // 
+            // pickThree2
+            // 
+            this.pickThree2.ErrorImage = null;
+            this.pickThree2.InitialImage = null;
+            this.pickThree2.Location = new System.Drawing.Point(119, 13);
+            this.pickThree2.Name = "pickThree2";
+            this.pickThree2.Size = new System.Drawing.Size(107, 135);
+            this.pickThree2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pickThree2.TabIndex = 2;
+            this.pickThree2.TabStop = false;
+            // 
+            // Distribuer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -750,7 +750,7 @@
             this.Controls.Add(this.groupMain2);
             this.Controls.Add(this.groupDealer);
             this.Controls.Add(this.groupMain1);
-            this.Name = "pick3card1";
+            this.Name = "Distribuer";
             this.Text = "Continuer";
             this.groupMain1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pickCard8)).EndInit();
@@ -778,8 +778,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pickThree6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pickThree5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pickThree4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pickThree3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pickThree2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pickThree1)).EndInit();
             this.groupMain4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pickFour8)).EndInit();
@@ -794,6 +792,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pick3card2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pickThreeCard1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pick3card3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pickThree3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pickThree2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -830,8 +830,6 @@
         private System.Windows.Forms.PictureBox pickThree6;
         private System.Windows.Forms.PictureBox pickThree5;
         private System.Windows.Forms.PictureBox pickThree4;
-        private System.Windows.Forms.PictureBox pickThree3;
-        private System.Windows.Forms.PictureBox pickThree2;
         private System.Windows.Forms.PictureBox pickThree1;
         private System.Windows.Forms.GroupBox groupMain4;
         private System.Windows.Forms.PictureBox pickFour8;
@@ -854,5 +852,7 @@
         private System.Windows.Forms.PictureBox pickThreeCard1;
         private System.Windows.Forms.PictureBox pick3card3;
         private System.Windows.Forms.Button buttonContinue;
+        private System.Windows.Forms.PictureBox pickThree3;
+        private System.Windows.Forms.PictureBox pickThree2;
     }
 }

@@ -63,6 +63,8 @@ namespace CompteurBelotteWindowsForm
         private void buttonPairDessus_Click(object sender, EventArgs e)
         {
             Program.pilePair.FusionnerAvec(Program.pileImpair);
+            Program.pilePair.RetournerPaquet();
+
             buttonPairDessus.Enabled = false;
             buttonImpairDessus.Enabled = false;
         }
@@ -70,13 +72,15 @@ namespace CompteurBelotteWindowsForm
         private void buttonImpairDessus_Click(object sender, EventArgs e)
         {
             Program.pileImpair.FusionnerAvec(Program.pilePair);
+            Program.pileImpair.RetournerPaquet();
+
             buttonImpairDessus.Enabled = false;
             buttonPairDessus.Enabled = false;
         }
 
         private void buttonCouper_Click(object sender, EventArgs e)
         {
-            Form form = new pick3card1();
+            Form form = new Distribuer();
             form.Location = this.Location;
             form.StartPosition = this.StartPosition;
             form.Show();

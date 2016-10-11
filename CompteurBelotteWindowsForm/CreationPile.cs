@@ -264,10 +264,10 @@ namespace CompteurBelotteWindowsForm
             {
                 if (pointsImpaire + pointsPaire >= 162)
                 {
-                    Form form = new ComptePoints(pointsPaire, pointsImpaire); ;
-                    form.Location = this.Location;
-                    form.StartPosition = this.StartPosition;
-                    form.Show();
+                    Program.comptePoints.Location = this.Location;
+                    Program.comptePoints.StartPosition = this.StartPosition;
+                    Program.comptePoints.SetPoints(pointsPaire, pointsImpaire);
+                    Program.comptePoints.Show();
                     this.Hide();
                 }
                 else
@@ -280,10 +280,11 @@ namespace CompteurBelotteWindowsForm
                     }
                     else if (dr == System.Windows.Forms.DialogResult.OK)
                     {
-                        Form form = new ComptePoints(pointsPaire, pointsImpaire); ;
-                        form.Location = this.Location;
-                        form.StartPosition = this.StartPosition;
-                        form.Show();
+
+                        Program.comptePoints.Location = this.Location;
+                        Program.comptePoints.StartPosition = this.StartPosition;
+                        Program.comptePoints.SetPoints(pointsPaire, pointsImpaire);
+                        Program.comptePoints.Show();
                         this.Hide();
                     }
                 }
@@ -298,10 +299,7 @@ namespace CompteurBelotteWindowsForm
             {
                 pointsImpaire += points;
 
-                Program.pileImpair.AjouterAuPaquet(c1);
-                Program.pileImpair.AjouterAuPaquet(c2);
-                Program.pileImpair.AjouterAuPaquet(c3);
-                Program.pileImpair.AjouterAuPaquet(c4);
+                Program.pileImpair.AjouterAuPaquet(c1, c2, c3, c4);
 
                 if (turn == 8)
                 {
@@ -316,10 +314,7 @@ namespace CompteurBelotteWindowsForm
             {
                 pointsPaire += points;
 
-                Program.pilePair.AjouterAuPaquet(c1);
-                Program.pilePair.AjouterAuPaquet(c2);
-                Program.pilePair.AjouterAuPaquet(c3);
-                Program.pilePair.AjouterAuPaquet(c4);
+                Program.pilePair.AjouterAuPaquet(c1, c2, c3, c4);
 
                 if (turn == 8)
                 {

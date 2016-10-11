@@ -10,16 +10,16 @@ using System.Windows.Forms;
 
 namespace CompteurBelotteWindowsForm
 {
-    public partial class pick3card1 : Form
+    public partial class Distribuer : Form
     {
         private Paquet paquet;
         private Joueur[] joueurs;
-        private int donneur = 0;
+        private int donneur = 1;
 
         private string path = "C:/Users/Utilisateur/Documents/Projets_Visual_Studio/BelotteWindowsForm/CompteurBelotteWindowsForm/Images cartes/";
         private string CardBack = "cartes_dos.bmp";
 
-        public pick3card1()
+        public Distribuer()
         {
             InitializeComponent();
 

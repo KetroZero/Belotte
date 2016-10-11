@@ -15,6 +15,8 @@ namespace CompteurBelotteWindowsForm
         public static Joueur J1, J2, J3, J4;
         public static Paquet pilePair;
         public static Paquet pileImpair;
+
+        public static ComptePoints comptePoints;
         /// <summary>
         /// Point d'entrée principal de l'application.
         /// </summary>
@@ -31,6 +33,9 @@ namespace CompteurBelotteWindowsForm
 
             pilePair = new Paquet();
             pileImpair = new Paquet();
+
+            comptePoints = new ComptePoints();
+            comptePoints.Hide();
 
             Application.Run(new CreationEquipe());
         }

@@ -58,6 +58,13 @@ namespace CompteurBelotteWindowsForm
         {
             cartes.Add(c);
         }
+        public void AjouterAuPaquet(Carte c1, Carte c2, Carte c3, Carte c4)
+        {
+            cartes.Add(c4);
+            cartes.Add(c3);
+            cartes.Add(c2);
+            cartes.Add(c1);
+        }
 
         public void RetournerPaquet()
         {
