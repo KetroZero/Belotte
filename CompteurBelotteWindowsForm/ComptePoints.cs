@@ -40,12 +40,18 @@ namespace CompteurBelotteWindowsForm
             totalPair = 0;
             totalImpair = 0;
 
+            int modI = (impair % 10);
+            int offsetI = (modI >= 5) ? 10 - modI : -modI;
+
+            int modP = (pair % 10);
+            int offsetP = (modP >= 5) ? 10 - modP : -modP;
+
             if (radioButtonImpair.Checked) // Impair à pris l'atout
             {
                 if (impair >= 82)
                 {
-                    totalImpair = 10 * (int)Math.Round((double)0.1f + impair / 10) + (belotteImpair ? 20 : 0);
-                    totalPair = 10 * (int)Math.Round((double)0.1f + pair / 10) + (belottePair ? 20 : 0);
+                    totalImpair = impair + offsetI;
+                    totalPair = pair + offsetP;
                 }
                 else
                 {
@@ -53,7 +59,8 @@ namespace CompteurBelotteWindowsForm
                     {
                         if (impair + 20 >= 82)
                         {
-                            totalImpair = 10 * (int)Math.Round((double)impair / 10) + 20;
+                            totalImpair = impair + offsetI + 20;
+                            totalPair = pair + offsetP;
                         }
                         else
                         {
@@ -64,7 +71,7 @@ namespace CompteurBelotteWindowsForm
                     else
                     {
                         totalImpair = 0;
-                        totalPair = 160 + (belottePair ? 20 : 0); ;
+                        totalPair = 160 + (belottePair ? 20 : 0);
                     }
                 }
 
@@ -75,8 +82,8 @@ namespace CompteurBelotteWindowsForm
 
                 if (pair >= 82)
                 {
-                    totalPair = 10 * (int)Math.Round((double)0.5f + pair / 10) + (belottePair ? 20 : 0);
-                    totalImpair = 10 * (int)Math.Round((double)0.5f + impair / 10) + (belotteImpair ? 20 : 0);
+                    totalPair = pair + offsetP;
+                    totalImpair = impair + offsetI;
                 }
                 else
                 {
@@ -84,8 +91,8 @@ namespace CompteurBelotteWindowsForm
                     {
                         if (pair + 20 >= 82)
                         {
-                            totalPair = 10 * (int)Math.Round((double)pair / 10) + 20;
-                            totalImpair = 10 * (int)Math.Round((double)impair / 10);
+                            totalPair = pair + offsetP + 20;
+                            totalImpair = impair + offsetI;
                         }
                         else
                         {
@@ -99,8 +106,6 @@ namespace CompteurBelotteWindowsForm
                         totalImpair = 160 + (belotteImpair ? 20 : 0);
                     }
                 }
-
-
             }
 
             DisplayScore();
