@@ -262,7 +262,7 @@ namespace CompteurBelotteWindowsForm
             }
             else
             {
-                if (pointsImpaire + pointsPaire >= 162)
+                if (pointsImpaire + pointsPaire >= 162) // could be 250 or 182
                 {
                     Program.comptePoints.Location = this.Location;
                     Program.comptePoints.StartPosition = this.StartPosition;

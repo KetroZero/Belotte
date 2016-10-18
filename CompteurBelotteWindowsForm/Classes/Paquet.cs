@@ -6,12 +6,18 @@ namespace CompteurBelotteWindowsForm
     public class Paquet
     {
         private List<Carte> cartes;
-
+        /// <summary>
+        /// Create empty deck
+        /// </summary>
         public Paquet()
         {
             cartes = new List<Carte>();
         }
 
+        /// <summary>
+        /// Create full deck with 32 cards
+        /// </summary>
+        /// <param name="random">True to shuffle the deck, false to initiaite full deck</param>
         public Paquet(bool random)
         {
             cartes = new List<Carte>();
@@ -58,6 +64,10 @@ namespace CompteurBelotteWindowsForm
         {
             cartes.Add(c);
         }
+
+        /// <summary>
+        /// Add 4 cards in backward order
+        /// </summary>
         public void AjouterAuPaquet(Carte c1, Carte c2, Carte c3, Carte c4)
         {
             cartes.Add(c4);
@@ -66,6 +76,9 @@ namespace CompteurBelotteWindowsForm
             cartes.Add(c1);
         }
 
+        /// <summary>
+        /// Reverse the order of the deck when couting points face up
+        /// </summary>
         public void RetournerPaquet()
         {
             cartes.Reverse();
