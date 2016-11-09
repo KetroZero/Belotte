@@ -177,76 +177,32 @@ namespace CompteurBelotteWindowsForm
 
         private void carte1_Click(object sender, EventArgs e)
         {
-            Carte c = new Carte(carte1.ImageLocation.Remove(0, path.Length));
-            paquetComplet.AjouterAuPaquet(c);
-
-            carte1.ImageLocation = path + CardBack;
-            SwitchImages();
+            cancelPlayCard(carte1);
         }
 
         private void carte2_Click(object sender, EventArgs e)
         {
-            Carte c = new Carte(carte2.ImageLocation.Remove(0, path.Length));
-            paquetComplet.AjouterAuPaquet(c);
-
-            carte2.ImageLocation = path + CardBack;
-            SwitchImages();
+            cancelPlayCard(carte2);
         }
 
         private void carte3_Click(object sender, EventArgs e)
         {
-            Carte c = new Carte(carte3.ImageLocation.Remove(0, path.Length));
-            paquetComplet.AjouterAuPaquet(c);
-
-            carte3.ImageLocation = path + CardBack;
-            SwitchImages();
+            cancelPlayCard(carte3);
         }
 
         private void carte4_Click(object sender, EventArgs e)
         {
-            Carte c = new Carte(carte4.ImageLocation.Remove(0, path.Length));
-            paquetComplet.AjouterAuPaquet(c);
-
-            carte4.ImageLocation = path + CardBack;
-            SwitchImages();
+            cancelPlayCard(carte4);
         }
 
         private void buttonPair_Click(object sender, EventArgs e)
         {
-            if (gameIsValid())
-            {
-                Carte c1 = new Carte(carte1.ImageLocation.Remove(0, path.Length));
-                c1.SetAtout(c1.couleur == currentAtout);
-                Carte c2 = new Carte(carte2.ImageLocation.Remove(0, path.Length));
-                c2.SetAtout(c2.couleur == currentAtout);
-                Carte c3 = new Carte(carte3.ImageLocation.Remove(0, path.Length));
-                c3.SetAtout(c3.couleur == currentAtout);
-                Carte c4 = new Carte(carte4.ImageLocation.Remove(0, path.Length));
-                c4.SetAtout(c4.couleur == currentAtout);
-
-                UpdatePoints(c1, c2, c3, c4, 0);
-
-                UpdateTurn();
-            }
+            discardPlayCard(0);
         }
 
         private void buttonImpair_Click(object sender, EventArgs e)
         {
-            if (gameIsValid())
-            {
-                Carte c1 = new Carte(carte1.ImageLocation.Remove(0, path.Length));
-                c1.SetAtout(c1.couleur == currentAtout);
-                Carte c2 = new Carte(carte2.ImageLocation.Remove(0, path.Length));
-                c2.SetAtout(c2.couleur == currentAtout);
-                Carte c3 = new Carte(carte3.ImageLocation.Remove(0, path.Length));
-                c3.SetAtout(c3.couleur == currentAtout);
-                Carte c4 = new Carte(carte4.ImageLocation.Remove(0, path.Length));
-                c4.SetAtout(c4.couleur == currentAtout);
-
-                UpdatePoints(c1, c2, c3, c4, 1);
-
-                UpdateTurn();
-            }
+            discardPlayCard(1);
         }
 
         private void UpdateTurn()
@@ -288,6 +244,34 @@ namespace CompteurBelotteWindowsForm
                         this.Hide();
                     }
                 }
+            }
+        }
+
+        private void cancelPlayCard(PictureBox pic)
+        {
+            Carte c = new Carte(pic.ImageLocation.Remove(0, path.Length));
+            paquetComplet.AjouterAuPaquet(c);
+
+            pic.ImageLocation = path + CardBack;
+            SwitchImages();
+        }
+
+        private void discardPlayCard(int winner)
+        {
+            if (gameIsValid())
+            {
+                Carte c1 = new Carte(carte1.ImageLocation.Remove(0, path.Length));
+                c1.SetAtout(c1.couleur == currentAtout);
+                Carte c2 = new Carte(carte2.ImageLocation.Remove(0, path.Length));
+                c2.SetAtout(c2.couleur == currentAtout);
+                Carte c3 = new Carte(carte3.ImageLocation.Remove(0, path.Length));
+                c3.SetAtout(c3.couleur == currentAtout);
+                Carte c4 = new Carte(carte4.ImageLocation.Remove(0, path.Length));
+                c4.SetAtout(c4.couleur == currentAtout);
+
+                UpdatePoints(c1, c2, c3, c4, winner);
+
+                UpdateTurn();
             }
         }
 
