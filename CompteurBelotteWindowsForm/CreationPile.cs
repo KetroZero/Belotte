@@ -75,66 +75,6 @@ namespace CompteurBelotteWindowsForm
             SwitchImages();
         }
 
-        private void SwitchImages()
-        {
-            if (radioButtonPique.Checked)
-            {
-                SetCardImage("P.bmp");
-            }
-
-            if (radioButtonCoeur.Checked)
-            {
-                SetCardImage("Co.bmp");
-            }
-            if (radioButtonTrefle.Checked)
-            {
-                SetCardImage("T.bmp");
-            }
-
-            if (radioButtonCarreau.Checked)
-            {
-                SetCardImage("Ca.bmp");
-            }
-        }
-
-        private void SetCardImage(string couleur)
-        {
-            pickCard1.ImageLocation = path + "A_" + couleur;
-            pickCard2.ImageLocation = path + "10_" + couleur;
-            pickCard3.ImageLocation = path + "K_" + couleur;
-            pickCard4.ImageLocation = path + "Q_" + couleur;
-            pickCard5.ImageLocation = path + "J_" + couleur;
-            pickCard6.ImageLocation = path + "9_" + couleur;
-            pickCard7.ImageLocation = path + "8_" + couleur;
-            pickCard8.ImageLocation = path + "7_" + couleur;
-
-            foreach (PictureBox p in groupBoxCardPick.Controls)
-            {
-                Carte c = new Carte(p.ImageLocation.Remove(0, path.Length));
-                if (!paquetComplet.isInPaquet(c))
-                {
-                    p.ImageLocation = path + CardBack;
-                }
-            }
-        }
-
-        private void SetCardPlayed(PictureBox p)
-        {
-            foreach (PictureBox pb in groupBoxJeu.Controls.OfType<PictureBox>().OrderBy(c => c.Name))
-            {
-                if (pb.ImageLocation == path + CardBack)
-                {
-                    pb.ImageLocation = p.ImageLocation;
-
-                    Carte c = new Carte(p.ImageLocation.Remove(0, path.Length));
-                    paquetComplet.Remove(c);
-
-                    p.ImageLocation = path + CardBack;
-                    break;
-                }
-            }
-        }
-
         private void pickCard1_Click(object sender, EventArgs e)
         {
             SetCardPlayed(pickCard1);
@@ -205,6 +145,68 @@ namespace CompteurBelotteWindowsForm
             discardPlayCard(1);
         }
 
+        private void SwitchImages()
+        {
+            if (radioButtonPique.Checked)
+            {
+                SetCardImage("P.bmp");
+            }
+
+            if (radioButtonCoeur.Checked)
+            {
+                SetCardImage("Co.bmp");
+            }
+            if (radioButtonTrefle.Checked)
+            {
+                SetCardImage("T.bmp");
+            }
+
+            if (radioButtonCarreau.Checked)
+            {
+                SetCardImage("Ca.bmp");
+            }
+        }
+
+        private void SetCardImage(string couleur)
+        {
+            pickCard1.ImageLocation = path + "A_" + couleur;
+            pickCard2.ImageLocation = path + "10_" + couleur;
+            pickCard3.ImageLocation = path + "K_" + couleur;
+            pickCard4.ImageLocation = path + "Q_" + couleur;
+            pickCard5.ImageLocation = path + "J_" + couleur;
+            pickCard6.ImageLocation = path + "9_" + couleur;
+            pickCard7.ImageLocation = path + "8_" + couleur;
+            pickCard8.ImageLocation = path + "7_" + couleur;
+
+            foreach (PictureBox p in groupBoxCardPick.Controls)
+            {
+                Carte c = new Carte(p.ImageLocation.Remove(0, path.Length));
+                if (!paquetComplet.isInPaquet(c))
+                {
+                    p.ImageLocation = path + CardBack;
+                }
+            }
+        }
+
+        private void SetCardPlayed(PictureBox p)
+        {
+            foreach (PictureBox pb in groupBoxJeu.Controls.OfType<PictureBox>().OrderBy(c => c.Name))
+            {
+                if (pb.ImageLocation == path + CardBack)
+                {
+                    pb.ImageLocation = p.ImageLocation;
+
+                    Carte c = new Carte(p.ImageLocation.Remove(0, path.Length));
+                    paquetComplet.Remove(c);
+
+                    p.ImageLocation = path + CardBack;
+                    break;
+                }
+            }
+        }
+
+   
+
         private void UpdateTurn()
         {
             if (turn < 8)
@@ -236,7 +238,6 @@ namespace CompteurBelotteWindowsForm
                     }
                     else if (dr == System.Windows.Forms.DialogResult.OK)
                     {
-
                         Program.comptePoints.Location = this.Location;
                         Program.comptePoints.StartPosition = this.StartPosition;
                         Program.comptePoints.SetPoints(pointsPaire, pointsImpaire);
