@@ -13,7 +13,7 @@ namespace CompteurBelotteWindowsForm
     public partial class Distribuer : Form
     {
         private Paquet paquet;
-
+        private Paquet table;
         private Joueur[] joueurs;
 
         private int turn = 1;
@@ -26,6 +26,10 @@ namespace CompteurBelotteWindowsForm
         private Image cardBack2 = Properties.Resources.carte_dos;
 
         private Couleur currentAtout;
+
+        private Carte retourne;
+
+        private List<TurnCommand> historique = new List<TurnCommand>();
 
         public Distribuer()
         {
@@ -57,27 +61,39 @@ namespace CompteurBelotteWindowsForm
             comboDonneur.Items.Add(Program.J2.name);
             comboDonneur.Items.Add(Program.J3.name);
             comboDonneur.Items.Add(Program.J4.name);
-
             comboDonneur.SelectedIndex = 0;
             comboDonneur.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            comboCouleur.DataSource = Enum.GetValues(typeof(Couleur));
+            comboCouleur.SelectedIndex = 0;
+            comboAtout.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            comboValeur.DataSource = Enum.GetValues(typeof(Rang));
+            comboCouleur.SelectedIndex = 0;
+            comboAtout.DropDownStyle = ComboBoxStyle.DropDownList;
 
             joueurs = new Joueur[] { Program.J4, Program.J1, Program.J2, Program.J3 };
 
             InitCards();
 
+            table = new Paquet();
             paquet = new Paquet();
 
             if (Program.pileImpair.getLength() < 1 && Program.pilePair.getLength() < 1)
             {
                 paquet = new Paquet(false);
 
-                buttonDonne2.Visible = false;
-                buttonDonne3.Visible = false;
-
                 InitFirstPlay();
             }
             else
             {
+
+                comboCouleur.Visible = true;
+                comboValeur.Visible = true;
+                pictureRetourne.Visible = true;
+                labelCouleur.Visible = true;
+                labelValeur.Visible = true;
+                labelRetour.Visible = true;
 
                 buttonDonne2.Visible = true;
                 buttonDonne3.Visible = true;
@@ -104,6 +120,16 @@ namespace CompteurBelotteWindowsForm
             }
 
             UpdateHands();
+
+            comboCouleur.Visible = false;
+            comboValeur.Visible = false;
+            pictureRetourne.Visible = false;
+            labelCouleur.Visible = false;
+            labelValeur.Visible = false;
+            labelRetour.Visible = false;
+
+            buttonDonne2.Visible = false;
+            buttonDonne3.Visible = false;
         }
 
         private void buttonDonne3_Click(object sender, EventArgs e)
@@ -122,11 +148,6 @@ namespace CompteurBelotteWindowsForm
             buttonDonne2.Enabled = false;
 
             UpdateHands();
-
-            Carte retourne = paquet.montrerAtout();
-            pictureRetourne.Image = (Image)Properties.Resources.ResourceManager.GetObject(retourne.ToImageLocation());
-
-
         }
 
         private void buttonDonne2_Click(object sender, EventArgs e)
@@ -190,10 +211,10 @@ namespace CompteurBelotteWindowsForm
             {
                 for (int i = 0; i < 8; i++)
                 {
-                    if (i < joueurs[j].cartes.Count)
+                    if (i < joueurs[j].getNbCard())
                     {
                         //playerCard(j + 1, i + 1).Image = (Image)Properties.Resources.ResourceManager.GetObject(joueurs[j].cartes[i].ToImageLocation());
-                        playerCard(j + 1, i + 1).ImageLocation = path + joueurs[j].cartes[i].ToImageLocation();
+                        playerCard(j + 1, i + 1).ImageLocation = path + joueurs[j].cartes.getCarte(i).ToImageLocation();
                     }
                 }
             }
@@ -314,16 +335,18 @@ namespace CompteurBelotteWindowsForm
         {
             foreach (PictureBox pb in groupTable.Controls.OfType<PictureBox>().OrderBy(c => c.Name))
             {
-                if (pb.ImageLocation == path+cardBack)
+                if (pb.ImageLocation == path + cardBack)
                 {
                     pb.ImageLocation = p.ImageLocation;
-                    Carte c = new Carte(p.ImageLocation); 
+                    Carte c = new Carte(p.ImageLocation);
                     paquet.Remove(c);
-
-                    p.ImageLocation = path+cardBack;
+                    table.AjouterAuPaquet(c);
+                    p.ImageLocation = path + cardBack;
                     break;
                 }
             }
+            // TODO : trouver quel joueur a joué la carte pour REMOVE dans la pile du joueur
+            historique.Add(new TurnCommand(paquet, table, "add"));
         }
 
 
@@ -340,6 +363,8 @@ namespace CompteurBelotteWindowsForm
             {
                 if (pointsImpaire + pointsPaire >= 162) // could be 250 or 182
                 {
+                    DialogResult dr = MessageBox.Show("La somme des points est valide", "Verification", MessageBoxButtons.OK);
+
                     Program.comptePoints.Location = this.Location;
                     Program.comptePoints.StartPosition = this.StartPosition;
                     Program.comptePoints.SetPoints(pointsPaire, pointsImpaire);
@@ -360,7 +385,7 @@ namespace CompteurBelotteWindowsForm
                         Program.comptePoints.StartPosition = this.StartPosition;
                         Program.comptePoints.SetPoints(pointsPaire, pointsImpaire);
                         Program.comptePoints.Show();
-                        this.Hide();
+                        this.Close();
                     }
                 }
             }
@@ -368,10 +393,14 @@ namespace CompteurBelotteWindowsForm
 
         private void cancelPlayCard(PictureBox pic)
         {
-            Carte c = new Carte(pic.Image.ToString());
+            Carte c = new Carte(pic.ImageLocation);
             paquet.AjouterAuPaquet(c);
 
-            pic.Image = cardBack2;
+            pic.ImageLocation = path + cardBack;
+
+            historique[historique.Count - 1].Undo();
+
+            UpdateHands();
         }
 
         private void discardPlayCard(int winner)
@@ -390,6 +419,8 @@ namespace CompteurBelotteWindowsForm
                 UpdatePoints(c1, c2, c3, c4, winner);
 
                 UpdateTurn();
+
+                pictureT1.ImageLocation = pictureT2.ImageLocation = pictureT3.ImageLocation = pictureT4.ImageLocation = path + cardBack;
             }
         }
 
@@ -447,7 +478,7 @@ namespace CompteurBelotteWindowsForm
         {
             foreach (PictureBox p in groupTable.Controls)
             {
-                if (p.Image == cardBack2)
+                if (p.ImageLocation == path + cardBack)
                 {
                     return false;
                 }
@@ -658,6 +689,18 @@ namespace CompteurBelotteWindowsForm
         private void comboAtout_SelectedIndexChanged(object sender, EventArgs e)
         {
             currentAtout = (Couleur)comboAtout.SelectedIndex;
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            retourne = new Carte((Rang)comboValeur.SelectedIndex, (Couleur)comboCouleur.SelectedIndex);
+            pictureRetourne.ImageLocation = retourne.ToImageLocation();
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            retourne = new Carte((Rang)comboValeur.SelectedIndex, (Couleur)comboCouleur.SelectedIndex);
+            pictureRetourne.ImageLocation = retourne.ToImageLocation();
         }
 
     }

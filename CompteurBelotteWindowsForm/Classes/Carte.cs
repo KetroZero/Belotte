@@ -33,13 +33,10 @@ namespace CompteurBelotteWindowsForm
         {
         }
 
-        public Carte(System.Drawing.Image img)
-        {
-
-        }
-
         public Carte(string imageName, bool atout = false)
         {
+            imageName = imageName.Remove(0, Program.imgPath.Length);
+
             string[] cardArgs = imageName.Split(new char[] { '_', '.' });
 
             switch (cardArgs[0])
@@ -279,6 +276,7 @@ namespace CompteurBelotteWindowsForm
             }
 
             card += ".bmp";
+
             return card;
         }
     }

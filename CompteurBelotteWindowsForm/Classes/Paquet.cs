@@ -89,9 +89,9 @@ namespace CompteurBelotteWindowsForm
             cartes.AddRange(p.cartes);
         }
 
-        public void Couper(Carte derniere)
+        public void CouperAvecAtout(Carte retourne)
         {
-            int index = cartes.IndexOf(derniere);
+            int index = (cartes.IndexOf(retourne) - 21) % cartes.Count;
             if (index >= 0 && index < cartes.Count - 1)
             {
                 index++; //  get next card

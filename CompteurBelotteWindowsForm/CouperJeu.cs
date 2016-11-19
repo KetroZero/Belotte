@@ -12,24 +12,9 @@ namespace CompteurBelotteWindowsForm
 {
     public partial class CouperJeu : Form
     {
-        private Carte coupe;
-
-        bool init = false;
         public CouperJeu()
         {
             InitializeComponent();
-
-            comboValeur.DataSource = Enum.GetValues(typeof(Rang));
-            comboValeur.DropDownStyle = ComboBoxStyle.DropDownList;
-
-            comboCouleur.DataSource = Enum.GetValues(typeof(Couleur));
-            comboCouleur.DropDownStyle = ComboBoxStyle.DropDownList;
-
-            comboValeur.SelectedIndex = 0;
-            comboCouleur.SelectedIndex = 0;
-
-            init = true;
-            //coupe = new Carte((Rang)comboValeur.SelectedItem, (Couleur)comboCouleur.SelectedItem, false);
         }
 
         private void buttonRetournerPair_Click(object sender, EventArgs e)
@@ -44,21 +29,6 @@ namespace CompteurBelotteWindowsForm
             buttonRetournerImpair.Text = (buttonRetournerImpair.Text == "Annuler") ? "Retourner pile impaire" : "Annuler";
         }
 
-        private void comboCouleur_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (init)
-            {
-                coupe = new Carte((Rang)comboValeur.SelectedItem, (Couleur)comboCouleur.SelectedItem, false);
-            }
-        }
-
-        private void comboValeur_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (init)
-            {
-                coupe = new Carte((Rang)comboValeur.SelectedItem, (Couleur)comboCouleur.SelectedItem, false);
-            }
-        }
 
         private void buttonPairDessus_Click(object sender, EventArgs e)
         {

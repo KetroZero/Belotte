@@ -6,23 +6,23 @@ namespace CompteurBelotteWindowsForm
     {
         public int numero;
         public string name;
-        public List<Carte> cartes;
+        public Paquet cartes;
 
         public Joueur(int numeroDeJoueur)
         {
             numero = numeroDeJoueur;
-            cartes = new List<Carte>();
+            cartes = new Paquet();
         }
         public Joueur(int numeroDeJoueur,string nomDeJoueur)
         {
             numero = numeroDeJoueur;
             name = nomDeJoueur;
-            cartes = new List<Carte>();
+            cartes = new Paquet();
         }
 
         public void ajouterCarte(Carte c)
         {
-            cartes.Add(c);
+            cartes.AjouterAuPaquet(c);
         }
 
         public void jouerCarte(Carte c)
@@ -30,12 +30,18 @@ namespace CompteurBelotteWindowsForm
             cartes.Remove(c);
         }
 
+        public int getNbCard()
+        {
+            return cartes.getLength();
+        }
+
         public string voirCartes()
         {
             string retour = string.Empty;
-            foreach (Carte c in cartes)
+
+            for (int i = 0; i < cartes.getLength();i++ )
             {
-                retour += "[" + c.ToString() + "], ";
+                retour += "[" + cartes.getCarte(i).ToString() + "], ";
             }
 
             return retour;
@@ -44,9 +50,9 @@ namespace CompteurBelotteWindowsForm
         public string voirCartesShort()
         {
             string retour = string.Empty;
-            foreach (Carte c in cartes)
+            for (int i = 0; i < cartes.getLength(); i++)
             {
-                retour += "[" + c.ToShortString() + "], ";
+                retour += "[" + cartes.getCarte(i).ToShortString() + "], ";
             }
 
             return retour;
