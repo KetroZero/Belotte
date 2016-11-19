@@ -20,15 +20,15 @@ namespace CompteurBelotteWindowsForm
         public ComptePoints()
         {
             InitializeComponent();
+
+            labelPair1.Text = radioButtonPair.Text = Program.J2.name + " et " + Program.J4.name + " (Paire)";
+            labelImpair1.Text = radioButtonImpair.Text = Program.J1.name + " et " + Program.J3.name + " (Impaire)";
         }
 
         public void SetPoints(int pair, int impair)
         {
             scorePair = pair;
             scoreImpair = impair;
-
-            radioButtonPair.Text = Program.J2.name + " et " + Program.J4.name + " (Paire)";
-            radioButtonImpair.Text = Program.J1.name + " et " + Program.J3.name + " (Impaire)";
 
             buttonSuivant.Enabled = false;
             buttonSuivant.Visible = false;

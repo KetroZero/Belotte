@@ -39,8 +39,8 @@
             this.radioButtonPair = new System.Windows.Forms.RadioButton();
             this.labelRemporte = new System.Windows.Forms.Label();
             this.labelPointPair1 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.labelPair1 = new System.Windows.Forms.Label();
+            this.labelImpair1 = new System.Windows.Forms.Label();
             this.labelPointsImpair = new System.Windows.Forms.Label();
             this.labelTotalPair = new System.Windows.Forms.Label();
             this.labelTotalImpair = new System.Windows.Forms.Label();
@@ -173,27 +173,27 @@
             this.labelPointPair1.TabIndex = 8;
             this.labelPointPair1.Text = "Points du tas :";
             // 
-            // label1
+            // labelPair1
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(14, 169);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(137, 26);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Equipe Paire";
+            this.labelPair1.AutoSize = true;
+            this.labelPair1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.labelPair1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPair1.Location = new System.Drawing.Point(14, 169);
+            this.labelPair1.Name = "labelPair1";
+            this.labelPair1.Size = new System.Drawing.Size(137, 26);
+            this.labelPair1.TabIndex = 9;
+            this.labelPair1.Text = "Equipe Paire";
             // 
-            // label2
+            // labelImpair1
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.SystemColors.Info;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(192, 169);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(159, 26);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Equipe Impaire";
+            this.labelImpair1.AutoSize = true;
+            this.labelImpair1.BackColor = System.Drawing.SystemColors.Info;
+            this.labelImpair1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelImpair1.Location = new System.Drawing.Point(192, 169);
+            this.labelImpair1.Name = "labelImpair1";
+            this.labelImpair1.Size = new System.Drawing.Size(159, 26);
+            this.labelImpair1.TabIndex = 10;
+            this.labelImpair1.Text = "Equipe Impaire";
             // 
             // labelPointsImpair
             // 
@@ -287,7 +287,7 @@
             this.buttonSuivant.UseVisualStyleBackColor = true;
             this.buttonSuivant.Click += new System.EventHandler(this.buttonSuivant_Click);
             // 
-            // Points_Coupe
+            // ComptePoints
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -301,8 +301,8 @@
             this.Controls.Add(this.labelTotalImpair);
             this.Controls.Add(this.labelTotalPair);
             this.Controls.Add(this.labelPointsImpair);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelImpair1);
+            this.Controls.Add(this.labelPair1);
             this.Controls.Add(this.labelPointPair1);
             this.Controls.Add(this.labelRemporte);
             this.Controls.Add(this.groupAtout);
@@ -310,7 +310,7 @@
             this.Controls.Add(this.labelJ2J4);
             this.Controls.Add(this.labelEquipeImapir);
             this.Controls.Add(this.labelEquipePair);
-            this.Name = "Points_Coupe";
+            this.Name = "ComptePoints";
             this.Text = "Points_Coupe";
             this.groupAtout.ResumeLayout(false);
             this.groupAtout.PerformLayout();
@@ -332,8 +332,8 @@
         private System.Windows.Forms.CheckBox checkBelottePair;
         private System.Windows.Forms.Label labelRemporte;
         private System.Windows.Forms.Label labelPointPair1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelPair1;
+        private System.Windows.Forms.Label labelImpair1;
         private System.Windows.Forms.Label labelPointsImpair;
         private System.Windows.Forms.Label labelTotalPair;
         private System.Windows.Forms.Label labelTotalImpair;

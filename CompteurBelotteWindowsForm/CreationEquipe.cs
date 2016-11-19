@@ -24,6 +24,11 @@ namespace CompteurBelotteWindowsForm
             textBoxJ3.Enabled = true;
             textBoxJ4.Enabled = true;
 
+            textBoxJ1.Text = "J1";
+            textBoxJ2.Text = "J2";
+            textBoxJ3.Text = "J3";
+            textBoxJ4.Text = "J4";
+
             labelError.Visible = false;
         }
 
@@ -60,7 +65,7 @@ namespace CompteurBelotteWindowsForm
 
             if (!error)
             {
-                Form pile = new CreationPile();
+                Form pile = new Distribuer();
                 pile.Location = this.Location;
                 pile.StartPosition = this.StartPosition;
                 pile.FormClosing += delegate { this.Show(); };
@@ -75,15 +80,14 @@ namespace CompteurBelotteWindowsForm
             bool isValid = true;
             if (string.IsNullOrWhiteSpace(control.Text))
             {
-                throw new Exception("Format de nom incorrect.");
                 isValid = false;
-
+                //throw new Exception("Format de nom incorrect.");
             }
 
             if (string.IsNullOrEmpty(control.Text))
             {
-                throw new Exception("Le nom est vide.");
                 isValid = false;
+                //throw new Exception("Le nom est vide.");
             }
 
             return isValid;

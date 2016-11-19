@@ -44,6 +44,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Command.cs" />
+    <Compile Include="Classes\TurnCommand.cs" />
     <Compile Include="CouperJeu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -56,12 +58,6 @@
     <Compile Include="Classes\Joueur.cs" />
     <Compile Include="Classes\Paquet.cs" />
     <Compile Include="Classes\Rang.cs" />
-    <Compile Include="CreationPile.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CreationPile.Designer.cs">
-      <DependentUpon>CreationPile.cs</DependentUpon>
-    </Compile>
     <Compile Include="CreationEquipe.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,9 +84,6 @@
     <EmbeddedResource Include="CreationEquipe.resx">
       <DependentUpon>CreationEquipe.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CreationPile.resx">
-      <DependentUpon>CreationPile.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ComptePoints.resx">
       <DependentUpon>ComptePoints.cs</DependentUpon>
     </EmbeddedResource>
@@ -105,6 +98,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -120,39 +114,39 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Images cartes\10_Ca.bmp" />
-    <Content Include="Images cartes\10_Co.bmp" />
-    <Content Include="Images cartes\10_P.bmp" />
-    <Content Include="Images cartes\10_T.bmp" />
-    <Content Include="Images cartes\7_Ca.bmp" />
-    <Content Include="Images cartes\7_Co.bmp" />
-    <Content Include="Images cartes\7_P.bmp" />
-    <Content Include="Images cartes\7_T.bmp" />
-    <Content Include="Images cartes\8_Ca.bmp" />
-    <Content Include="Images cartes\8_Co.bmp" />
-    <Content Include="Images cartes\8_P.bmp" />
-    <Content Include="Images cartes\8_T.bmp" />
-    <Content Include="Images cartes\9_Ca.bmp" />
-    <Content Include="Images cartes\9_Co.bmp" />
-    <Content Include="Images cartes\9_P.bmp" />
-    <Content Include="Images cartes\9_T.bmp" />
-    <Content Include="Images cartes\A_Ca.bmp" />
-    <Content Include="Images cartes\A_Co.bmp" />
-    <Content Include="Images cartes\A_P.bmp" />
-    <Content Include="Images cartes\A_T.bmp" />
-    <Content Include="Images cartes\carte_dos.bmp" />
-    <Content Include="Images cartes\J_Ca.bmp" />
-    <Content Include="Images cartes\J_Co.bmp" />
-    <Content Include="Images cartes\J_P.bmp" />
-    <Content Include="Images cartes\J_T.bmp" />
-    <Content Include="Images cartes\K_Ca.bmp" />
-    <Content Include="Images cartes\K_Co.bmp" />
-    <Content Include="Images cartes\K_P.bmp" />
-    <Content Include="Images cartes\K_T.bmp" />
-    <Content Include="Images cartes\Q_Ca.bmp" />
-    <Content Include="Images cartes\Q_Co.bmp" />
-    <Content Include="Images cartes\Q_P.bmp" />
-    <Content Include="Images cartes\Q_T.bmp" />
+    <Content Include="Resources\10_Ca.bmp" />
+    <Content Include="Resources\10_Co.bmp" />
+    <Content Include="Resources\10_P.bmp" />
+    <Content Include="Resources\10_T.bmp" />
+    <Content Include="Resources\7_Ca.bmp" />
+    <Content Include="Resources\7_Co.bmp" />
+    <Content Include="Resources\7_P.bmp" />
+    <Content Include="Resources\7_T.bmp" />
+    <Content Include="Resources\8_Ca.bmp" />
+    <Content Include="Resources\8_Co.bmp" />
+    <Content Include="Resources\8_P.bmp" />
+    <Content Include="Resources\8_T.bmp" />
+    <Content Include="Resources\9_Ca.bmp" />
+    <Content Include="Resources\9_Co.bmp" />
+    <Content Include="Resources\9_P.bmp" />
+    <Content Include="Resources\9_T.bmp" />
+    <Content Include="Resources\A_Ca.bmp" />
+    <Content Include="Resources\A_Co.bmp" />
+    <Content Include="Resources\A_P.bmp" />
+    <Content Include="Resources\A_T.bmp" />
+    <Content Include="Resources\carte_dos.bmp" />
+    <Content Include="Resources\J_Ca.bmp" />
+    <Content Include="Resources\J_Co.bmp" />
+    <Content Include="Resources\J_P.bmp" />
+    <Content Include="Resources\J_T.bmp" />
+    <Content Include="Resources\K_Ca.bmp" />
+    <Content Include="Resources\K_Co.bmp" />
+    <Content Include="Resources\K_P.bmp" />
+    <Content Include="Resources\K_T.bmp" />
+    <Content Include="Resources\Q_Ca.bmp" />
+    <Content Include="Resources\Q_Co.bmp" />
+    <Content Include="Resources\Q_P.bmp" />
+    <Content Include="Resources\Q_T.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -8,6 +8,7 @@ namespace CompteurBelotteWindowsForm
 {
     public class Carte
     {
+        
 
         public int valeur;
         public Rang nom;
@@ -30,6 +31,11 @@ namespace CompteurBelotteWindowsForm
         }
         public Carte()
         {
+        }
+
+        public Carte(System.Drawing.Image img)
+        {
+
         }
 
         public Carte(string imageName, bool atout = false)
@@ -188,13 +194,13 @@ namespace CompteurBelotteWindowsForm
             {
                 default: color = "-2";
                     break;
-                case Couleur.Carreau: color = "D";
+                case Couleur.Carreau: color = "Ca";
                     break;
-                case Couleur.Coeur: color = "H";
+                case Couleur.Coeur: color = "Co";
                     break;
-                case Couleur.Pique: color = "S";
+                case Couleur.Pique: color = "Pi";
                     break;
-                case Couleur.Trefle: color = "C";
+                case Couleur.Trefle: color = "Tr";
                     break;
             }
 
@@ -225,13 +231,19 @@ namespace CompteurBelotteWindowsForm
             return this.nom.Equals(test.nom) && this.couleur == test.couleur;
         }
 
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+
         public string ToImageLocation()
         {
             string card = "init";
 
             switch (nom)
             {
-                default: break; // throw Exception ??
+                default: card = "carte";
+                    break;
 
                 case Rang.As: card = "A";
                     break;
@@ -253,7 +265,8 @@ namespace CompteurBelotteWindowsForm
 
             switch (couleur)
             {
-                default: break; // throw Exception ??
+                default: card += "_dos";
+                    break;
 
                 case Couleur.Carreau: card += "_Ca";
                     break;
@@ -266,7 +279,6 @@ namespace CompteurBelotteWindowsForm
             }
 
             card += ".bmp";
-
             return card;
         }
     }

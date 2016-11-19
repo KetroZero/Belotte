@@ -15,7 +15,7 @@ namespace CompteurBelotteWindowsForm
         public static Joueur J1, J2, J3, J4;
         public static Paquet pilePair;
         public static Paquet pileImpair;
-
+        public static string imgPath = "C:/Users/Utilisateur/Documents/Projets_Visual_Studio/BelotteWindowsForm/CompteurBelotteWindowsForm/Resources/";
         public static ComptePoints comptePoints;
         /// <summary>
         /// Point d'entrée principal de l'application.
