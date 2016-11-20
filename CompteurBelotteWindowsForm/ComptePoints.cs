@@ -41,10 +41,10 @@ namespace CompteurBelotteWindowsForm
             totalImpair = 0;
 
             int modI = (impair % 10);
-            int offsetI = (modI >= 5) ? 10 - modI : -modI;
+            int offsetI = (modI > 5) ? 10 - modI : -modI;
 
             int modP = (pair % 10);
-            int offsetP = (modP >= 5) ? 10 - modP : -modP;
+            int offsetP = (modP > 5) ? 10 - modP : -modP;
 
             if (radioButtonImpair.Checked) // Impair à pris l'atout
             {
@@ -171,6 +171,8 @@ namespace CompteurBelotteWindowsForm
 
         private void buttonSuivant_Click(object sender, EventArgs e)
         {
+            Program.tours++;
+
             Form form = new CouperJeu();
             form.Location = this.Location;
             form.StartPosition = this.StartPosition;

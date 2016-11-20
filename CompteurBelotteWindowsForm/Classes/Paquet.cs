@@ -65,6 +65,11 @@ namespace CompteurBelotteWindowsForm
             cartes.Add(c);
         }
 
+        public List<Carte> getAllCards()
+        {
+            return cartes;
+        }
+
         /// <summary>
         /// Add 4 cards in backward order
         /// </summary>
@@ -91,14 +96,27 @@ namespace CompteurBelotteWindowsForm
 
         public void CouperAvecAtout(Carte retourne)
         {
-            int index = (cartes.IndexOf(retourne) - 21) % cartes.Count;
-            if (index >= 0 && index < cartes.Count - 1)
+            List<Carte> move = new List<Carte>();
+
+            int index = cartes.IndexOf(retourne);
+
+            int start = (index + 10) % 32; //  get end of pile
+
+            for (int i = start; i < start + 20; i++) // insert 20 card before reveal Atout
             {
-                index++; //  get next card
-                List<Carte> move = cartes.GetRange(index, cartes.Count - index);
-                cartes.RemoveRange(index, cartes.Count - index);
-                cartes.InsertRange(0, move);
+                move.Add(cartes[i % 32]);
             }
+
+            //move.Reverse(); // reverse order to match dealing method
+
+            foreach (Carte c in move)
+            {
+                cartes.Remove(c);
+            }
+
+            cartes.InsertRange(0, move); // add at top
+
+            int newIdx = cartes.IndexOf(retourne);
         }
 
         public void Remove(Carte c)

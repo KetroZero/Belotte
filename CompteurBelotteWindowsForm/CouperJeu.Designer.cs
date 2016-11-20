@@ -37,7 +37,7 @@
             // 
             // buttonPairDessus
             // 
-            this.buttonPairDessus.Location = new System.Drawing.Point(181, 12);
+            this.buttonPairDessus.Location = new System.Drawing.Point(199, 101);
             this.buttonPairDessus.Name = "buttonPairDessus";
             this.buttonPairDessus.Size = new System.Drawing.Size(162, 66);
             this.buttonPairDessus.TabIndex = 0;
@@ -47,7 +47,7 @@
             // 
             // buttonImpairDessus
             // 
-            this.buttonImpairDessus.Location = new System.Drawing.Point(181, 118);
+            this.buttonImpairDessus.Location = new System.Drawing.Point(199, 12);
             this.buttonImpairDessus.Name = "buttonImpairDessus";
             this.buttonImpairDessus.Size = new System.Drawing.Size(162, 66);
             this.buttonImpairDessus.TabIndex = 1;
@@ -58,7 +58,7 @@
             // buttonRetournerPair
             // 
             this.buttonRetournerPair.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.buttonRetournerPair.Location = new System.Drawing.Point(13, 12);
+            this.buttonRetournerPair.Location = new System.Drawing.Point(12, 101);
             this.buttonRetournerPair.Name = "buttonRetournerPair";
             this.buttonRetournerPair.Size = new System.Drawing.Size(162, 66);
             this.buttonRetournerPair.TabIndex = 2;
@@ -69,7 +69,7 @@
             // buttonRetournerImpair
             // 
             this.buttonRetournerImpair.BackColor = System.Drawing.SystemColors.Info;
-            this.buttonRetournerImpair.Location = new System.Drawing.Point(12, 118);
+            this.buttonRetournerImpair.Location = new System.Drawing.Point(12, 12);
             this.buttonRetournerImpair.Name = "buttonRetournerImpair";
             this.buttonRetournerImpair.Size = new System.Drawing.Size(162, 66);
             this.buttonRetournerImpair.TabIndex = 3;
@@ -79,19 +79,20 @@
             // 
             // buttonCouper
             // 
-            this.buttonCouper.Location = new System.Drawing.Point(480, 11);
+            this.buttonCouper.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.buttonCouper.Location = new System.Drawing.Point(196, 222);
             this.buttonCouper.Name = "buttonCouper";
             this.buttonCouper.Size = new System.Drawing.Size(165, 67);
             this.buttonCouper.TabIndex = 9;
             this.buttonCouper.Text = "Couper et Distribuer";
-            this.buttonCouper.UseVisualStyleBackColor = true;
+            this.buttonCouper.UseVisualStyleBackColor = false;
             this.buttonCouper.Click += new System.EventHandler(this.buttonCouper_Click);
             // 
             // CouperJeu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(788, 423);
+            this.ClientSize = new System.Drawing.Size(639, 380);
             this.Controls.Add(this.buttonCouper);
             this.Controls.Add(this.buttonRetournerImpair);
             this.Controls.Add(this.buttonRetournerPair);

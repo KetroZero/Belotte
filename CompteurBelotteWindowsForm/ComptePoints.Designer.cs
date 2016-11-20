@@ -28,9 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.labelEquipePair = new System.Windows.Forms.Label();
             this.labelEquipeImapir = new System.Windows.Forms.Label();
-            this.labelJ2J4 = new System.Windows.Forms.Label();
             this.labelJ1J3 = new System.Windows.Forms.Label();
             this.groupAtout = new System.Windows.Forms.GroupBox();
             this.checkBelotteImpair = new System.Windows.Forms.CheckBox();
@@ -38,58 +36,39 @@
             this.radioButtonImpair = new System.Windows.Forms.RadioButton();
             this.radioButtonPair = new System.Windows.Forms.RadioButton();
             this.labelRemporte = new System.Windows.Forms.Label();
-            this.labelPointPair1 = new System.Windows.Forms.Label();
-            this.labelPair1 = new System.Windows.Forms.Label();
             this.labelImpair1 = new System.Windows.Forms.Label();
             this.labelPointsImpair = new System.Windows.Forms.Label();
-            this.labelTotalPair = new System.Windows.Forms.Label();
             this.labelTotalImpair = new System.Windows.Forms.Label();
             this.buttonValide = new System.Windows.Forms.Button();
-            this.listBoxPair = new System.Windows.Forms.ListBox();
             this.listBoxImpair = new System.Windows.Forms.ListBox();
-            this.labelCumulPair = new System.Windows.Forms.Label();
             this.labelCumulImpair = new System.Windows.Forms.Label();
             this.buttonSuivant = new System.Windows.Forms.Button();
+            this.labelTotalPair = new System.Windows.Forms.Label();
+            this.labelPair1 = new System.Windows.Forms.Label();
+            this.labelPointPair1 = new System.Windows.Forms.Label();
+            this.labelCumulPair = new System.Windows.Forms.Label();
+            this.listBoxPair = new System.Windows.Forms.ListBox();
+            this.labelJ2J4 = new System.Windows.Forms.Label();
+            this.labelEquipePair = new System.Windows.Forms.Label();
             this.groupAtout.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // labelEquipePair
-            // 
-            this.labelEquipePair.AutoSize = true;
-            this.labelEquipePair.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.labelEquipePair.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelEquipePair.Location = new System.Drawing.Point(508, 9);
-            this.labelEquipePair.Name = "labelEquipePair";
-            this.labelEquipePair.Size = new System.Drawing.Size(137, 26);
-            this.labelEquipePair.TabIndex = 0;
-            this.labelEquipePair.Text = "Equipe Paire";
             // 
             // labelEquipeImapir
             // 
             this.labelEquipeImapir.AutoSize = true;
             this.labelEquipeImapir.BackColor = System.Drawing.SystemColors.Info;
             this.labelEquipeImapir.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelEquipeImapir.Location = new System.Drawing.Point(711, 9);
+            this.labelEquipeImapir.Location = new System.Drawing.Point(525, 7);
             this.labelEquipeImapir.Name = "labelEquipeImapir";
             this.labelEquipeImapir.Size = new System.Drawing.Size(159, 26);
             this.labelEquipeImapir.TabIndex = 1;
             this.labelEquipeImapir.Text = "Equipe Impaire";
             // 
-            // labelJ2J4
-            // 
-            this.labelJ2J4.AutoSize = true;
-            this.labelJ2J4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelJ2J4.Location = new System.Drawing.Point(509, 57);
-            this.labelJ2J4.Name = "labelJ2J4";
-            this.labelJ2J4.Size = new System.Drawing.Size(65, 20);
-            this.labelJ2J4.TabIndex = 4;
-            this.labelJ2J4.Text = "J2 et J4";
-            // 
             // labelJ1J3
             // 
             this.labelJ1J3.AutoSize = true;
             this.labelJ1J3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelJ1J3.Location = new System.Drawing.Point(712, 57);
+            this.labelJ1J3.Location = new System.Drawing.Point(526, 55);
             this.labelJ1J3.Name = "labelJ1J3";
             this.labelJ1J3.Size = new System.Drawing.Size(65, 20);
             this.labelJ1J3.TabIndex = 5;
@@ -110,7 +89,7 @@
             // checkBelotteImpair
             // 
             this.checkBelotteImpair.AutoSize = true;
-            this.checkBelotteImpair.Location = new System.Drawing.Point(165, 42);
+            this.checkBelotteImpair.Location = new System.Drawing.Point(164, 18);
             this.checkBelotteImpair.Name = "checkBelotteImpair";
             this.checkBelotteImpair.Size = new System.Drawing.Size(59, 17);
             this.checkBelotteImpair.TabIndex = 3;
@@ -121,7 +100,7 @@
             // checkBelottePair
             // 
             this.checkBelottePair.AutoSize = true;
-            this.checkBelottePair.Location = new System.Drawing.Point(165, 19);
+            this.checkBelottePair.Location = new System.Drawing.Point(164, 42);
             this.checkBelottePair.Name = "checkBelottePair";
             this.checkBelottePair.Size = new System.Drawing.Size(59, 17);
             this.checkBelottePair.TabIndex = 2;
@@ -132,7 +111,7 @@
             // radioButtonImpair
             // 
             this.radioButtonImpair.AutoSize = true;
-            this.radioButtonImpair.Location = new System.Drawing.Point(6, 42);
+            this.radioButtonImpair.Location = new System.Drawing.Point(9, 18);
             this.radioButtonImpair.Name = "radioButtonImpair";
             this.radioButtonImpair.Size = new System.Drawing.Size(99, 17);
             this.radioButtonImpair.TabIndex = 1;
@@ -144,7 +123,7 @@
             // radioButtonPair
             // 
             this.radioButtonPair.AutoSize = true;
-            this.radioButtonPair.Location = new System.Drawing.Point(6, 19);
+            this.radioButtonPair.Location = new System.Drawing.Point(9, 42);
             this.radioButtonPair.Name = "radioButtonPair";
             this.radioButtonPair.Size = new System.Drawing.Size(89, 17);
             this.radioButtonPair.TabIndex = 0;
@@ -163,33 +142,12 @@
             this.labelRemporte.TabIndex = 7;
             this.labelRemporte.Text = "Qui à pris l\'atout ?";
             // 
-            // labelPointPair1
-            // 
-            this.labelPointPair1.AutoSize = true;
-            this.labelPointPair1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPointPair1.Location = new System.Drawing.Point(16, 212);
-            this.labelPointPair1.Name = "labelPointPair1";
-            this.labelPointPair1.Size = new System.Drawing.Size(109, 20);
-            this.labelPointPair1.TabIndex = 8;
-            this.labelPointPair1.Text = "Points du tas :";
-            // 
-            // labelPair1
-            // 
-            this.labelPair1.AutoSize = true;
-            this.labelPair1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.labelPair1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPair1.Location = new System.Drawing.Point(14, 169);
-            this.labelPair1.Name = "labelPair1";
-            this.labelPair1.Size = new System.Drawing.Size(137, 26);
-            this.labelPair1.TabIndex = 9;
-            this.labelPair1.Text = "Equipe Paire";
-            // 
             // labelImpair1
             // 
             this.labelImpair1.AutoSize = true;
             this.labelImpair1.BackColor = System.Drawing.SystemColors.Info;
             this.labelImpair1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelImpair1.Location = new System.Drawing.Point(192, 169);
+            this.labelImpair1.Location = new System.Drawing.Point(15, 161);
             this.labelImpair1.Name = "labelImpair1";
             this.labelImpair1.Size = new System.Drawing.Size(159, 26);
             this.labelImpair1.TabIndex = 10;
@@ -199,27 +157,17 @@
             // 
             this.labelPointsImpair.AutoSize = true;
             this.labelPointsImpair.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPointsImpair.Location = new System.Drawing.Point(194, 212);
+            this.labelPointsImpair.Location = new System.Drawing.Point(17, 204);
             this.labelPointsImpair.Name = "labelPointsImpair";
             this.labelPointsImpair.Size = new System.Drawing.Size(109, 20);
             this.labelPointsImpair.TabIndex = 11;
             this.labelPointsImpair.Text = "Points du tas :";
             // 
-            // labelTotalPair
-            // 
-            this.labelTotalPair.AutoSize = true;
-            this.labelTotalPair.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTotalPair.Location = new System.Drawing.Point(19, 252);
-            this.labelTotalPair.Name = "labelTotalPair";
-            this.labelTotalPair.Size = new System.Drawing.Size(56, 20);
-            this.labelTotalPair.TabIndex = 12;
-            this.labelTotalPair.Text = "Total : ";
-            // 
             // labelTotalImpair
             // 
             this.labelTotalImpair.AutoSize = true;
             this.labelTotalImpair.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTotalImpair.Location = new System.Drawing.Point(194, 252);
+            this.labelTotalImpair.Location = new System.Drawing.Point(17, 244);
             this.labelTotalImpair.Name = "labelTotalImpair";
             this.labelTotalImpair.Size = new System.Drawing.Size(56, 20);
             this.labelTotalImpair.TabIndex = 13;
@@ -236,41 +184,21 @@
             this.buttonValide.UseVisualStyleBackColor = true;
             this.buttonValide.Click += new System.EventHandler(this.buttonValide_Click);
             // 
-            // listBoxPair
-            // 
-            this.listBoxPair.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listBoxPair.FormattingEnabled = true;
-            this.listBoxPair.ItemHeight = 24;
-            this.listBoxPair.Location = new System.Drawing.Point(513, 115);
-            this.listBoxPair.Name = "listBoxPair";
-            this.listBoxPair.Size = new System.Drawing.Size(132, 292);
-            this.listBoxPair.TabIndex = 15;
-            // 
             // listBoxImpair
             // 
             this.listBoxImpair.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBoxImpair.FormattingEnabled = true;
             this.listBoxImpair.ItemHeight = 24;
-            this.listBoxImpair.Location = new System.Drawing.Point(716, 115);
+            this.listBoxImpair.Location = new System.Drawing.Point(530, 113);
             this.listBoxImpair.Name = "listBoxImpair";
             this.listBoxImpair.Size = new System.Drawing.Size(132, 292);
             this.listBoxImpair.TabIndex = 16;
-            // 
-            // labelCumulPair
-            // 
-            this.labelCumulPair.AutoSize = true;
-            this.labelCumulPair.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCumulPair.Location = new System.Drawing.Point(530, 413);
-            this.labelCumulPair.Name = "labelCumulPair";
-            this.labelCumulPair.Size = new System.Drawing.Size(44, 20);
-            this.labelCumulPair.TabIndex = 17;
-            this.labelCumulPair.Text = "Total";
             // 
             // labelCumulImpair
             // 
             this.labelCumulImpair.AutoSize = true;
             this.labelCumulImpair.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCumulImpair.Location = new System.Drawing.Point(733, 413);
+            this.labelCumulImpair.Location = new System.Drawing.Point(547, 411);
             this.labelCumulImpair.Name = "labelCumulImpair";
             this.labelCumulImpair.Size = new System.Drawing.Size(44, 20);
             this.labelCumulImpair.TabIndex = 18;
@@ -287,29 +215,101 @@
             this.buttonSuivant.UseVisualStyleBackColor = true;
             this.buttonSuivant.Click += new System.EventHandler(this.buttonSuivant_Click);
             // 
+            // labelTotalPair
+            // 
+            this.labelTotalPair.AutoSize = true;
+            this.labelTotalPair.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTotalPair.Location = new System.Drawing.Point(197, 244);
+            this.labelTotalPair.Name = "labelTotalPair";
+            this.labelTotalPair.Size = new System.Drawing.Size(56, 20);
+            this.labelTotalPair.TabIndex = 22;
+            this.labelTotalPair.Text = "Total : ";
+            // 
+            // labelPair1
+            // 
+            this.labelPair1.AutoSize = true;
+            this.labelPair1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.labelPair1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPair1.Location = new System.Drawing.Point(192, 161);
+            this.labelPair1.Name = "labelPair1";
+            this.labelPair1.Size = new System.Drawing.Size(137, 26);
+            this.labelPair1.TabIndex = 21;
+            this.labelPair1.Text = "Equipe Paire";
+            // 
+            // labelPointPair1
+            // 
+            this.labelPointPair1.AutoSize = true;
+            this.labelPointPair1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPointPair1.Location = new System.Drawing.Point(194, 204);
+            this.labelPointPair1.Name = "labelPointPair1";
+            this.labelPointPair1.Size = new System.Drawing.Size(109, 20);
+            this.labelPointPair1.TabIndex = 20;
+            this.labelPointPair1.Text = "Points du tas :";
+            // 
+            // labelCumulPair
+            // 
+            this.labelCumulPair.AutoSize = true;
+            this.labelCumulPair.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCumulPair.Location = new System.Drawing.Point(755, 411);
+            this.labelCumulPair.Name = "labelCumulPair";
+            this.labelCumulPair.Size = new System.Drawing.Size(44, 20);
+            this.labelCumulPair.TabIndex = 26;
+            this.labelCumulPair.Text = "Total";
+            // 
+            // listBoxPair
+            // 
+            this.listBoxPair.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBoxPair.FormattingEnabled = true;
+            this.listBoxPair.ItemHeight = 24;
+            this.listBoxPair.Location = new System.Drawing.Point(738, 113);
+            this.listBoxPair.Name = "listBoxPair";
+            this.listBoxPair.Size = new System.Drawing.Size(132, 292);
+            this.listBoxPair.TabIndex = 25;
+            // 
+            // labelJ2J4
+            // 
+            this.labelJ2J4.AutoSize = true;
+            this.labelJ2J4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelJ2J4.Location = new System.Drawing.Point(734, 55);
+            this.labelJ2J4.Name = "labelJ2J4";
+            this.labelJ2J4.Size = new System.Drawing.Size(65, 20);
+            this.labelJ2J4.TabIndex = 24;
+            this.labelJ2J4.Text = "J2 et J4";
+            // 
+            // labelEquipePair
+            // 
+            this.labelEquipePair.AutoSize = true;
+            this.labelEquipePair.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.labelEquipePair.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEquipePair.Location = new System.Drawing.Point(733, 7);
+            this.labelEquipePair.Name = "labelEquipePair";
+            this.labelEquipePair.Size = new System.Drawing.Size(137, 26);
+            this.labelEquipePair.TabIndex = 23;
+            this.labelEquipePair.Text = "Equipe Paire";
+            // 
             // ComptePoints
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(882, 445);
-            this.Controls.Add(this.buttonSuivant);
-            this.Controls.Add(this.labelCumulImpair);
             this.Controls.Add(this.labelCumulPair);
-            this.Controls.Add(this.listBoxImpair);
             this.Controls.Add(this.listBoxPair);
-            this.Controls.Add(this.buttonValide);
-            this.Controls.Add(this.labelTotalImpair);
+            this.Controls.Add(this.labelJ2J4);
+            this.Controls.Add(this.labelEquipePair);
             this.Controls.Add(this.labelTotalPair);
-            this.Controls.Add(this.labelPointsImpair);
-            this.Controls.Add(this.labelImpair1);
             this.Controls.Add(this.labelPair1);
             this.Controls.Add(this.labelPointPair1);
+            this.Controls.Add(this.buttonSuivant);
+            this.Controls.Add(this.labelCumulImpair);
+            this.Controls.Add(this.listBoxImpair);
+            this.Controls.Add(this.buttonValide);
+            this.Controls.Add(this.labelTotalImpair);
+            this.Controls.Add(this.labelPointsImpair);
+            this.Controls.Add(this.labelImpair1);
             this.Controls.Add(this.labelRemporte);
             this.Controls.Add(this.groupAtout);
             this.Controls.Add(this.labelJ1J3);
-            this.Controls.Add(this.labelJ2J4);
             this.Controls.Add(this.labelEquipeImapir);
-            this.Controls.Add(this.labelEquipePair);
             this.Name = "ComptePoints";
             this.Text = "Points_Coupe";
             this.groupAtout.ResumeLayout(false);
@@ -321,9 +321,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label labelEquipePair;
         private System.Windows.Forms.Label labelEquipeImapir;
-        private System.Windows.Forms.Label labelJ2J4;
         private System.Windows.Forms.Label labelJ1J3;
         private System.Windows.Forms.GroupBox groupAtout;
         private System.Windows.Forms.RadioButton radioButtonImpair;
@@ -331,17 +329,19 @@
         private System.Windows.Forms.CheckBox checkBelotteImpair;
         private System.Windows.Forms.CheckBox checkBelottePair;
         private System.Windows.Forms.Label labelRemporte;
-        private System.Windows.Forms.Label labelPointPair1;
-        private System.Windows.Forms.Label labelPair1;
         private System.Windows.Forms.Label labelImpair1;
         private System.Windows.Forms.Label labelPointsImpair;
-        private System.Windows.Forms.Label labelTotalPair;
         private System.Windows.Forms.Label labelTotalImpair;
         private System.Windows.Forms.Button buttonValide;
-        private System.Windows.Forms.ListBox listBoxPair;
         private System.Windows.Forms.ListBox listBoxImpair;
-        private System.Windows.Forms.Label labelCumulPair;
         private System.Windows.Forms.Label labelCumulImpair;
         private System.Windows.Forms.Button buttonSuivant;
+        private System.Windows.Forms.Label labelTotalPair;
+        private System.Windows.Forms.Label labelPair1;
+        private System.Windows.Forms.Label labelPointPair1;
+        private System.Windows.Forms.Label labelCumulPair;
+        private System.Windows.Forms.ListBox listBoxPair;
+        private System.Windows.Forms.Label labelJ2J4;
+        private System.Windows.Forms.Label labelEquipePair;
     }
 }

@@ -15,6 +15,8 @@ namespace CompteurBelotteWindowsForm
         public CouperJeu()
         {
             InitializeComponent();
+            buttonRetournerImpair.Text = " Retourner pile impaire (" + Program.J1.name + " et " + Program.J3.name + ")";
+            buttonRetournerPair.Text = " Retourner pile paire (" + Program.J2.name + " et " + Program.J4.name + ")";
         }
 
         private void buttonRetournerPair_Click(object sender, EventArgs e)

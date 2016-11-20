@@ -79,7 +79,7 @@ namespace CompteurBelotteWindowsForm
             table = new Paquet();
             paquet = new Paquet();
 
-            if (Program.pileImpair.getLength() < 1 && Program.pilePair.getLength() < 1)
+            if (Program.tours < 1 )
             {
                 paquet = new Paquet(false);
 
@@ -87,7 +87,6 @@ namespace CompteurBelotteWindowsForm
             }
             else
             {
-
                 comboCouleur.Visible = true;
                 comboValeur.Visible = true;
                 pictureRetourne.Visible = true;
@@ -134,6 +133,8 @@ namespace CompteurBelotteWindowsForm
 
         private void buttonDonne3_Click(object sender, EventArgs e)
         {
+            paquet.CouperAvecAtout(retourne);
+
             for (int i = donneur; i < donneur + 4; i++)
             {
                 paquet.Distribuer3Cartes(joueurs[i % 4]);
@@ -152,6 +153,8 @@ namespace CompteurBelotteWindowsForm
 
         private void buttonDonne2_Click(object sender, EventArgs e)
         {
+            paquet.CouperAvecAtout(retourne);
+
             for (int i = donneur; i < donneur + 4; i++)
             {
                 paquet.Distribuer2Cartes(joueurs[i % 4]);
@@ -166,10 +169,6 @@ namespace CompteurBelotteWindowsForm
             buttonDonne2.Enabled = false;
 
             UpdateHands();
-
-            Carte retourne = paquet.montrerAtout();
-            pictureRetourne.Image = (Image)Properties.Resources.ResourceManager.GetObject(retourne.ToImageLocation());
-
         }
 
         private void InitCards()
@@ -213,9 +212,24 @@ namespace CompteurBelotteWindowsForm
                 {
                     if (i < joueurs[j].getNbCard())
                     {
-                        //playerCard(j + 1, i + 1).Image = (Image)Properties.Resources.ResourceManager.GetObject(joueurs[j].cartes[i].ToImageLocation());
                         playerCard(j + 1, i + 1).ImageLocation = path + joueurs[j].cartes.getCarte(i).ToImageLocation();
                     }
+                    else
+                    {
+                        playerCard(j + 1, i + 1).ImageLocation = path + cardBack;
+                    }
+                }
+            }
+
+            for (int i = 0; i < 4; i++)
+            {
+                if (i < table.getLength())
+                {
+                    tableCards(i + 1).ImageLocation = path + table.getCarte(i).ToImageLocation();
+                }
+                else
+                {
+                    tableCards(i + 1).ImageLocation = path + cardBack;
                 }
             }
         }
@@ -308,11 +322,25 @@ namespace CompteurBelotteWindowsForm
         private PictureBox playerCard(int player, int cardIndex)
         {
             PictureBox p = new PictureBox();
-            GroupBox gb = groupMain1;
-
-            gb = (player == 1) ? groupMain1 : (player == 2) ? groupMain2 : (player == 3) ? groupMain3 : groupMain4;
+            GroupBox gb = (player == 1) ? groupMain1 : (player == 2) ? groupMain2 : (player == 3) ? groupMain3 : groupMain4;
 
             foreach (PictureBox pb in gb.Controls)
+            {
+                if (pb.Name.Contains(cardIndex.ToString()))
+                {
+                    p = pb;
+                    break;
+                }
+            }
+
+            return p;
+        }
+
+        private PictureBox tableCards(int cardIndex)
+        {
+            PictureBox p = new PictureBox();
+
+            foreach (PictureBox pb in groupTable.Controls)
             {
                 if (pb.Name.Contains(cardIndex.ToString()))
                 {
@@ -331,22 +359,19 @@ namespace CompteurBelotteWindowsForm
             this.Close();
         }
 
-        private void SetCardPlayed(PictureBox p)
+        private void SetCardPlayed(PictureBox p, Joueur j)
         {
-            foreach (PictureBox pb in groupTable.Controls.OfType<PictureBox>().OrderBy(c => c.Name))
+            if (p.ImageLocation != path + cardBack) // not empty space
             {
-                if (pb.ImageLocation == path + cardBack)
-                {
-                    pb.ImageLocation = p.ImageLocation;
-                    Carte c = new Carte(p.ImageLocation);
-                    paquet.Remove(c);
-                    table.AjouterAuPaquet(c);
-                    p.ImageLocation = path + cardBack;
-                    break;
-                }
+                Carte c = new Carte(p.ImageLocation);
+
+                table.AjouterAuPaquet(c);
+                j.cartes.getAllCards().Remove(c);
+
+                historique.Add(new TurnCommand(j.cartes, table, "add"));
+                UpdateHands();
             }
-            // TODO : trouver quel joueur a joué la carte pour REMOVE dans la pile du joueur
-            historique.Add(new TurnCommand(paquet, table, "add"));
+
         }
 
 
@@ -393,12 +418,10 @@ namespace CompteurBelotteWindowsForm
 
         private void cancelPlayCard(PictureBox pic)
         {
-            Carte c = new Carte(pic.ImageLocation);
-            paquet.AjouterAuPaquet(c);
+            //Carte c = new Carte(pic.ImageLocation);
+            //pic.ImageLocation = path + cardBack;
 
-            pic.ImageLocation = path + cardBack;
-
-            historique[historique.Count - 1].Undo();
+            //historique[historique.Count - 1].Undo();
 
             UpdateHands();
         }
@@ -407,20 +430,17 @@ namespace CompteurBelotteWindowsForm
         {
             if (gameIsValid())
             {
-                Carte c1 = new Carte(pictureT1.ImageLocation);
-                c1.SetAtout(c1.couleur == currentAtout);
-                Carte c2 = new Carte(pictureT2.ImageLocation);
-                c2.SetAtout(c2.couleur == currentAtout);
-                Carte c3 = new Carte(pictureT3.ImageLocation);
-                c3.SetAtout(c3.couleur == currentAtout);
-                Carte c4 = new Carte(pictureT4.ImageLocation);
-                c4.SetAtout(c4.couleur == currentAtout);
+                foreach (Carte c in table.getAllCards())
+                {
+                    c.SetAtout(c.couleur == currentAtout);
+                }
 
-                UpdatePoints(c1, c2, c3, c4, winner);
+                UpdatePoints(table.getCarte(0), table.getCarte(1), table.getCarte(2), table.getCarte(3), winner);
 
                 UpdateTurn();
 
                 pictureT1.ImageLocation = pictureT2.ImageLocation = pictureT3.ImageLocation = pictureT4.ImageLocation = path + cardBack;
+
             }
         }
 
@@ -433,6 +453,7 @@ namespace CompteurBelotteWindowsForm
                 pointsImpaire += points;
 
                 Program.pileImpair.AjouterAuPaquet(c1, c2, c3, c4);
+                historique.Add(new TurnCommand(table, Program.pileImpair, "add"));
 
                 if (turn == 8)
                 {
@@ -448,6 +469,7 @@ namespace CompteurBelotteWindowsForm
                 pointsPaire += points;
 
                 Program.pilePair.AjouterAuPaquet(c1, c2, c3, c4);
+                historique.Add(new TurnCommand(table, Program.pilePair, "add"));
 
                 if (turn == 8)
                 {
@@ -459,13 +481,12 @@ namespace CompteurBelotteWindowsForm
                 }
             }
 
-            paquet.Remove(c1);
-            paquet.Remove(c2);
-            paquet.Remove(c3);
-            paquet.Remove(c4);
+            table.getAllCards().Clear();
 
             labelpointimpair.Text = pointsImpaire.ToString();
             labelpointPair.Text = pointsPaire.ToString();
+
+            UpdateHands();
 
         }
 
@@ -518,167 +539,168 @@ namespace CompteurBelotteWindowsForm
 
         private void buttonAnnule_Click_1(object sender, EventArgs e)
         {
-
+            //historique[historique.Count - 1].Undo();
+            //UpdateHands();
         }
 
         private void pickCard1_Click(object sender, EventArgs e)
         {
-            SetCardPlayed(pickCard1);
+            SetCardPlayed(pickCard1, joueurs[0]);
         }
 
         private void pickCard2_Click(object sender, EventArgs e)
         {
-            SetCardPlayed(pickCard2);
+            SetCardPlayed(pickCard2, joueurs[0]);
         }
 
         private void pickCard3_Click(object sender, EventArgs e)
         {
-            SetCardPlayed(pickCard3);
+            SetCardPlayed(pickCard3, joueurs[0]);
         }
 
         private void pickCard4_Click(object sender, EventArgs e)
         {
-            SetCardPlayed(pickCard4);
+            SetCardPlayed(pickCard4, joueurs[0]);
         }
 
         private void pickCard5_Click(object sender, EventArgs e)
         {
-            SetCardPlayed(pickCard5);
+            SetCardPlayed(pickCard5, joueurs[0]);
         }
 
         private void pickCard6_Click(object sender, EventArgs e)
         {
-            SetCardPlayed(pickCard6);
+            SetCardPlayed(pickCard6, joueurs[0]);
         }
 
         private void pickCard7_Click(object sender, EventArgs e)
         {
-            SetCardPlayed(pickCard7);
+            SetCardPlayed(pickCard7, joueurs[0]);
         }
 
         private void pickCard8_Click(object sender, EventArgs e)
         {
-            SetCardPlayed(pickCard8);
+            SetCardPlayed(pickCard8, joueurs[0]);
         }
 
         private void pickTwocard1_Click(object sender, EventArgs e)
         {
-            SetCardPlayed(pickTwocard1);
+            SetCardPlayed(pickTwocard1, joueurs[1]);
         }
 
         private void pickTwocard2_Click(object sender, EventArgs e)
         {
-            SetCardPlayed(pickTwocard2);
+            SetCardPlayed(pickTwocard2, joueurs[1]);
         }
 
         private void pickTwocard3_Click(object sender, EventArgs e)
         {
-            SetCardPlayed(pickTwocard3);
+            SetCardPlayed(pickTwocard3, joueurs[1]);
         }
 
         private void pickTwocard4_Click(object sender, EventArgs e)
         {
-            SetCardPlayed(pickTwocard4);
+            SetCardPlayed(pickTwocard4, joueurs[1]);
         }
 
         private void pickTwocard5_Click(object sender, EventArgs e)
         {
-            SetCardPlayed(pickTwocard5);
+            SetCardPlayed(pickTwocard5, joueurs[1]);
         }
 
         private void pickTwocard6_Click(object sender, EventArgs e)
         {
-            SetCardPlayed(pickTwocard6);
+            SetCardPlayed(pickTwocard6, joueurs[1]);
         }
 
         private void pickTwocard7_Click(object sender, EventArgs e)
         {
-            SetCardPlayed(pickTwocard7);
+            SetCardPlayed(pickTwocard7, joueurs[1]);
         }
 
         private void pickTwocard8_Click(object sender, EventArgs e)
         {
-            SetCardPlayed(pickTwocard8);
+            SetCardPlayed(pickTwocard8, joueurs[1]);
         }
 
         private void pickThree1_Click(object sender, EventArgs e)
         {
-            SetCardPlayed(pickThree1);
+            SetCardPlayed(pickThree1, joueurs[2]);
         }
 
         private void pickThree2_Click(object sender, EventArgs e)
         {
-            SetCardPlayed(pickThree2);
+            SetCardPlayed(pickThree2, joueurs[2]);
         }
 
         private void pickThree3_Click(object sender, EventArgs e)
         {
-            SetCardPlayed(pickThree3);
+            SetCardPlayed(pickThree3, joueurs[2]);
         }
 
         private void pickThree4_Click(object sender, EventArgs e)
         {
-            SetCardPlayed(pickThree4);
+            SetCardPlayed(pickThree4, joueurs[2]);
         }
 
         private void pickThree5_Click(object sender, EventArgs e)
         {
-            SetCardPlayed(pickThree5);
+            SetCardPlayed(pickThree5, joueurs[2]);
         }
 
         private void pickThree6_Click(object sender, EventArgs e)
         {
-            SetCardPlayed(pickThree6);
+            SetCardPlayed(pickThree6, joueurs[2]);
         }
 
         private void pickThree7_Click(object sender, EventArgs e)
         {
-            SetCardPlayed(pickThree7);
+            SetCardPlayed(pickThree7, joueurs[2]);
         }
 
         private void pickThree8_Click(object sender, EventArgs e)
         {
-            SetCardPlayed(pickThree8);
+            SetCardPlayed(pickThree8, joueurs[2]);
         }
 
         private void pickFour1_Click(object sender, EventArgs e)
         {
-            SetCardPlayed(pickFour1);
+            SetCardPlayed(pickFour1, joueurs[3]);
         }
 
         private void pickFour2_Click(object sender, EventArgs e)
         {
-            SetCardPlayed(pickFour2);
+            SetCardPlayed(pickFour2, joueurs[3]);
         }
 
         private void pickFour3_Click(object sender, EventArgs e)
         {
-            SetCardPlayed(pickFour3);
+            SetCardPlayed(pickFour3, joueurs[3]);
         }
 
         private void pickFour4_Click(object sender, EventArgs e)
         {
-            SetCardPlayed(pickFour4);
+            SetCardPlayed(pickFour4, joueurs[3]);
         }
 
         private void pickFour5_Click(object sender, EventArgs e)
         {
-            SetCardPlayed(pickFour5);
+            SetCardPlayed(pickFour5, joueurs[3]);
         }
 
         private void pickFour6_Click(object sender, EventArgs e)
         {
-            SetCardPlayed(pickFour6);
+            SetCardPlayed(pickFour6, joueurs[3]);
         }
 
         private void pickFour7_Click(object sender, EventArgs e)
         {
-            SetCardPlayed(pickFour7);
+            SetCardPlayed(pickFour7, joueurs[3]);
         }
 
         private void pickFour8_Click(object sender, EventArgs e)
         {
-            SetCardPlayed(pickFour8);
+            SetCardPlayed(pickFour8, joueurs[3]);
         }
 
         private void comboDonneur_SelectedIndexChanged(object sender, EventArgs e)
@@ -694,13 +716,13 @@ namespace CompteurBelotteWindowsForm
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             retourne = new Carte((Rang)comboValeur.SelectedIndex, (Couleur)comboCouleur.SelectedIndex);
-            pictureRetourne.ImageLocation = retourne.ToImageLocation();
+            pictureRetourne.ImageLocation =path+ retourne.ToImageLocation();
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             retourne = new Carte((Rang)comboValeur.SelectedIndex, (Couleur)comboCouleur.SelectedIndex);
-            pictureRetourne.ImageLocation = retourne.ToImageLocation();
+            pictureRetourne.ImageLocation =path+ retourne.ToImageLocation();
         }
 
     }

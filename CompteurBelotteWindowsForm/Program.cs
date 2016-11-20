@@ -8,9 +8,8 @@ namespace CompteurBelotteWindowsForm
 {
     static class Program
     {
-        public static int pointsPaire = 0;
-        public static int pointsImpaire = 0;
         public static int maxScore = 1000;
+        public static int tours;
 
         public static Joueur J1, J2, J3, J4;
         public static Paquet pilePair;
@@ -34,6 +33,7 @@ namespace CompteurBelotteWindowsForm
             pilePair = new Paquet();
             pileImpair = new Paquet();
 
+            tours = 0;
             comptePoints = new ComptePoints();
             comptePoints.Hide();
 
