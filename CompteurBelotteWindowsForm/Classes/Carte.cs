@@ -35,7 +35,7 @@ namespace CompteurBelotteWindowsForm
 
         public Carte(string imageName, bool atout = false)
         {
-            imageName = imageName.Remove(0, Program.imgPath.Length);
+            imageName = imageName.Remove(0, DonneesJeu.imgPath.Length);
 
             string[] cardArgs = imageName.Split(new char[] { '_', '.' });
 

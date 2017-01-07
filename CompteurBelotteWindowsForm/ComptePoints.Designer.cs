@@ -89,9 +89,10 @@
             // checkBelotteImpair
             // 
             this.checkBelotteImpair.AutoSize = true;
-            this.checkBelotteImpair.Location = new System.Drawing.Point(164, 18);
+            this.checkBelotteImpair.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.checkBelotteImpair.Location = new System.Drawing.Point(170, 19);
             this.checkBelotteImpair.Name = "checkBelotteImpair";
-            this.checkBelotteImpair.Size = new System.Drawing.Size(59, 17);
+            this.checkBelotteImpair.Size = new System.Drawing.Size(71, 21);
             this.checkBelotteImpair.TabIndex = 3;
             this.checkBelotteImpair.Text = "Belotte";
             this.checkBelotteImpair.UseVisualStyleBackColor = true;
@@ -100,9 +101,10 @@
             // checkBelottePair
             // 
             this.checkBelottePair.AutoSize = true;
-            this.checkBelottePair.Location = new System.Drawing.Point(164, 42);
+            this.checkBelottePair.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.checkBelottePair.Location = new System.Drawing.Point(170, 46);
             this.checkBelottePair.Name = "checkBelottePair";
-            this.checkBelottePair.Size = new System.Drawing.Size(59, 17);
+            this.checkBelottePair.Size = new System.Drawing.Size(71, 21);
             this.checkBelottePair.TabIndex = 2;
             this.checkBelottePair.Text = "Belotte";
             this.checkBelottePair.UseVisualStyleBackColor = true;
@@ -111,9 +113,10 @@
             // radioButtonImpair
             // 
             this.radioButtonImpair.AutoSize = true;
+            this.radioButtonImpair.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.radioButtonImpair.Location = new System.Drawing.Point(9, 18);
             this.radioButtonImpair.Name = "radioButtonImpair";
-            this.radioButtonImpair.Size = new System.Drawing.Size(99, 17);
+            this.radioButtonImpair.Size = new System.Drawing.Size(126, 21);
             this.radioButtonImpair.TabIndex = 1;
             this.radioButtonImpair.TabStop = true;
             this.radioButtonImpair.Text = "Impaire J1 et J3";
@@ -123,9 +126,10 @@
             // radioButtonPair
             // 
             this.radioButtonPair.AutoSize = true;
+            this.radioButtonPair.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.radioButtonPair.Location = new System.Drawing.Point(9, 42);
             this.radioButtonPair.Name = "radioButtonPair";
-            this.radioButtonPair.Size = new System.Drawing.Size(89, 17);
+            this.radioButtonPair.Size = new System.Drawing.Size(113, 21);
             this.radioButtonPair.TabIndex = 0;
             this.radioButtonPair.TabStop = true;
             this.radioButtonPair.Text = "Paire J2 et J4";
@@ -135,12 +139,12 @@
             // labelRemporte
             // 
             this.labelRemporte.AutoSize = true;
-            this.labelRemporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRemporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelRemporte.Location = new System.Drawing.Point(15, 24);
             this.labelRemporte.Name = "labelRemporte";
-            this.labelRemporte.Size = new System.Drawing.Size(135, 20);
+            this.labelRemporte.Size = new System.Drawing.Size(183, 20);
             this.labelRemporte.TabIndex = 7;
-            this.labelRemporte.Text = "Qui à pris l\'atout ?";
+            this.labelRemporte.Text = "Qui avait pris l\'atout ?";
             // 
             // labelImpair1
             // 

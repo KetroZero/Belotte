@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Command.cs" />
+    <Compile Include="Classes\DonneesJeu.cs" />
     <Compile Include="Classes\TurnCommand.cs" />
     <Compile Include="CouperJeu.cs">
       <SubType>Form</SubType>

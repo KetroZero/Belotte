@@ -5,19 +5,21 @@ namespace CompteurBelotteWindowsForm
 {
     public class Paquet
     {
-        private List<Carte> cartes;
+        protected List<Carte> cartes;
+        private int capaciteMax;
         /// <summary>
         /// Create empty deck
         /// </summary>
-        public Paquet()
+        public Paquet(int capacite = 32)
         {
             cartes = new List<Carte>();
+            capaciteMax = capacite;
         }
 
         /// <summary>
         /// Create full deck with 32 cards
         /// </summary>
-        /// <param name="random">True to shuffle the deck, false to initiaite full deck</param>
+        /// <param name="random">True to shuffle the deck, false to initiaite ordered full deck</param>
         public Paquet(bool random)
         {
             cartes = new List<Carte>();
@@ -100,7 +102,7 @@ namespace CompteurBelotteWindowsForm
 
             int index = cartes.IndexOf(retourne);
 
-            int start = (index + 10) % 32; //  get end of pile
+            int start = (index + 12) % 32; //  get end of pile
 
             for (int i = start; i < start + 20; i++) // insert 20 card before reveal Atout
             {
@@ -148,11 +150,11 @@ namespace CompteurBelotteWindowsForm
         // ##### Private #####
         /**********************/
 
-        private void DistribuerNCartes(Joueur j, int nbcartes)
+        private void DistribuerNCartes(Paquet p, int nbcartes)
         {
             for (int i = 0; i < nbcartes; i++)
             {
-                j.ajouterCarte(getCarte(0));
+                p.AjouterAuPaquet(getCarte(0));
                 cartes.RemoveAt(0);
             }
         }
@@ -169,6 +171,29 @@ namespace CompteurBelotteWindowsForm
                 cartes[k] = cartes[n];
                 cartes[n] = temp;
             }
+        }
+
+        public string voirCartes()
+        {
+            string retour = string.Empty;
+
+            for (int i = 0; i < cartes.Count; i++)
+            {
+                retour += "[" + cartes[i].ToString() + "], ";
+            }
+
+            return retour;
+        }
+
+        public string voirCartesShort()
+        {
+            string retour = string.Empty;
+            for (int i = 0; i < cartes.Count; i++)
+            {
+                retour += "[" + cartes[i].ToShortString() + "], ";
+            }
+
+            return retour;
         }
     }
 }

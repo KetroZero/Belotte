@@ -15,6 +15,7 @@ namespace CompteurBelotteWindowsForm
         public CreationEquipe()
         {
             InitializeComponent();
+            DonneesJeu.donneur = DonneesJeu.J1;
         }
 
         private void buttonEquipe_Click(object sender, EventArgs e)
@@ -40,20 +41,20 @@ namespace CompteurBelotteWindowsForm
             {
                 if (TextBoxIsValid(textBoxJ1))
                 {
-                    Program.J1 = new Joueur(1, textBoxJ1.Text);
+                    DonneesJeu.J1 = new Joueur(1, textBoxJ1.Text);
                 }
 
                 if (TextBoxIsValid(textBoxJ1))
                 {
-                    Program.J2 = new Joueur(2, textBoxJ2.Text);
+                    DonneesJeu.J2 = new Joueur(2, textBoxJ2.Text);
                 }
                 if (TextBoxIsValid(textBoxJ1))
                 {
-                    Program.J3 = new Joueur(3, textBoxJ3.Text);
+                    DonneesJeu.J3 = new Joueur(3, textBoxJ3.Text);
                 }
                 if (TextBoxIsValid(textBoxJ1))
                 {
-                    Program.J4 = new Joueur(4, textBoxJ4.Text);
+                    DonneesJeu.J4 = new Joueur(4, textBoxJ4.Text);
                 }
             }
             catch (Exception ex)
@@ -65,11 +66,10 @@ namespace CompteurBelotteWindowsForm
 
             if (!error)
             {
-                Form pile = new Distribuer();
-                pile.Location = this.Location;
-                pile.StartPosition = this.StartPosition;
-                pile.FormClosing += delegate { this.Show(); };
-                pile.Show();
+                Form distribuer = new Distribuer();
+                distribuer.Location = this.Location;
+                distribuer.StartPosition = this.StartPosition;
+                distribuer.Show();
                 this.Hide();
             }
 
@@ -77,39 +77,26 @@ namespace CompteurBelotteWindowsForm
 
         private bool TextBoxIsValid(TextBox control)
         {
-            bool isValid = true;
-            if (string.IsNullOrWhiteSpace(control.Text))
-            {
-                isValid = false;
-                //throw new Exception("Format de nom incorrect.");
-            }
-
-            if (string.IsNullOrEmpty(control.Text))
-            {
-                isValid = false;
-                //throw new Exception("Le nom est vide.");
-            }
-
-            return isValid;
+            return !string.IsNullOrWhiteSpace(control.Text);
         }
 
         private void groupBoxScore_Enter(object sender, EventArgs e)
         {
             if (radioButtonScore1000.Checked)
             {
-                Program.maxScore = int.Parse(radioButtonScore1000.Text);
+                DonneesJeu.maxScore = 1000;//int.Parse(radioButtonScore1000.Text);
             }
 
             if (radioButtonScore1500.Checked)
             {
-                Program.maxScore = int.Parse(radioButtonScore1500.Text);
+                DonneesJeu.maxScore = 1500;//int.Parse(radioButtonScore1500.Text);
             }
 
             if (radioButtonScoreAutre.Checked)
             {
                 try
                 {
-                    Program.maxScore = int.Parse(textBoxScore.Text);
+                    DonneesJeu.maxScore = int.Parse(textBoxScore.Text);
                 }
                 catch (Exception ex)
                 {
@@ -122,7 +109,7 @@ namespace CompteurBelotteWindowsForm
         {
             try
             {
-                Program.maxScore = int.Parse(textBoxScore.Text);
+                DonneesJeu.maxScore = int.Parse(textBoxScore.Text);
             }
             catch (Exception ex)
             {
@@ -133,6 +120,90 @@ namespace CompteurBelotteWindowsForm
         private void radioButtonScoreAutre_CheckedChanged(object sender, EventArgs e)
         {
             textBoxScore.Enabled = radioButtonScoreAutre.Checked;
+        }
+
+        private void textBoxJ1_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(textBoxJ1.Text))
+            {
+                radioDistribuer1.Text = textBoxJ1.Text;
+            }
+            else
+            {
+                radioDistribuer1.Text = "Joueur 1";
+            }
+        }
+
+        private void textBoxJ2_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(textBoxJ2.Text))
+            {
+                radioDistribuer2.Text = textBoxJ2.Text;
+            }
+            else
+            {
+                radioDistribuer2.Text = "Joueur 2";
+            }
+        }
+
+        private void textBoxJ3_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(textBoxJ3.Text))
+            {
+                radioDistribuer3.Text = textBoxJ3.Text;
+            }
+            else
+            {
+                radioDistribuer3.Text = "Joueur 3";
+            }
+
+        }
+
+        private void textBoxJ4_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(textBoxJ4.Text))
+            {
+                radioDistribuer4.Text = textBoxJ4.Text;
+            }
+            else
+            {
+                radioDistribuer4.Text = "Joueur 4";
+            }
+
+        }
+
+        private void radioDistribuer1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioDistribuer1.Checked)
+            {
+                DonneesJeu.donneur = DonneesJeu.J1;
+            }
+        }
+
+        private void radioDistribuer2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioDistribuer2.Checked)
+            {
+                DonneesJeu.donneur = DonneesJeu.J2;
+            }
+        }
+
+        private void radioDistribuer3_CheckedChanged(object sender, EventArgs e)
+        {
+
+            if (radioDistribuer3.Checked)
+            {
+                DonneesJeu.donneur = DonneesJeu.J3;
+            }
+        }
+
+        private void radioDistribuer4_CheckedChanged(object sender, EventArgs e)
+        {
+
+            if (radioDistribuer4.Checked)
+            {
+                DonneesJeu.donneur = DonneesJeu.J4;
+            }
         }
     }
 }

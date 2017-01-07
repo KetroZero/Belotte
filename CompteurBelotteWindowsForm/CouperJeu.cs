@@ -15,27 +15,27 @@ namespace CompteurBelotteWindowsForm
         public CouperJeu()
         {
             InitializeComponent();
-            buttonRetournerImpair.Text = " Retourner pile impaire (" + Program.J1.name + " et " + Program.J3.name + ")";
-            buttonRetournerPair.Text = " Retourner pile paire (" + Program.J2.name + " et " + Program.J4.name + ")";
+            labelPair.Text = DonneesJeu.J1.name + " et " + DonneesJeu.J3.name + " (Impair)";
+            labelImpair.Text = DonneesJeu.J2.name + " et " + DonneesJeu.J4.name + " (Pair)";
         }
 
         private void buttonRetournerPair_Click(object sender, EventArgs e)
         {
-            Program.pilePair.RetournerPaquet();
-            buttonRetournerPair.Text = (buttonRetournerPair.Text == "Annuler") ? "Retourner pile paire" : "Annuler";
+            DonneesJeu.pilePair.RetournerPaquet();
+            buttonRetournerPair.Text = (buttonRetournerPair.Text == "Annuler") ? "Compter et retourner la pile paire" : "Annuler";
         }
 
         private void buttonRetournerImpair_Click(object sender, EventArgs e)
         {
-            Program.pileImpair.RetournerPaquet();
-            buttonRetournerImpair.Text = (buttonRetournerImpair.Text == "Annuler") ? "Retourner pile impaire" : "Annuler";
+            DonneesJeu.pileImpair.RetournerPaquet();
+            buttonRetournerImpair.Text = (buttonRetournerImpair.Text == "Annuler") ? "Compter et retourner la pile impaire" : "Annuler";
         }
 
 
         private void buttonPairDessus_Click(object sender, EventArgs e)
         {
-            Program.pilePair.FusionnerAvec(Program.pileImpair);
-            Program.pilePair.RetournerPaquet();
+            DonneesJeu.pilePair.FusionnerAvec(DonneesJeu.pileImpair);
+            DonneesJeu.pilePair.RetournerPaquet();
 
             buttonPairDessus.Enabled = false;
             buttonImpairDessus.Enabled = false;
@@ -43,8 +43,8 @@ namespace CompteurBelotteWindowsForm
 
         private void buttonImpairDessus_Click(object sender, EventArgs e)
         {
-            Program.pileImpair.FusionnerAvec(Program.pilePair);
-            Program.pileImpair.RetournerPaquet();
+            DonneesJeu.pileImpair.FusionnerAvec(DonneesJeu.pilePair);
+            DonneesJeu.pileImpair.RetournerPaquet();
 
             buttonImpairDessus.Enabled = false;
             buttonPairDessus.Enabled = false;

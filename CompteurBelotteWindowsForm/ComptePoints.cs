@@ -21,8 +21,8 @@ namespace CompteurBelotteWindowsForm
         {
             InitializeComponent();
 
-            labelPair1.Text = radioButtonPair.Text = Program.J2.name + " et " + Program.J4.name + " (Paire)";
-            labelImpair1.Text = radioButtonImpair.Text = Program.J1.name + " et " + Program.J3.name + " (Impaire)";
+            labelPair1.Text = radioButtonPair.Text = DonneesJeu.J2.name + " et " + DonneesJeu.J4.name + " (Paire)";
+            labelImpair1.Text = radioButtonImpair.Text = DonneesJeu.J1.name + " et " + DonneesJeu.J3.name + " (Impaire)";
         }
 
         public void SetPoints(int pair, int impair)
@@ -123,25 +123,25 @@ namespace CompteurBelotteWindowsForm
 
         private void buttonValide_Click(object sender, EventArgs e)
         {
-            listBoxPair.Items.Add(totalPair);
-            listBoxImpair.Items.Add(totalImpair);
-
             buttonValide.Enabled = false;
-
             buttonSuivant.Enabled = true;
             buttonSuivant.Visible = true;
 
-            int cumulPair = 0;
-            foreach (int i in listBoxPair.Items)
+            DonneesJeu.pointsImpairsParManche.Add(totalPair);
+            DonneesJeu.pointsPairsParManche.Add(totalImpair);
+
+            foreach (int p in DonneesJeu.pointsImpairsParManche)
             {
-                cumulPair += i;
+                listBoxImpair.Items.Add(p);
             }
 
-            int cumulImpair = 0;
-            foreach (int i in listBoxImpair.Items)
+            foreach (int p in DonneesJeu.pointsPairsParManche)
             {
-                cumulImpair += i;
+                listBoxPair.Items.Add(p);
             }
+
+            int cumulPair = DonneesJeu.pointsPairsParManche.Sum();
+            int cumulImpair = DonneesJeu.pointsImpairsParManche.Sum();
 
             labelCumulPair.Text = "Cumule [ " + cumulPair + " ]";
             labelCumulImpair.Text = "Cumule [ " + cumulImpair + " ]";
@@ -171,7 +171,7 @@ namespace CompteurBelotteWindowsForm
 
         private void buttonSuivant_Click(object sender, EventArgs e)
         {
-            Program.tours++;
+            DonneesJeu.tours++;
 
             Form form = new CouperJeu();
             form.Location = this.Location;

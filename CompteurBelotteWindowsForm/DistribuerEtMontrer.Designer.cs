@@ -82,7 +82,6 @@
             this.labelPair2 = new System.Windows.Forms.Label();
             this.buttonImpair = new System.Windows.Forms.Button();
             this.buttonPair = new System.Windows.Forms.Button();
-            this.comboDonneur = new System.Windows.Forms.ComboBox();
             this.labelDonneur = new System.Windows.Forms.Label();
             this.labelpointimpair = new System.Windows.Forms.Label();
             this.labelpointPair = new System.Windows.Forms.Label();
@@ -96,6 +95,7 @@
             this.labelCouleur = new System.Windows.Forms.Label();
             this.comboValeur = new System.Windows.Forms.ComboBox();
             this.labelValeur = new System.Windows.Forms.Label();
+            this.labelNomDonneur = new System.Windows.Forms.Label();
             this.groupMain1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pickCard8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pickCard7)).BeginInit();
@@ -760,7 +760,7 @@
             // 
             this.buttonImpair.BackColor = System.Drawing.SystemColors.Info;
             this.buttonImpair.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonImpair.Location = new System.Drawing.Point(606, 29);
+            this.buttonImpair.Location = new System.Drawing.Point(606, 24);
             this.buttonImpair.Name = "buttonImpair";
             this.buttonImpair.Size = new System.Drawing.Size(170, 70);
             this.buttonImpair.TabIndex = 20;
@@ -780,23 +780,13 @@
             this.buttonPair.UseVisualStyleBackColor = false;
             this.buttonPair.Click += new System.EventHandler(this.buttonPair_Click);
             // 
-            // comboDonneur
-            // 
-            this.comboDonneur.FormattingEnabled = true;
-            this.comboDonneur.Location = new System.Drawing.Point(17, 47);
-            this.comboDonneur.Name = "comboDonneur";
-            this.comboDonneur.Size = new System.Drawing.Size(94, 21);
-            this.comboDonneur.TabIndex = 24;
-            this.comboDonneur.Text = "-Donneur-";
-            this.comboDonneur.SelectedIndexChanged += new System.EventHandler(this.comboDonneur_SelectedIndexChanged);
-            // 
             // labelDonneur
             // 
             this.labelDonneur.AutoSize = true;
-            this.labelDonneur.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDonneur.Location = new System.Drawing.Point(16, 24);
+            this.labelDonneur.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDonneur.Location = new System.Drawing.Point(20, 16);
             this.labelDonneur.Name = "labelDonneur";
-            this.labelDonneur.Size = new System.Drawing.Size(71, 20);
+            this.labelDonneur.Size = new System.Drawing.Size(78, 20);
             this.labelDonneur.TabIndex = 23;
             this.labelDonneur.Text = "Donneur";
             // 
@@ -940,11 +930,22 @@
             this.labelValeur.TabIndex = 32;
             this.labelValeur.Text = "Valeur";
             // 
+            // labelNomDonneur
+            // 
+            this.labelNomDonneur.AutoSize = true;
+            this.labelNomDonneur.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.labelNomDonneur.Location = new System.Drawing.Point(20, 48);
+            this.labelNomDonneur.Name = "labelNomDonneur";
+            this.labelNomDonneur.Size = new System.Drawing.Size(71, 20);
+            this.labelNomDonneur.TabIndex = 34;
+            this.labelNomDonneur.Text = "Donneur";
+            // 
             // Distribuer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1259, 840);
+            this.Controls.Add(this.labelNomDonneur);
             this.Controls.Add(this.comboValeur);
             this.Controls.Add(this.labelValeur);
             this.Controls.Add(this.comboCouleur);
@@ -954,7 +955,6 @@
             this.Controls.Add(this.buttonAnnule);
             this.Controls.Add(this.labelpointimpair);
             this.Controls.Add(this.labelpointPair);
-            this.Controls.Add(this.comboDonneur);
             this.Controls.Add(this.labelDonneur);
             this.Controls.Add(this.labelImpair2);
             this.Controls.Add(this.labelPair2);
@@ -1083,7 +1083,6 @@
         private System.Windows.Forms.Label labelPair2;
         private System.Windows.Forms.Button buttonImpair;
         private System.Windows.Forms.Button buttonPair;
-        private System.Windows.Forms.ComboBox comboDonneur;
         private System.Windows.Forms.Label labelDonneur;
         private System.Windows.Forms.Label labelpointimpair;
         private System.Windows.Forms.Label labelpointPair;
@@ -1094,5 +1093,6 @@
         private System.Windows.Forms.Label labelCouleur;
         private System.Windows.Forms.ComboBox comboValeur;
         private System.Windows.Forms.Label labelValeur;
+        private System.Windows.Forms.Label labelNomDonneur;
     }
 }
