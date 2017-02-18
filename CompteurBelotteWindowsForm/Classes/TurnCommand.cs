@@ -6,52 +6,32 @@ using System.Threading.Tasks;
 
 namespace CompteurBelotteWindowsForm
 {
-    class TurnCommand : Command
+    class TurnCommand 
     {
-        public Paquet source;
-        public Paquet destination;
+        public Paquet source { get; private set; }
+        public Paquet destination { get; private set; }
+        public Carte carte { get; private set; }
 
-        public string action = "add";
 
-        public TurnCommand(Paquet source, Paquet destination, string act)
+        public TurnCommand(Paquet source, Paquet destination, Carte carte)
         {
             this.source = source;
             this.destination = destination;
-            action = act;
+            this.carte = carte;
+
+            Transferer();
         }
 
-        public override void Undo()
+        private void Transferer()
         {
-            if (action == "add")
-            {
-                Remove(source, destination);
-            }
-            else
-            {
-                Add(source, destination);
-            }
+            destination.AjouterAuPaquet(carte);
+            source.Remove(carte);
         }
 
-        public override void Redo()
+        public void Annuler()
         {
-            if (action == "add")
-            {
-                Add(source, destination);
-            }
-            else
-            {
-                Remove(source, destination);
-            }
-        }
-
-        private void Add(Paquet source, Paquet destination)
-        {
-            destination.AjouterAuPaquet(source.getCarte(0));
-        }
-
-        private void Remove(Paquet source, Paquet destination)
-        {
-            source.AjouterAuPaquet(destination.getCarte(0));
+            source.AjouterAuPaquet(carte);
+            destination.Remove(carte);
         }
     }
 }

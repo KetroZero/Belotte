@@ -350,16 +350,17 @@ namespace CompteurBelotteWindowsForm
                 {
                     Carte c = new Carte(p.ImageLocation);
 
-                    table.AjouterAuPaquet(c);
-                    j.getAllCards().Remove(c);
-
-                    historique.Add(new TurnCommand(j, table, "add"));
-                    UpdateHands();
+                    TransfertAndHistorique(j, table, c);
                 }
             }
         }
 
-
+        private void TransfertAndHistorique(Paquet source, Paquet destination, Carte c)
+        {
+            TurnCommand tc = new TurnCommand(source, destination, c);
+            historique.Add(tc);
+            UpdateHands();
+        }
 
         private void UpdateTurn()
         {
@@ -405,12 +406,18 @@ namespace CompteurBelotteWindowsForm
 
         private void cancelPlayCard(PictureBox pic)
         {
-            //Carte c = new Carte(pic.ImageLocation);
-            //pic.ImageLocation = path + cardBack;
+            Carte c = new Carte(pic.ImageLocation);
 
-            //historique[historique.Count - 1].Undo();
+            if (pic.ImageLocation != string.Concat(path + cardBack))
+            {
+                pic.ImageLocation = path + cardBack;
 
-            UpdateHands();
+                int index = historique.Count - 1;
+                historique[index].Annuler();
+                historique.RemoveAt(index);
+
+                UpdateHands();
+            }
         }
 
         private void discardPlayCard(int winner)
@@ -439,8 +446,11 @@ namespace CompteurBelotteWindowsForm
             {
                 pointsImpaire += points;
 
-                DonneesJeu.pileImpair.AjouterAuPaquet(c1, c2, c3, c4);
-                historique.Add(new TurnCommand(table, DonneesJeu.pileImpair, "add"));
+                //DonneesJeu.pileImpair.AjouterAuPaquet(c1, c2, c3, c4);
+                TransfertAndHistorique(table, DonneesJeu.pileImpair, c4);
+                TransfertAndHistorique(table, DonneesJeu.pileImpair, c3);
+                TransfertAndHistorique(table, DonneesJeu.pileImpair, c2);
+                TransfertAndHistorique(table, DonneesJeu.pileImpair, c1);
 
                 if (turn == 8)
                 {
@@ -455,8 +465,11 @@ namespace CompteurBelotteWindowsForm
             {
                 pointsPaire += points;
 
-                DonneesJeu.pilePair.AjouterAuPaquet(c1, c2, c3, c4);
-                historique.Add(new TurnCommand(table, DonneesJeu.pilePair, "add"));
+                //DonneesJeu.pilePair.AjouterAuPaquet(c1, c2, c3, c4);
+                TransfertAndHistorique(table, DonneesJeu.pilePair, c4);
+                TransfertAndHistorique(table, DonneesJeu.pilePair, c3);
+                TransfertAndHistorique(table, DonneesJeu.pilePair, c2);
+                TransfertAndHistorique(table, DonneesJeu.pilePair, c1);
 
                 if (turn == 8)
                 {
@@ -468,7 +481,7 @@ namespace CompteurBelotteWindowsForm
                 }
             }
 
-            table.getAllCards().Clear();
+            //table.getAllCards().Clear();
 
             labelpointimpair.Text = pointsImpaire.ToString();
             labelpointPair.Text = pointsPaire.ToString();
@@ -526,8 +539,27 @@ namespace CompteurBelotteWindowsForm
 
         private void buttonAnnule_Click_1(object sender, EventArgs e)
         {
-            //historique[historique.Count - 1].Undo();
-            //UpdateHands();
+            // vide la table avant de restaurer la main precedante
+            int tidx = table.getLength();
+            for (int j = tidx; j > 0; j--)
+            {
+                int index = historique.Count - 1;
+                historique[index].Annuler();
+                historique.RemoveAt(index);
+            }
+
+            int hindex = historique.Count - 1;
+            // annule les cartes et les points dans la pile paire/impaire
+            if (historique[hindex].source == table)
+            {
+                for (int i = hindex; i > hindex - 4; i--)
+                {
+                    historique[i].Annuler();
+                }
+                historique.RemoveRange(hindex - 4, 4);
+            }
+
+            UpdateHands();
         }
 
         private void pickCard1_Click(object sender, EventArgs e)

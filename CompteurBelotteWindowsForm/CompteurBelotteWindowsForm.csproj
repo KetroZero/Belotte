@@ -44,7 +44,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\Command.cs" />
     <Compile Include="Classes\DonneesJeu.cs" />
     <Compile Include="Classes\TurnCommand.cs" />
     <Compile Include="CouperJeu.cs">
