@@ -541,7 +541,7 @@ namespace CompteurBelotteWindowsForm
         {
             // vide la table avant de restaurer la main precedante
             int tidx = table.getLength();
-            for (int j = tidx; j > 0; j--)
+            for (int j = 0; j<tidx; j++)
             {
                 int index = historique.Count - 1;
                 historique[index].Annuler();
