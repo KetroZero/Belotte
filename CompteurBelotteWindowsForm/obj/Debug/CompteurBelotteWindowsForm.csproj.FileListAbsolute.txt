@@ -9,3 +9,4 @@ C:\Users\Utilisateur\Documents\Projets_Visual_Studio\BelotteWindowsForm\Compteur
 C:\Users\Utilisateur\Documents\Projets_Visual_Studio\BelotteWindowsForm\CompteurBelotteWindowsForm\obj\Debug\CompteurBelotteWindowsForm.csproj.GenerateResource.Cache
 C:\Users\Utilisateur\Documents\Projets_Visual_Studio\BelotteWindowsForm\CompteurBelotteWindowsForm\obj\Debug\CompteurBelotteWindowsForm.exe
 C:\Users\Utilisateur\Documents\Projets_Visual_Studio\BelotteWindowsForm\CompteurBelotteWindowsForm\obj\Debug\CompteurBelotteWindowsForm.pdb
+C:\Users\Utilisateur\Documents\Projets_Visual_Studio\BelotteWindowsForm\CompteurBelotteWindowsForm\obj\Debug\CompteurBelotteWindowsForm.csprojResolveAssemblyReference.cache

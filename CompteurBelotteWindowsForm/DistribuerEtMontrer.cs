@@ -412,9 +412,7 @@ namespace CompteurBelotteWindowsForm
             {
                 pic.ImageLocation = path + cardBack;
 
-                int index = historique.Count - 1;
-                historique[index].Annuler();
-                historique.RemoveAt(index);
+                Undo();
 
                 UpdateHands();
             }
@@ -539,27 +537,42 @@ namespace CompteurBelotteWindowsForm
 
         private void buttonAnnule_Click_1(object sender, EventArgs e)
         {
-            // vide la table avant de restaurer la main precedante
-            int tidx = table.getLength();
-            for (int j = 0; j<tidx; j++)
+            // annulation impossible avant
+            if (historique.Count > 0)
             {
-                int index = historique.Count - 1;
+                // vide la table avant de restaurer la main precedante
+                int tidx = table.getLength();
+                for (int j = 0; j < tidx; j++)
+                {
+                    Undo();
+                }
+
+                int hindex = historique.Count - 1;
+                // verifier par rapport au remove précédant
+                if (hindex > 0)
+                {
+                    // annule les cartes et les points dans la pile paire/impaire
+                    if (historique[hindex].source == table)
+                    {
+                        for (int i = hindex; i > hindex - 4; i--)
+                        {
+                            Undo();
+                        }
+                    }
+
+                    UpdateHands();
+                }
+            }
+        }
+
+        private void Undo()
+        {
+            int index = historique.Count - 1;
+            if (index >= 0)
+            {
                 historique[index].Annuler();
                 historique.RemoveAt(index);
             }
-
-            int hindex = historique.Count - 1;
-            // annule les cartes et les points dans la pile paire/impaire
-            if (historique[hindex].source == table)
-            {
-                for (int i = hindex; i > hindex - 4; i--)
-                {
-                    historique[i].Annuler();
-                }
-                historique.RemoveRange(hindex - 4, 4);
-            }
-
-            UpdateHands();
         }
 
         private void pickCard1_Click(object sender, EventArgs e)
