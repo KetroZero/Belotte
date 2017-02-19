@@ -1,0 +1,17 @@
+﻿<UserControl x:Class="WpfBelotte.views.PlayerCardsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" >
+    <StackPanel Orientation="Horizontal">
+        <Image Source="C:\Users\Utilisateur\Documents\Projets_Visual_Studio\BelotteWindowsForm\CompteurBelotteWindowsForm\Resources\carte_dos.bmp"/>
+        <Image Source="C:\Users\Utilisateur\Documents\Projets_Visual_Studio\BelotteWindowsForm\CompteurBelotteWindowsForm\Resources\carte_dos.bmp"/>
+        <Image Source="C:\Users\Utilisateur\Documents\Projets_Visual_Studio\BelotteWindowsForm\CompteurBelotteWindowsForm\Resources\carte_dos.bmp"/>
+        <Image Source="C:\Users\Utilisateur\Documents\Projets_Visual_Studio\BelotteWindowsForm\CompteurBelotteWindowsForm\Resources\carte_dos.bmp"/>
+        <Image Source="C:\Users\Utilisateur\Documents\Projets_Visual_Studio\BelotteWindowsForm\CompteurBelotteWindowsForm\Resources\carte_dos.bmp"/>
+        <Image Source="C:\Users\Utilisateur\Documents\Projets_Visual_Studio\BelotteWindowsForm\CompteurBelotteWindowsForm\Resources\carte_dos.bmp"/>
+        <Image Source="C:\Users\Utilisateur\Documents\Projets_Visual_Studio\BelotteWindowsForm\CompteurBelotteWindowsForm\Resources\carte_dos.bmp"/>
+        <Image Source="C:\Users\Utilisateur\Documents\Projets_Visual_Studio\BelotteWindowsForm\CompteurBelotteWindowsForm\Resources\carte_dos.bmp"/>
+    </StackPanel>
+</UserControl>
