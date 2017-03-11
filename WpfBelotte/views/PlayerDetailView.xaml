@@ -1,0 +1,41 @@
+﻿<UserControl x:Class="WpfBelotte.views.PlayerDetailView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:view="clr-namespace:WpfBelotte.views"
+             mc:Ignorable="d" >
+
+    <StackPanel Orientation="Vertical">
+        <!--<StackPanel.Style>
+            <Style TargetType="StackPanel">
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding Equipe, Converter={StaticResource ToColor}}">
+                        <Setter Property="Background" Value="{Binding}"/>
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+        </StackPanel.Style>-->
+        
+        <StackPanel Orientation="Horizontal">
+            <Label Content="{Binding Nom}" />
+            <Label Content="{Binding Equipe}"/>
+            
+            <StackPanel.Style>
+                <Style TargetType="StackPanel">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Equipe, Converter={StaticResource ToBool}}" Value="False">
+                            <Setter Property="Background" Value="RosyBrown"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Equipe, Converter={StaticResource ToBool}}" Value="True">
+                            <Setter Property="Background" Value="Aqua"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </StackPanel.Style>
+        </StackPanel>
+
+        <view:PlayerCardsView DataContext="{Binding ImagesCartes}"/>
+    </StackPanel>
+
+</UserControl>
