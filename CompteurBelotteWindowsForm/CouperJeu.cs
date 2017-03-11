@@ -15,8 +15,8 @@ namespace CompteurBelotteWindowsForm
         public CouperJeu()
         {
             InitializeComponent();
-            labelPair.Text = DonneesJeu.J1.name + " et " + DonneesJeu.J3.name + " (Impair)";
-            labelImpair.Text = DonneesJeu.J2.name + " et " + DonneesJeu.J4.name + " (Pair)";
+            labelPair.Text = DonneesJeu.J1.nom + " et " + DonneesJeu.J3.nom + " (Impair)";
+            labelImpair.Text = DonneesJeu.J2.nom + " et " + DonneesJeu.J4.nom + " (Pair)";
         }
 
         private void buttonRetournerPair_Click(object sender, EventArgs e)

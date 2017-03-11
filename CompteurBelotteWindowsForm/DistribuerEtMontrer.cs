@@ -37,15 +37,15 @@ namespace CompteurBelotteWindowsForm
 
             this.Text = "Belotte - Main des joueurs - Tour (" + turn + "/8)";
 
-            labelJ1.Text = DonneesJeu.J1.name;
-            labelJ2.Text = DonneesJeu.J2.name;
-            labelJ3.Text = DonneesJeu.J3.name;
-            labelJ4.Text = DonneesJeu.J4.name;
+            labelJ1.Text = DonneesJeu.J1.nom;
+            labelJ2.Text = DonneesJeu.J2.nom;
+            labelJ3.Text = DonneesJeu.J3.nom;
+            labelJ4.Text = DonneesJeu.J4.nom;
 
-            labelImpair2.Text = DonneesJeu.J1.name + " et " + DonneesJeu.J3.name;
+            labelImpair2.Text = DonneesJeu.J1.nom + " et " + DonneesJeu.J3.nom;
             labelpointimpair.Text = "0";
 
-            labelPair2.Text = DonneesJeu.J2.name + " et " + DonneesJeu.J4.name;
+            labelPair2.Text = DonneesJeu.J2.nom + " et " + DonneesJeu.J4.nom;
             labelpointPair.Text = "0";
 
 
@@ -67,7 +67,7 @@ namespace CompteurBelotteWindowsForm
             comboValeur.DropDownStyle = ComboBoxStyle.DropDownList;
 
             joueurs = new Joueur[] { DonneesJeu.J4, DonneesJeu.J1, DonneesJeu.J2, DonneesJeu.J3 };
-            labelNomDonneur.Text = DonneesJeu.donneur.name;
+            labelNomDonneur.Text = DonneesJeu.donneur.nom;
             donneur = DonneesJeu.donneur.numero;
 
             InitCards();

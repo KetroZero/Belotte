@@ -2,14 +2,30 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:view="clr-namespace:WpfBelotte.views"
-        Title="MainWindow" Height="350" Width="525">
+        Title="Moniteur de cartes - Belotte" Height="750" Width="825">
+
     <StackPanel>
         <TabControl>
             <TabItem Header="Scores">
                 <view:ScoreView/>
             </TabItem>
             <TabItem Header="Jeu">
-                <view:PlayerCardsView/>
+                <StackPanel>
+                    <ListBox ItemsSource="{Binding Joueurs}" HorizontalAlignment="Left">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <view:PlayerDetailView DataContext="{Binding}" />
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                    <view:TableCardsView DataContext="{Binding Table}" HorizontalAlignment="Left" Margin="86,0,0,0"/>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Equipe">
+                <view:CreateTeamView/>
+            </TabItem>
+            <TabItem Header="Table">
+                <view:TableCardsView/>
             </TabItem>
         </TabControl>
     </StackPanel>

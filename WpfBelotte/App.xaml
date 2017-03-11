@@ -1,8 +1,10 @@
 ﻿<Application x:Class="WpfBelotte.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:converters="clr-namespace:WpfBelotte.converters"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <converters:StringToImageConverter x:Key="ToImage"/>
+        <converters:EquipeToBoolConverter x:Key="ToBool"/>
     </Application.Resources>
 </Application>

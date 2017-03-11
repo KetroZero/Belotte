@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\DonneesJeu.cs" />
+    <Compile Include="Classes\Equipe.cs" />
     <Compile Include="Classes\TurnCommand.cs" />
     <Compile Include="CouperJeu.cs">
       <SubType>Form</SubType>
@@ -114,39 +115,105 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\10_Ca.bmp" />
-    <Content Include="Resources\10_Co.bmp" />
-    <Content Include="Resources\10_P.bmp" />
-    <Content Include="Resources\10_T.bmp" />
-    <Content Include="Resources\7_Ca.bmp" />
-    <Content Include="Resources\7_Co.bmp" />
-    <Content Include="Resources\7_P.bmp" />
-    <Content Include="Resources\7_T.bmp" />
-    <Content Include="Resources\8_Ca.bmp" />
-    <Content Include="Resources\8_Co.bmp" />
-    <Content Include="Resources\8_P.bmp" />
-    <Content Include="Resources\8_T.bmp" />
-    <Content Include="Resources\9_Ca.bmp" />
-    <Content Include="Resources\9_Co.bmp" />
-    <Content Include="Resources\9_P.bmp" />
-    <Content Include="Resources\9_T.bmp" />
-    <Content Include="Resources\A_Ca.bmp" />
-    <Content Include="Resources\A_Co.bmp" />
-    <Content Include="Resources\A_P.bmp" />
-    <Content Include="Resources\A_T.bmp" />
-    <Content Include="Resources\carte_dos.bmp" />
-    <Content Include="Resources\J_Ca.bmp" />
-    <Content Include="Resources\J_Co.bmp" />
-    <Content Include="Resources\J_P.bmp" />
-    <Content Include="Resources\J_T.bmp" />
-    <Content Include="Resources\K_Ca.bmp" />
-    <Content Include="Resources\K_Co.bmp" />
-    <Content Include="Resources\K_P.bmp" />
-    <Content Include="Resources\K_T.bmp" />
-    <Content Include="Resources\Q_Ca.bmp" />
-    <Content Include="Resources\Q_Co.bmp" />
-    <Content Include="Resources\Q_P.bmp" />
-    <Content Include="Resources\Q_T.bmp" />
+    <Content Include="Resources\10_Ca.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\10_Co.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\10_P.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\10_T.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\7_Ca.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\7_Co.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\7_P.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\7_T.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\8_Ca.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\8_Co.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\8_P.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\8_T.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\9_Ca.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\9_Co.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\9_P.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\9_T.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\A_Ca.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\A_Co.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\A_P.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\A_T.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\carte_dos.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\J_Ca.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\J_Co.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\J_P.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\J_T.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\K_Ca.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\K_Co.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\K_P.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\K_T.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Q_Ca.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Q_Co.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Q_P.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Q_T.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
