@@ -12,7 +12,7 @@ namespace WpfBelotte.models
     public class JoueurModel : ViewModelBase
     {
         private Joueur joueur;
-        private List<CarteModel> cartesModel;
+        private List<CarteModel> cartesModel;                    
 
         public JoueurModel(Joueur j)
         {

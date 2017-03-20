@@ -21,10 +21,12 @@ namespace WpfBelotte.converters
             string defaultImage = "carte_dos.bmp";
             string prefix = "/WpfBelotte;component/images/";
 
-            if (value == null) { value = defaultImage; }
+            if (value == null) { value = defaultImage as string; }
+            if (string.IsNullOrEmpty(value.ToString())) { value = defaultImage as string; }
+            if (value.ToString().Contains("carte")) { value = defaultImage as string; }
             
 
-            return string.Concat(prefix, value);
+            return string.Concat(prefix, value.ToString());
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)

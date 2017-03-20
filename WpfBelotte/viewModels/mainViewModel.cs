@@ -20,8 +20,10 @@ namespace WpfBelotte.viewModels
         //** Private 
         //****************
 
-        private Joueur[] joueurs;
-        private JoueurModel[] joueursModel;
+        //Models
+        private Joueur[] joueurs;// = new Joueur[4];
+        private JoueurModel[] joueursModel;// = new JoueurModel[4];
+        private ScoresModel scoresModel;
         private TableModel table;
 
         //****************
@@ -37,12 +39,17 @@ namespace WpfBelotte.viewModels
         public Paquet pilePair;
         public Paquet pileImpair;
 
-        public List<int> pointsPairsParManche;
-        public List<int> pointsImpairsParManche;
-
-
 
         public mainViewModel()
+        {
+            pilePair = new Paquet();
+            pileImpair = new Paquet();
+
+            paquetJeu = new Paquet(false);
+
+            InitFirstPlay();
+        }
+        private void InitFirstPlay()
         {
             joueurs = new Joueur[nbJoueurs]
             {
@@ -52,37 +59,6 @@ namespace WpfBelotte.viewModels
                 new Joueur(3,"J3")
             };
 
-            //joueursModel = new JoueurModel[nbJoueurs]
-            // {
-            //     new JoueurModel(joueurs[0]),
-            //     new JoueurModel(joueurs[1]),
-            //     new JoueurModel(joueurs[2]),
-            //     new JoueurModel(joueurs[3])
-            // };
-
-            pilePair = new Paquet();
-            pileImpair = new Paquet();
-
-            pointsPairsParManche = new List<int>();
-            pointsImpairsParManche = new List<int>();
-
-            paquetJeu = new Paquet(false);
-
-            InitFirstPlay();
-        }
-
-        public JoueurModel[] Joueurs
-        {
-            get { return joueursModel; }
-        }
-
-        public TableModel Table
-        {
-            get { return table; }
-        }
-
-        private void InitFirstPlay()
-        {
             for (int i = idDonneur + 1; i < idDonneur + 1 + nbJoueurs; i++)
             {
                 paquetJeu.Distribuer3Cartes(joueurs[i % nbJoueurs]);
@@ -98,12 +74,47 @@ namespace WpfBelotte.viewModels
                 new JoueurModel(joueurs[3])
             };
 
-            var tableTemp = new Paquet();
-            tableTemp.AjouterAuPaquet(new Carte(Rang.As, Couleur.Carreau));
-            tableTemp.AjouterAuPaquet(new Carte(Rang.As, Couleur.Carreau));
-            tableTemp.AjouterAuPaquet(new Carte(Rang.As, Couleur.Carreau));
-            tableTemp.AjouterAuPaquet(new Carte(Rang.As, Couleur.Carreau));
+            var tableTemp = new Paquet(4);
+            tableTemp.AjouterAuPaquet(new Carte("carte_dos"));
+            tableTemp.AjouterAuPaquet(new Carte("carte_dos"));
+            tableTemp.AjouterAuPaquet(new Carte("carte_dos"));
+            tableTemp.AjouterAuPaquet(new Carte("carte_dos"));
             table = new TableModel(tableTemp);
+
+            scoresModel = new ScoresModel();
         }
+
+        public JoueurModel[] Joueurs
+        {
+            get { return joueursModel; }
+        }
+        public JoueurModel J1
+        {
+            get { return joueursModel[1]; }
+        }
+        public JoueurModel J2
+        {
+            get { return joueursModel[2]; }
+        }
+        public JoueurModel J3
+        {
+            get { return joueursModel[3]; }
+        }
+        public JoueurModel J4
+        {
+            get { return joueursModel[0]; }
+        }
+
+        public TableModel Table
+        {
+            get { return table; }
+        }
+
+        public ScoresModel Scores
+        {
+            get { return scoresModel; }
+        }
+
+   
     }
 }

@@ -7,12 +7,12 @@
              mc:Ignorable="d" >
     <StackPanel Orientation="Vertical">
         <StackPanel Orientation="Horizontal">
-            <view:SetNameView BorderThickness="2" BorderBrush="RosyBrown"/>
-            <view:SetNameView BorderThickness="2" BorderBrush="RosyBrown"/>
+            <view:SetNameView BorderThickness="2" BorderBrush="RosyBrown" DataContext="{Binding J2}" Margin="5"/>
+            <view:SetNameView BorderThickness="2" BorderBrush="RosyBrown" DataContext="{Binding J4}" Margin="5"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
-            <view:SetNameView BorderThickness="2" BorderBrush="Aqua"/>
-            <view:SetNameView BorderThickness="2" BorderBrush="Aqua"/>
+            <view:SetNameView BorderThickness="2" BorderBrush="Aqua" DataContext="{Binding J1}" Margin="5"/>
+            <view:SetNameView BorderThickness="2" BorderBrush="Aqua" DataContext="{Binding J3}" Margin="5"/>
         </StackPanel>
 
         <StackPanel Orientation="Horizontal">

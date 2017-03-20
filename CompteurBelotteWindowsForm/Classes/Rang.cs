@@ -7,5 +7,5 @@
     Valet,
     Dame,
     Roi,
-    As
+    As,
 }

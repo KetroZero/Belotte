@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" >
     <StackPanel Orientation="Horizontal">
-        <Label Content="J2" Margin="5" />
-        <TextBox Text="Joueur 2" Margin="5" Width="120px" TextAlignment="Center"/>
+        <Label Content="{Binding Nom}" Margin="5" />
+        <TextBox Text="{Binding Nom}" Margin="5" Width="120" TextAlignment="Center"/>
     </StackPanel>
 </UserControl>

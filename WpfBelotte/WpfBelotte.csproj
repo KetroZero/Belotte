@@ -67,9 +67,9 @@
     </ApplicationDefinition>
     <Compile Include="converters\EquipeToBoolConverter.cs" />
     <Compile Include="converters\StringToImageConverter.cs" />
-    <Compile Include="DonneesJeu.cs" />
     <Compile Include="models\CarteModel.cs" />
     <Compile Include="models\JoueurModel.cs" />
+    <Compile Include="models\ScoresModel.cs" />
     <Compile Include="models\TableModel.cs" />
     <Compile Include="viewModels\mainViewModel.cs" />
     <Compile Include="views\CreateTeamView.xaml.cs">

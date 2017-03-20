@@ -7,15 +7,6 @@
              mc:Ignorable="d" >
 
     <StackPanel Orientation="Vertical">
-        <!--<StackPanel.Style>
-            <Style TargetType="StackPanel">
-                <Style.Triggers>
-                    <DataTrigger Binding="{Binding Equipe, Converter={StaticResource ToColor}}">
-                        <Setter Property="Background" Value="{Binding}"/>
-                    </DataTrigger>
-                </Style.Triggers>
-            </Style>
-        </StackPanel.Style>-->
         
         <StackPanel Orientation="Horizontal">
             <Label Content="{Binding Nom}" />

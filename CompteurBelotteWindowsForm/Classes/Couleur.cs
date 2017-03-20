@@ -3,5 +3,5 @@
     Pique,
     Coeur,
     Trefle,
-    Carreau    
+    Carreau,
 }

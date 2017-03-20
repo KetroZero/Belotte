@@ -6,27 +6,34 @@
 
     <StackPanel>
         <TabControl>
-            <TabItem Header="Scores">
-                <view:ScoreView/>
+            <TabItem Header="Equipe">
+                <view:CreateTeamView DataContext="{Binding}"/>
             </TabItem>
             <TabItem Header="Jeu">
                 <StackPanel>
                     <ListBox ItemsSource="{Binding Joueurs}" HorizontalAlignment="Left">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
-                                <view:PlayerDetailView DataContext="{Binding}" />
+                                <view:PlayerDetailView DataContext="{Binding}"/>
                             </DataTemplate>
                         </ListBox.ItemTemplate>
                     </ListBox>
                     <view:TableCardsView DataContext="{Binding Table}" HorizontalAlignment="Left" Margin="86,0,0,0"/>
                 </StackPanel>
             </TabItem>
-            <TabItem Header="Equipe">
-                <view:CreateTeamView/>
+            <TabItem Header="Scores" >
+                <view:ScoreView DataContext="{Binding Scores}"/>
             </TabItem>
-            <TabItem Header="Table">
+            <!--<TabItem Header="Table">
                 <view:TableCardsView/>
-            </TabItem>
+            </TabItem>-->
+            
+            <TabControl.Resources>
+                <Style TargetType="TabItem">
+                    <Setter Property="Width" Value="80"/>
+                    <Setter Property="Height" Value="30"/>
+                </Style>
+            </TabControl.Resources>
         </TabControl>
     </StackPanel>
 </Window>

@@ -8,13 +8,12 @@ namespace CompteurBelotteWindowsForm
 {
     public class Carte
     {
-        
-
         public int valeur;
-        public Rang nom;
+        public Rang rang;
         public Couleur couleur;
         public bool atout;
 
+        private bool verso; // cote verso, carte_dos.bmp
         /// <summary>
         /// Creer un instance de la class carte
         /// </summary>
@@ -23,47 +22,50 @@ namespace CompteurBelotteWindowsForm
         /// <param name="asset">La couleur de la carte est un atout, faux par defaut</param>
         public Carte(Rang rank, Couleur color, bool asset = false)
         {
-            nom = rank;
+            rang = rank;
             couleur = color;
             atout = asset;
 
+            verso = false;
             valeur = rankToValeur(rank, asset);
         }
         public Carte()
         {
+            valeur = -10;
+            verso = true;
         }
 
         public Carte(string imageName, bool atout = false)
         {
-            imageName = imageName.Remove(0, DonneesJeu.imgPath.Length);
-
             string[] cardArgs = imageName.Split(new char[] { '_', '.' });
 
             switch (cardArgs[0])
             {
-                default: break; // throw Exception ??
+                default: verso = true;
+                    break; // throw Exception ??
 
-                case "A": nom = Rang.As;
+                case "A": rang = Rang.As;
                     break;
-                case "K": nom = Rang.Roi;
+                case "K": rang = Rang.Roi;
                     break;
-                case "Q": nom = Rang.Dame;
+                case "Q": rang = Rang.Dame;
                     break;
-                case "J": nom = Rang.Valet;
+                case "J": rang = Rang.Valet;
                     break;
-                case "10": nom = Rang.Dix;
+                case "10": rang = Rang.Dix;
                     break;
-                case "9": nom = Rang.Neuf;
+                case "9": rang = Rang.Neuf;
                     break;
-                case "8": nom = Rang.Huit;
+                case "8": rang = Rang.Huit;
                     break;
-                case "7": nom = Rang.Sept;
+                case "7": rang = Rang.Sept;
                     break;
             }
 
             switch (cardArgs[1])
             {
-                default: break; // throw Exception ??
+                default: verso = true;
+                    break; // throw Exception ??
 
                 case "Ca": couleur = Couleur.Carreau;
                     break;
@@ -77,13 +79,13 @@ namespace CompteurBelotteWindowsForm
 
             this.atout = atout;
 
-            valeur = rankToValeur(nom, atout);
+            valeur = rankToValeur(rang, atout);
         }
 
         public void SetAtout(bool atout)
         {
             this.atout = atout;
-            valeur = rankToValeur(nom, atout);
+            valeur = rankToValeur(rang, atout);
         }
 
         public bool isCarte(string description)
@@ -115,21 +117,21 @@ namespace CompteurBelotteWindowsForm
             {
                 default: return false;
 
-                case 'A': nom = Rang.As;
+                case 'A': rang = Rang.As;
                     break;
-                case 'R': nom = Rang.Roi;
+                case 'R': rang = Rang.Roi;
                     break;
-                case 'D': nom = Rang.Dame;
+                case 'D': rang = Rang.Dame;
                     break;
-                case 'V': nom = Rang.Valet;
+                case 'V': rang = Rang.Valet;
                     break;
-                case '1': nom = Rang.Dix;
+                case '1': rang = Rang.Dix;
                     break;
-                case '9': nom = Rang.Neuf;
+                case '9': rang = Rang.Neuf;
                     break;
-                case '8': nom = Rang.Huit;
+                case '8': rang = Rang.Huit;
                     break;
-                case '7': nom = Rang.Sept;
+                case '7': rang = Rang.Sept;
                     break;
 
             }
@@ -148,7 +150,7 @@ namespace CompteurBelotteWindowsForm
                     break;
             }
 
-            valeur = rankToValeur(nom, false);
+            valeur = rankToValeur(rang, false);
 
             //all ok
             return true;
@@ -156,7 +158,7 @@ namespace CompteurBelotteWindowsForm
 
         override public string ToString()
         {
-            return nom.ToString() + " de " + couleur.ToString();
+            return rang.ToString() + " de " + couleur.ToString();
         }
 
         public string ToShortString()
@@ -164,7 +166,7 @@ namespace CompteurBelotteWindowsForm
             string rank = "initR";
             string color = "initC";
 
-            switch (nom)
+            switch (rang)
             {
                 default: rank = "-1";
                     break;
@@ -206,6 +208,11 @@ namespace CompteurBelotteWindowsForm
 
         private int rankToValeur(Rang rank, bool asset)
         {
+            if (verso)
+            {
+                return -10; //verso, not visible card
+            }
+
             switch (rank)
             {
                 default: return -1;
@@ -225,7 +232,7 @@ namespace CompteurBelotteWindowsForm
         public override bool Equals(Object obj)
         {
             Carte test = obj as Carte;
-            return this.nom.Equals(test.nom) && this.couleur == test.couleur;
+            return this.rang.Equals(test.rang) && this.couleur == test.couleur;
         }
 
         public override int GetHashCode()
@@ -235,9 +242,14 @@ namespace CompteurBelotteWindowsForm
 
         public string ToImageLocation()
         {
+            if (verso)
+            {
+                return "carte_dos.bmp";
+            }
+
             string card = "init";
 
-            switch (nom)
+            switch (rang)
             {
                 default: card = "carte";
                     break;
